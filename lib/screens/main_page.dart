@@ -132,7 +132,7 @@ class _MainPageState extends State<MainPage> {
                                 itemBuilder: (context, index) {
                                   return TextButton(
                                     onPressed: () {
-                                      if (index == 1)
+                                      if (index == 0)
                                         setState(() {
                                           contentWidget = Column(
                                             children: [
@@ -168,7 +168,7 @@ class _MainPageState extends State<MainPage> {
                                           );
                                         });
 
-                                      if (index == 2)
+                                      if (index == 1)
                                         setState(() {
                                           contentWidget = Column(
                                             children: [
@@ -208,7 +208,7 @@ class _MainPageState extends State<MainPage> {
                                           );
                                         });
 
-                                      if (index == 3)
+                                      if (index == 2)
                                         setState(() {
                                           contentWidget = Column(
                                             children: [
@@ -244,7 +244,7 @@ class _MainPageState extends State<MainPage> {
                                           );
                                         });
 
-                                      if (index == 4)
+                                      if (index == 3)
                                         setState(() {
                                           contentWidget = Column(
                                             children: [
@@ -280,7 +280,7 @@ class _MainPageState extends State<MainPage> {
                                           );
                                         });
 
-                                      if (index == 5)
+                                      if (index == 4)
                                         setState(() {
                                           contentWidget = Column(
                                             children: [
