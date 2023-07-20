@@ -23,6 +23,8 @@ class AddedSushiItem extends StatefulWidget {
 class _AddedSushiItemState extends State<AddedSushiItem> {
   @override
   Widget build(BuildContext context) {
+    if(widget.counters[widget.product]!=null)
+    if(widget.counters[widget.product]!>0)
     return Container(
       margin: EdgeInsets.all(5),
       padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
@@ -167,5 +169,6 @@ class _AddedSushiItemState extends State<AddedSushiItem> {
         ],
       ),
     );
+    return Container();
   }
 }

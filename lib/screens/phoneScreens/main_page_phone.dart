@@ -39,11 +39,11 @@ class _MainPagePhoneState extends State<MainPagePhone> {
   }
 
   void BasketChangedAdd(Product product, bool same) {
-    if (!same&&!basket.contains(product)) {
-        setState(() {
-          basket.add(product);
-          totalPrice += int.parse(product.price.replaceAll("₴", ""));
-        });
+    if (!same && !basket.contains(product)) {
+      setState(() {
+        basket.add(product);
+        totalPrice += int.parse(product.price.replaceAll("₴", ""));
+      });
     } else
       setState(() {
         totalPrice += int.parse(product.price.replaceAll("₴", ""));
@@ -153,6 +153,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                       size: 30,
                     ),
                     onPressed: () {
+                      !basket.isEmpty?
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
@@ -194,7 +195,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                             ),
                           );
                         },
-                      );
+                      ):Container();
                     },
                   )))),
       Positioned(
@@ -268,7 +269,6 @@ class _SalesWidgetState extends State<SalesWidget> {
                   )),
               IconButton(
                   onPressed: () {
-                    print("neg");
                     setState(() {
                       col = false;
                       img = false;

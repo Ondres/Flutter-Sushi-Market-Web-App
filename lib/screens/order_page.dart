@@ -653,8 +653,14 @@ class _OrderPageState extends State<OrderPage> {
                     padding:
                         MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
                   ),
-                  onPressed: () {
-                    _startBot();
+                  onPressed: () async {
+                    await _startBot();
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return CustomAlertDialog(); // Вызов нашего алерт-диалога
+                      },
+                    );
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -722,7 +728,46 @@ _startBot() async {
   !courier ? Order += "\nДоставка кур'єром" : Order += "\nСамовивіз";
   courier ? Order += "\nПункт видачі: " + selectedValue.toString() : "";
   Order += "\nЗамовлення: ";
-  for (int i = 0; i < basket.length; i++) Order += basket[i].name + ", ";
+  for (int i = 0; i < basket.length; i++) Order += basket[i].name + " " + counters[basket[i]].toString() + " шт., \n";
+  Order+="Всього до сплати: "+totalPrice.toString();
   await teleDart.sendMessage(580706417, Order);
   teleDart.stop();
+}
+
+class CustomAlertDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'Ваше замовлення прийнято! Очікуйте на дзвінок :)',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            'Якщо протягом п\'яти хвилин ви не отримаєте дзвінка, будь ласка подзвоніть нам',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.grey,
+            ),
+          ),
+          SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .pop(); // Закрытие алерт-диалога при нажатии кнопки
+            },
+            child: Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
 }
