@@ -472,7 +472,7 @@ class _MainPageState extends State<MainPage> {
                                     ? Container(
                                         margin: EdgeInsets.only(top: 20),
                                         width: 220,
-                                        height: 200,
+                                        height: 260,
                                         child: ListView.builder(
                                           itemCount: basket.length,
                                           itemBuilder: (context, index) {

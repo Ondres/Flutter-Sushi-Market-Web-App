@@ -181,6 +181,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                       itemBuilder: (context, index) {
                                         Product product = basket[index];
                                         return AddedSushiItem(
+                                          empty: true,
                                           product: product,
                                           changeBasket: BasketChangedDel,
                                           changeBasketAdd: BasketChangedAdd,
@@ -189,7 +190,6 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                       },
                                     ),
                                   ),
-                                  // Дополнительный контент, если нужно
                                 ],
                               ),
                             ),

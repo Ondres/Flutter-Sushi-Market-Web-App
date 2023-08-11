@@ -4,21 +4,24 @@ import 'SushiClass.dart';
 
 class AddedSushiItem extends StatefulWidget {
   final Product product;
-  Map<Product, int> counters;
+  final Map<Product, int> counters;
   final Function(Product, bool, {int? items}) changeBasket;
   final Function(Product, bool) changeBasketAdd;
+  final bool empty;
 
-  AddedSushiItem(
-      {required this.product,
-      required this.counters,
-      required this.changeBasket,
-      required this.changeBasketAdd,
-      Key? key})
-      : super(key: key);
+  AddedSushiItem({
+    required this.product,
+    required this.counters,
+    required this.changeBasket,
+    required this.changeBasketAdd,
+    this.empty = false,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<AddedSushiItem> createState() => _AddedSushiItemState();
 }
+
 
 class _AddedSushiItemState extends State<AddedSushiItem> {
   @override
@@ -90,6 +93,8 @@ class _AddedSushiItemState extends State<AddedSushiItem> {
                                       } else
                                         widget.changeBasket(
                                             widget.product, true);
+                                      if(widget.empty&&basket.isEmpty)
+                                        Navigator.of(context).pop();
                                     },
                                     child: Container(
                                         width: 30,
@@ -159,6 +164,8 @@ class _AddedSushiItemState extends State<AddedSushiItem> {
                   setState(() {
                     counters.remove(widget.product);
                   });
+                  if(widget.empty&&basket.isEmpty)
+                    Navigator.of(context).pop();
                 },
                 child: Icon(
                   Icons.close,

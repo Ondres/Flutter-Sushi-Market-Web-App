@@ -490,26 +490,24 @@ class _PhoneScreenState extends State<PhoneScreen> {
           ),
         ),
         body: Container(
-            color: Color.fromRGBO(242, 242, 242, 1),
-            width: MediaQuery.of(context).size.width,
-            child: ListView.builder(
-                itemCount: 1,
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      PhoneTopWidget(
-                        changeContentWidget: widget.changeContentWidget,
-                        BasketChangedAdd: widget.BasketChangedAdd,
-                      ),
-                      contentWidget,
-                      Visibility(
-                        visible: contentWidget.key != contentWidgetKey,
-                        child: BottomInfo(),
-                      ),
-                      BottomContacts(),
-                    ],
-                  );
-                })));
+          color: Color.fromRGBO(242, 242, 242, 1),
+          width: MediaQuery.of(context).size.width,
+          child: ListView(
+            children: [
+              PhoneTopWidget(
+                changeContentWidget: widget.changeContentWidget,
+                BasketChangedAdd: widget.BasketChangedAdd,
+              ),
+              contentWidget,
+              Visibility(
+                visible: contentWidget.key != contentWidgetKey,
+                child: BottomInfo(),
+              ),
+              BottomContacts(),
+            ],
+          ),
+        )
+    );
   }
 }
 
