@@ -49,9 +49,11 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.only(bottom: 20),
-        height: MediaQuery.of(context).size.height * 0.8,
-        width: MediaQuery.of(context).size.width,
-        child: SingleChildScrollView(
+        height: !basket.isEmpty?1100:900,
+        width: MediaQuery
+            .of(context)
+            .size
+            .width,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -63,12 +65,18 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                   children: [
                     Container(
                       height: 160,
-                      width: MediaQuery.of(context).size.width * 0.8,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.8,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                              width: MediaQuery.of(context).size.width * 0.8,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 0.8,
                               height: 50,
                               margin: EdgeInsets.only(bottom: 20),
                               child: TextField(
@@ -96,12 +104,16 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 // maxLength: 15,
                               )),
                           Container(
-                              width: MediaQuery.of(context).size.width * 0.8,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 0.8,
                               height: 50,
+                              margin: EdgeInsets.only(bottom: 20),
                               child: TextField(
                                 controller: nameController,
                                 decoration: InputDecoration(
-                                  hintText: "Ім'я",
+                                  hintText: 'Ім`я',
                                   hintStyle: TextStyle(
                                     color: Color.fromRGBO(157, 155, 155, 1),
                                   ),
@@ -109,8 +121,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                   fillColor: Colors.white,
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    borderSide:
-                                        BorderSide.none, // Скрываем границу
+                                    borderSide: BorderSide.none,
                                   ),
                                 ),
                                 style: TextStyle(
@@ -118,7 +129,6 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 ),
                                 textAlign: TextAlign.left,
                                 keyboardType: TextInputType.text,
-                                // задайте необходимые размеры для поля ввода
                                 minLines: 1,
                                 maxLines: 1,
                               )),
@@ -126,7 +136,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                       ),
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.8,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.8,
                       height: 160,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -138,8 +151,8 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 TextButton(
                                   style: ButtonStyle(
                                     padding:
-                                        MaterialStateProperty.all<EdgeInsets>(
-                                            EdgeInsets.zero),
+                                    MaterialStateProperty.all<EdgeInsets>(
+                                        EdgeInsets.zero),
                                   ),
                                   onPressed: () {
                                     setState(() {
@@ -150,21 +163,21 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                     alignment: Alignment.center,
                                     child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       children: [
                                         Icon(Icons.attach_money_rounded,
                                             size: 22,
                                             color: cash
                                                 ? Colors.white
                                                 : Color.fromRGBO(
-                                                    157, 155, 155, 1)),
+                                                157, 155, 155, 1)),
                                         Text(
                                           "Готівкою",
                                           style: TextStyle(
                                               color: cash
                                                   ? Colors.white
                                                   : Color.fromRGBO(
-                                                      157, 155, 155, 1)),
+                                                  157, 155, 155, 1)),
                                         ),
                                       ],
                                     ),
@@ -175,7 +188,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                           ? Color.fromRGBO(255, 141, 64, 1)
                                           : Colors.white,
                                     ),
-                                    width: MediaQuery.of(context).size.width *
+                                    width: MediaQuery
+                                        .of(context)
+                                        .size
+                                        .width *
                                         0.38,
                                     height: 50,
                                   ),
@@ -183,8 +199,8 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 TextButton(
                                     style: ButtonStyle(
                                       padding:
-                                          MaterialStateProperty.all<EdgeInsets>(
-                                              EdgeInsets.zero),
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.zero),
                                     ),
                                     onPressed: () {
                                       setState(() {
@@ -195,14 +211,14 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                       alignment: Alignment.center,
                                       child: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                           children: [
                                             Icon(
                                               Icons.credit_card_outlined,
                                               size: 22,
                                               color: cash
                                                   ? Color.fromRGBO(
-                                                      157, 155, 155, 1)
+                                                  157, 155, 155, 1)
                                                   : Colors.white,
                                             ),
                                             Text(
@@ -210,7 +226,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                               style: TextStyle(
                                                 color: cash
                                                     ? Color.fromRGBO(
-                                                        157, 155, 155, 1)
+                                                    157, 155, 155, 1)
                                                     : Colors.white,
                                               ),
                                             ),
@@ -222,7 +238,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                             ? Colors.white
                                             : Color.fromRGBO(255, 141, 64, 1),
                                       ),
-                                      width: MediaQuery.of(context).size.width *
+                                      width: MediaQuery
+                                          .of(context)
+                                          .size
+                                          .width *
                                           0.38,
                                       height: 50,
                                     )),
@@ -230,7 +249,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                             ),
                           ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.8,
+                            width: MediaQuery
+                                .of(context)
+                                .size
+                                .width * 0.8,
                             height: 75,
                             margin: EdgeInsets.only(top: 20),
                             padding: EdgeInsets.all(0),
@@ -246,7 +268,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.0),
                                   borderSide:
-                                      BorderSide.none, // Скрываем границу
+                                  BorderSide.none, // Скрываем границу
                                 ),
                               ),
                               style: TextStyle(
@@ -259,7 +281,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                             ),
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular((10))),
+                              BorderRadius.all(Radius.circular((10))),
                               color: Colors.white,
                             ),
                           ),
@@ -267,7 +289,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                       ),
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.8,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.8,
                       height: 320,
                       alignment: Alignment.topCenter,
                       child: Column(
@@ -280,8 +305,8 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 TextButton(
                                     style: ButtonStyle(
                                       padding:
-                                          MaterialStateProperty.all<EdgeInsets>(
-                                              EdgeInsets.zero),
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.zero),
                                     ),
                                     onPressed: () {
                                       setState(() {
@@ -296,7 +321,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                             color: courier
                                                 ? Colors.white
                                                 : Color.fromRGBO(
-                                                    157, 155, 155, 1)),
+                                                157, 155, 155, 1)),
                                       ),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.all(
@@ -305,15 +330,18 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                             ? Color.fromRGBO(255, 141, 64, 1)
                                             : Colors.white,
                                       ),
-                                      width: MediaQuery.of(context).size.width *
+                                      width: MediaQuery
+                                          .of(context)
+                                          .size
+                                          .width *
                                           0.38,
                                       height: 50,
                                     )),
                                 TextButton(
                                     style: ButtonStyle(
                                       padding:
-                                          MaterialStateProperty.all<EdgeInsets>(
-                                              EdgeInsets.zero),
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.zero),
                                     ),
                                     onPressed: () {
                                       setState(() {
@@ -337,7 +365,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                             ? Colors.white
                                             : Color.fromRGBO(255, 141, 64, 1),
                                       ),
-                                      width: MediaQuery.of(context).size.width *
+                                      width: MediaQuery
+                                          .of(context)
+                                          .size
+                                          .width *
                                           0.38,
                                       height: 50,
                                     )),
@@ -375,17 +406,17 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 ),
                                 items: items
                                     .map((String item) =>
-                                        DropdownMenuItem<String>(
-                                          value: item,
-                                          child: Text(
-                                            item,
-                                            style: const TextStyle(
-                                              fontSize: 14,
-                                              color: Colors.black54,
-                                            ),
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        ))
+                                    DropdownMenuItem<String>(
+                                      value: item,
+                                      child: Text(
+                                        item,
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.black54,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ))
                                     .toList(),
                                 value: selectedValue,
                                 onChanged: (String? value) {
@@ -396,7 +427,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 buttonStyleData: ButtonStyleData(
                                   height: 50,
                                   width:
-                                      MediaQuery.of(context).size.width * 0.8,
+                                  MediaQuery
+                                      .of(context)
+                                      .size
+                                      .width * 0.8,
                                   padding: const EdgeInsets.only(
                                       left: 14, right: 14),
                                   decoration: BoxDecoration(
@@ -417,7 +451,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 dropdownStyleData: DropdownStyleData(
                                   maxHeight: 200,
                                   width:
-                                      MediaQuery.of(context).size.width * 0.8,
+                                  MediaQuery
+                                      .of(context)
+                                      .size
+                                      .width * 0.8,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(14),
                                     color: Colors.white,
@@ -425,9 +462,9 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                   scrollbarTheme: ScrollbarThemeData(
                                     radius: const Radius.circular(40),
                                     thickness:
-                                        MaterialStateProperty.all<double>(6),
+                                    MaterialStateProperty.all<double>(6),
                                     thumbVisibility:
-                                        MaterialStateProperty.all<bool>(true),
+                                    MaterialStateProperty.all<bool>(true),
                                   ),
                                 ),
                                 menuItemStyleData: const MenuItemStyleData(
@@ -438,14 +475,20 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                             ),
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                              BorderRadius.all(Radius.circular(10)),
                               color: Colors.white,
                             ),
-                            width: MediaQuery.of(context).size.width * 0.8,
+                            width: MediaQuery
+                                .of(context)
+                                .size
+                                .width * 0.8,
                             height: 50,
                           ),
                           Container(
-                              width: MediaQuery.of(context).size.width * 0.8,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 0.8,
                               height: 50,
                               margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
                               child: TextField(
@@ -460,7 +503,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10.0),
                                     borderSide:
-                                        BorderSide.none, // Скрываем границу
+                                    BorderSide.none, // Скрываем границу
                                   ),
                                 ),
                                 style: TextStyle(
@@ -477,7 +520,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                               children: [
                                 Container(
                                   width:
-                                      MediaQuery.of(context).size.width * 0.38,
+                                  MediaQuery
+                                      .of(context)
+                                      .size
+                                      .width * 0.38,
                                   height: 50,
                                   child: TextField(
                                     controller: houseController,
@@ -490,9 +536,9 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                       fillColor: Colors.white,
                                       border: OutlineInputBorder(
                                         borderRadius:
-                                            BorderRadius.circular(10.0),
+                                        BorderRadius.circular(10.0),
                                         borderSide:
-                                            BorderSide.none, // Скрываем границу
+                                        BorderSide.none, // Скрываем границу
                                       ),
                                     ),
                                     style: TextStyle(
@@ -505,7 +551,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                   ),
                                   decoration: BoxDecoration(
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular((10))),
+                                    BorderRadius.all(Radius.circular((10))),
                                     color: Colors.white,
                                   ),
                                 ),
@@ -522,9 +568,9 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                       fillColor: Colors.white,
                                       border: OutlineInputBorder(
                                         borderRadius:
-                                            BorderRadius.circular(10.0),
+                                        BorderRadius.circular(10.0),
                                         borderSide:
-                                            BorderSide.none, // Скрываем границу
+                                        BorderSide.none, // Скрываем границу
                                       ),
                                     ),
                                     style: TextStyle(
@@ -537,11 +583,14 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                   ),
                                   decoration: BoxDecoration(
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular((10))),
+                                    BorderRadius.all(Radius.circular((10))),
                                     color: Colors.white,
                                   ),
                                   width:
-                                      MediaQuery.of(context).size.width * 0.38,
+                                  MediaQuery
+                                      .of(context)
+                                      .size
+                                      .width * 0.38,
                                   height: 50,
                                 ),
                               ],
@@ -551,17 +600,24 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                       ),
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.8,
-                      height: 260,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.8,
+                      height: !basket.isEmpty ? 260 : 60,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+                          !basket.isEmpty ?
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.8,
+                            width: MediaQuery
+                                .of(context)
+                                .size
+                                .width * 0.8,
                             height: 200,
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular((10))),
+                              BorderRadius.all(Radius.circular((10))),
                               color: Colors.white,
                             ),
                             child: ListView.builder(
@@ -576,21 +632,24 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 );
                               },
                             ),
-                          ),
+                          ) : Container(),
                           Container(
                             margin: EdgeInsets.only(top: 20),
                             height: 24,
-                            width: MediaQuery.of(context).size.width * 0.8,
+                            width: MediaQuery
+                                .of(context)
+                                .size
+                                .width * 0.8,
                             padding: EdgeInsets.only(left: 10),
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular((10))),
+                              BorderRadius.all(Radius.circular((10))),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Container(
-                                  width: 110,
+                                  width: 130,
                                   alignment: Alignment.centerLeft,
                                   child: Text(
                                     "Палички та соус",
@@ -600,26 +659,32 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                   ),
                                 ),
                                 Container(
-                                    width: MediaQuery.of(context).size.width *
+                                    width: MediaQuery
+                                        .of(context)
+                                        .size
+                                        .width *
                                         0.38,
                                     alignment: Alignment.centerLeft,
                                     child: Container(
                                         width:
-                                            MediaQuery.of(context).size.width *
-                                                0.38,
+                                        MediaQuery
+                                            .of(context)
+                                            .size
+                                            .width *
+                                            0.38,
                                         child: Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
+                                          MainAxisAlignment.spaceAround,
                                           children: [
                                             Container(
                                                 width: 30,
                                                 child: TextButton(
                                                     style: ButtonStyle(
                                                       padding:
-                                                          MaterialStateProperty
-                                                              .all<EdgeInsets>(
-                                                                  EdgeInsets
-                                                                      .zero),
+                                                      MaterialStateProperty
+                                                          .all<EdgeInsets>(
+                                                          EdgeInsets
+                                                              .zero),
                                                     ),
                                                     onPressed: () {
                                                       setState(() {
@@ -629,7 +694,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                                     child: Container(
                                                         width: 30,
                                                         alignment:
-                                                            Alignment.center,
+                                                        Alignment.center,
                                                         child: Icon(
                                                             Icons.dangerous,
                                                             size: 24,
@@ -650,10 +715,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                                 child: TextButton(
                                                     style: ButtonStyle(
                                                       padding:
-                                                          MaterialStateProperty
-                                                              .all<EdgeInsets>(
-                                                                  EdgeInsets
-                                                                      .zero),
+                                                      MaterialStateProperty
+                                                          .all<EdgeInsets>(
+                                                          EdgeInsets
+                                                              .zero),
                                                     ),
                                                     onPressed: () {
                                                       setState(() {
@@ -663,16 +728,16 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                                     child: Container(
                                                         width: 30,
                                                         alignment:
-                                                            Alignment.center,
+                                                        Alignment.center,
                                                         child: Icon(
                                                             Icons.add_circle,
                                                             size: 24,
                                                             color:
-                                                                Color.fromRGBO(
-                                                                    255,
-                                                                    141,
-                                                                    64,
-                                                                    1))))),
+                                                            Color.fromRGBO(
+                                                                255,
+                                                                141,
+                                                                64,
+                                                                1))))),
                                           ],
                                         ))),
                               ],
@@ -690,7 +755,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.8,
                         padding: EdgeInsets.only(left: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -731,7 +799,10 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width * 0.8,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.8,
                         margin: EdgeInsets.only(bottom: 20),
                         height: 50,
                         child: Text(
@@ -749,7 +820,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
               ),
             ],
           ),
-        ));
+        );
   }
 }
 

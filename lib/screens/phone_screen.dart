@@ -63,6 +63,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                               changeBasketAdd: widget.BasketChangedAdd,
                               key: contentWidgetKey,
                             ));
+                            Navigator.pop(context);
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.75,
@@ -326,6 +327,8 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                       ),
                                     ],
                                   ));
+
+                                Navigator.pop(context);
                               },
                               buttonStyleData: ButtonStyleData(
                                 height: 50,
@@ -375,6 +378,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                         TextButton(
                           onPressed: () {
                             widget.changeContentWidget(DeliveryInfoPhone());
+                            Navigator.pop(context);
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.75,
@@ -391,6 +395,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                         TextButton(
                           onPressed: () {
                             widget.changeContentWidget(AboutUsPhone());
+                            Navigator.pop(context);
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.75,
@@ -409,6 +414,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                             widget.changeContentWidget(SalesWidget(
                               changeBasket: widget.BasketChangedAdd,
                             ));
+                            Navigator.pop(context);
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.75,
@@ -499,24 +505,22 @@ class _PhoneScreenState extends State<PhoneScreen> {
         body: Container(
           color: Color.fromRGBO(242, 242, 242, 1),
           width: MediaQuery.of(context).size.width,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                PhoneTopWidget(
-                  changeContentWidget: widget.changeContentWidget,
-                  BasketChangedAdd: widget.BasketChangedAdd,
-                ),
-                contentWidget,
-                Visibility(
-                  visible: contentWidget.key != contentWidgetKey,
-                  child: BottomInfo(),
-                ),
-                BottomContacts(),
-              ],
-            ),
-            //
+          child: ListView(
+            children: [
+              PhoneTopWidget(
+                changeContentWidget: widget.changeContentWidget,
+                BasketChangedAdd: widget.BasketChangedAdd,
+              ),
+              contentWidget,
+              Visibility(
+                visible: contentWidget.key != contentWidgetKey,
+                child: BottomInfo(),
+              ),
+              BottomContacts(),
+            ],
           ),
-        ));
+        )
+    );
   }
 }
 
