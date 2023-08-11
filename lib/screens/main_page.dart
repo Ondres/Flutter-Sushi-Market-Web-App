@@ -1764,10 +1764,7 @@ class _BottomContactsState extends State<BottomContacts> {
             child: Text("© 2023 SuCheff Все права защищены"),
           ),
         ),
-        Container(
-          color: Colors.white,
-          height: 40,
-        ),
+    
       ],
     );
   }
