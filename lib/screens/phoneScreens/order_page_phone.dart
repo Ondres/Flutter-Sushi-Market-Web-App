@@ -293,7 +293,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                           .of(context)
                           .size
                           .width * 0.8,
-                      height: 320,
+                      height: !courier?320:180,
                       alignment: Alignment.topCenter,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -484,6 +484,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 .width * 0.8,
                             height: 50,
                           ),
+                          !courier?
                           Container(
                               width: MediaQuery
                                   .of(context)
@@ -513,7 +514,8 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 keyboardType: TextInputType.text,
                                 minLines: 1,
                                 maxLines: 1,
-                              )),
+                              )):Container(),
+                          !courier?
                           Container(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -595,7 +597,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 ),
                               ],
                             ),
-                          ),
+                          ):Container(),
                         ],
                       ),
                     ),
