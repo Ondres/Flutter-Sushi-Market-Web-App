@@ -58,7 +58,7 @@ class _DeliveryInfoState extends State<DeliveryInfo> {
                       ),
                       Container(
                         width: 560,
-                        child: Text("Amet amet, ornare ipsum, praesent. Sollicitudin suspendisse fames leo, volutpat at. A mi, sapien et et nulla massa. Rhoncus vel maecenas est nisi aliquet. Neque elementum faucibus scelerisque ultrices netus aliquam neque. Interdum quis auctor felis cras velit mauris. Eros in tellus pellentesque gravida feugiat facilisi mauris. At in mauris condimentum ornare auctor feugiat nullam ut. Donec duis scelerisque lobortis arcu, urna purus pulvinar.", style: TextStyle(
+                        child: Text("1.  По телефону. У такому разі ви можете обговорити всі деталі замовлення безпосередньо з оператором, який заповнить всю необхідну інформацію;\n2. На сайті. Для цього вам необхідно вибрати цікаві для вас позиції та додати їх до кошика. Після визначитись, будете забирати самі чи вам потрібна доставка (здійснюється лише до під’їзду).", style: TextStyle(
                           fontSize: 16,
                         ),),
                       )
@@ -90,8 +90,8 @@ class _DeliveryInfoState extends State<DeliveryInfo> {
                       ),
                       Container(
                         width: 560,
-                        child: Text("Amet amet, ornare ipsum, praesent. Sollicitudin suspendisse fames leo, volutpat at. A mi, sapien et et nulla massa. Rhoncus vel maecenas est nisi aliquet. Neque elementum faucibus scelerisque ultrices netus aliquam neque. Interdum quis auctor felis cras velit mauris. Eros in tellus pellentesque gravida feugiat facilisi mauris. At in mauris condimentum ornare auctor feugiat nullam ut. Donec duis scelerisque lobortis arcu, urna purus pulvinar.", style: TextStyle(
-                          fontSize: 16,
+                        child: Text("1. При самовивозі ви можете розрахуватись як готівкою так і карткою; \n2. При доставці, оплата проводиться переказом на розрахунковий рахунок в повному обсязі з урахуванням суми доставки (якщо є).", style: TextStyle(
+                          fontSize: 18,
                         ),),
                       )
                     ],
@@ -142,7 +142,12 @@ class _DeliveryInfoState extends State<DeliveryInfo> {
                       ),
                       Container(
                         width: 560,
-                        child: Text("Amet amet, ornare ipsum, praesent. Sollicitudin suspendisse fames leo, volutpat at. A mi, sapien et et nulla massa. Rhoncus vel maecenas est nisi aliquet. Neque elementum faucibus scelerisque ultrices netus aliquam neque. Interdum quis auctor felis cras velit mauris. Eros in tellus pellentesque gravida feugiat facilisi mauris. At in mauris condimentum ornare auctor feugiat nullam ut. Donec duis scelerisque lobortis arcu, urna purus pulvinar.", style: TextStyle(
+                        child: Text(
+                          "1. Замовлення «на зараз». Середній час доставки, в позначеній зоні, від 60-90хв з моменту вашого дзвінка або оформлення на сайті (в останньому, після дзвінка оператора для уточнення замовлення);"
+                              '\n*Час доставки рахується після сплати замовлення в повному обсязі'
+                              ' \n2. На відведену годину. Ви отримуєте замовлення у відведений вами час (+/- 10хв);'
+                              '\n3. Замовлення на доставку приймаються не пізніше 60хв до завершення робочого дня.',
+                           style: TextStyle(
                           fontSize: 16,
                         ),),
                       )

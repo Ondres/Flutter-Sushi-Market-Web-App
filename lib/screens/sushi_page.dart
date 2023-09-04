@@ -58,7 +58,7 @@ class _SushiListState extends State<SushiList> {
                               color: Colors.black26,
                               image: DecorationImage(
                                 image: AssetImage(sushiList[index].image),
-                                fit: BoxFit.fitWidth,
+                                fit: BoxFit.cover,
                               )),
                         )),
                     Container(

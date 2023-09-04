@@ -136,34 +136,31 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 0,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 1,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 2,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 3,
                                 ),
                               ],
                             ));
                           }
+
                           if (value ==
-                              "Філадельфія*assets/SushiPhiladelphia.png")
+                              "Набори*assets/SushiPhiladelphia.png")
                             widget.changeContentWidget(Column(
                               children: [
                                 Container(
                                   alignment: Alignment.centerLeft,
                                   margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
-                                  child: Text("Філадельфія",
+                                  child: Text("Набори",
                                       style: TextStyle(
                                           fontSize: 35,
                                           color:
@@ -173,47 +170,39 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 0,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 1,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 2,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 3,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 0,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 1,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 2,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 3,
                                 ),
                               ],
                             ));
 
-                          if (value == "Класичні роли*assets/ClassicSushi.png")
+                          if (value == "Великі роли*assets/ClassicSushi.png")
                             widget.changeContentWidget(Column(
                               children: [
                                 Container(
@@ -229,33 +218,29 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 0,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 1,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 2,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 3,
                                 ),
                               ],
                             ));
 
-                          if (value == "Макі*assets/SushiMaki.png")
+                          if (value == "Роли в норі*assets/SushiMaki.png")
                             widget.changeContentWidget(Column(
                               children: [
                                 Container(
                                   alignment: Alignment.centerLeft,
                                   margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
-                                  child: Text("Макі",
+                                  child: Text("Роли в норі",
                                       style: TextStyle(
                                           fontSize: 35,
                                           color:
@@ -265,32 +250,29 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 0,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 1,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 2,
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
                                   sushiList: firmovi_roll,
-                                  row: 3,
                                 ),
                               ],
                             ));
-                          if (value == "Суші*assets/Sushi.png")
+
+                          if (value == "Суші та гункани*assets/Sushi.png")
                             widget.changeContentWidget(Column(
                               children: [
                                 Container(
                                   alignment: Alignment.centerLeft,
                                   margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
-                                  child: Text("Суші",
+                                  child: Text("Суші та гункани",
                                       style: TextStyle(
                                           fontSize: 35,
                                           color:
@@ -299,23 +281,19 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                  row: 0,
+                                  sushiList: sushi.sublist(0,2),
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                  row: 1,
+                                  sushiList: sushi.sublist(2,4),
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                  row: 2,
+                                  sushiList: sushi.sublist(4,6),
                                 ),
                                 SushiListPhone(
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                  row: 3,
+                                  sushiList: sushi.sublist(5,7),
                                 ),
                               ],
                             ));

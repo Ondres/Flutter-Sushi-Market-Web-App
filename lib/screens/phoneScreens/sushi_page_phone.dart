@@ -5,10 +5,8 @@ import 'package:sushi/menu/menu_lists.dart';
 class SushiListPhone extends StatefulWidget {
   final Function(Product, bool) changeBasket;
   final List<Product> sushiList;
-  final int? row;
 
   SushiListPhone({
-    this.row,
     Key? key,
     required this.sushiList,
     required this.changeBasket,
@@ -22,22 +20,12 @@ class _SushiListPhoneState extends State<SushiListPhone> {
   @override
   Widget build(BuildContext context) {
     List<Product> sushiList = widget.sushiList;
-    if (widget.row != null)
-      setState(() {
-        int a = (MediaQuery.of(context).size.width / 180).toInt();
-        int b = (widget.row! * a).toInt();
-        int c = a + b;
-        sushiList = widget.sushiList.sublist(b, c);
-      });
-    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-      Container(
+    return Container(
         width: MediaQuery.of(context).size.width,
         height: 260,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: sushiList.asMap().entries.map((entry) {
-            int index = entry.key;
-            return Container(
+        children: [
+          Container(
               margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -53,7 +41,7 @@ class _SushiListPhoneState extends State<SushiListPhone> {
                       ),
                       onPressed: () {
                         showAlertDialog(
-                            context, sushiList[index], widget.changeBasket);
+                            context, sushiList[0], widget.changeBasket);
                       },
                       child: Container(
                         height: 100,
@@ -64,7 +52,7 @@ class _SushiListPhoneState extends State<SushiListPhone> {
                             ),
                             color: Colors.black26,
                             image: DecorationImage(
-                              image: AssetImage(sushiList[index].image),
+                              image: AssetImage(sushiList[0].image),
                               fit: BoxFit.fitWidth,
                             )),
                       )),
@@ -72,7 +60,7 @@ class _SushiListPhoneState extends State<SushiListPhone> {
                     height: 35,
                     margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
                     child: Text(
-                      sushiList[index].name,
+                      sushiList[0].name,
                       style: TextStyle(
                         fontSize: 17,
                       ),
@@ -82,7 +70,7 @@ class _SushiListPhoneState extends State<SushiListPhone> {
                   Container(
                     height: 15,
                     margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                    child: Text("Вага: " + sushiList[index].weight),
+                    child: Text("Вага: " + sushiList[0].weight),
                     alignment: Alignment.centerLeft,
                   ),
                   Container(
@@ -98,7 +86,7 @@ class _SushiListPhoneState extends State<SushiListPhone> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
-                          sushiList[index].price,
+                          sushiList[0].price,
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
@@ -112,15 +100,15 @@ class _SushiListPhoneState extends State<SushiListPhone> {
                             minimumSize: Size(100, 45),
                           ),
                           onPressed: () {
-                            if (counters.containsKey(sushiList[index])) {
+                            if (counters.containsKey(sushiList[0])) {
                               setState(() {
-                                int k = counters[sushiList[index]]!;
+                                int k = counters[sushiList[0]]!;
                                 k++;
-                                counters[sushiList[index]] = k;
+                                counters[sushiList[0]] = k;
                               });
                             } else
-                              counters[sushiList[index]] = 1;
-                            widget.changeBasket(sushiList[index], false);
+                              counters[sushiList[0]] = 1;
+                            widget.changeBasket(sushiList[0], false);
                           },
                           child: Text('Замовити'),
                         ),
@@ -129,11 +117,105 @@ class _SushiListPhoneState extends State<SushiListPhone> {
                   )
                 ],
               ),
-            );
-          }).toList(),
-        ),
-      ),
-    ]);
+            ),
+          //sushiList.length==2?
+          Container(
+            margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            height: 250,
+            width: 165,
+            child: Column(
+              children: [
+                TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    onPressed: () {
+                      showAlertDialog(
+                          context, sushiList[1], widget.changeBasket);
+                    },
+                    child: Container(
+                      height: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(30),
+                            topLeft: Radius.circular(30),
+                          ),
+                          color: Colors.black26,
+                          image: DecorationImage(
+                            image: AssetImage(sushiList[1].image),
+                            fit: BoxFit.fitWidth,
+                          )),
+                    )),
+                Container(
+                  height: 35,
+                  margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
+                  child: Text(
+                    sushiList[1].name,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                  alignment: Alignment.centerLeft,
+                ),
+                Container(
+                  height: 15,
+                  margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
+                  child: Text("Вага: " + sushiList[1].weight),
+                  alignment: Alignment.centerLeft,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
+                  height: 1,
+                  color: Colors.black,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
+                  height: 40,
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        sushiList[1].price,
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orange,
+                          onPrimary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          minimumSize: Size(100, 45),
+                        ),
+                        onPressed: () {
+                          if (counters.containsKey(sushiList[1])) {
+                            setState(() {
+                              int k = counters[sushiList[1]]!;
+                              k++;
+                              counters[sushiList[1]] = k;
+                            });
+                          } else
+                            counters[sushiList[1]] = 1;
+                          widget.changeBasket(sushiList[1], false);
+                        },
+                        child: Text('Замовити'),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
+              //:Container(),
+
+        ])
+    );
   }
 }
 

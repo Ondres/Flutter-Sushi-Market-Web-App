@@ -17,6 +17,7 @@ import 'package:hovering/hovering.dart';
 Widget contentWidget = Container();
 int totalPrice = 0;
 int checkBottom = 1;
+int sum = 0;
 final Key contentWidgetKey = UniqueKey();
 int firstIn = 0;
 bool _isHovered = false;
@@ -99,23 +100,19 @@ class _MainPagePhoneState extends State<MainPagePhone> {
             ),
             SushiListPhone(
               changeBasket: BasketChangedAdd,
-              sushiList: firmovi_roll,
-              row: 0,
+              sushiList: classic,
             ),
             SushiListPhone(
               changeBasket: BasketChangedAdd,
-              sushiList: firmovi_roll,
-              row: 1,
+              sushiList: classic,
             ),
             SushiListPhone(
               changeBasket: BasketChangedAdd,
-              sushiList: firmovi_roll,
-              row: 2,
+              sushiList: classic,
             ),
             SushiListPhone(
               changeBasket: BasketChangedAdd,
-              sushiList: firmovi_roll,
-              row: 3,
+              sushiList: classic,
             ),
           ],
         );
@@ -125,6 +122,10 @@ class _MainPagePhoneState extends State<MainPagePhone> {
   @override
   Widget build(BuildContext context) {
     First();
+    sum = 0;
+    counters.forEach((product, value) {
+      sum += value;
+    });
     return Scaffold(
         body: Stack(children: [
       PhoneScreen(
@@ -168,6 +169,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
+                                 TotalPriceWidget(),
                                   Container(
                                     width: 220,
                                     height: 200,
@@ -180,12 +182,16 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                       itemCount: basket.length,
                                       itemBuilder: (context, index) {
                                         Product product = basket[index];
-                                        return AddedSushiItem(
-                                          empty: true,
-                                          product: product,
-                                          changeBasket: BasketChangedDel,
-                                          changeBasketAdd: BasketChangedAdd,
-                                          counters: counters,
+                                        return Column(
+                                          children: [
+                                            AddedSushiItem(
+                                              empty: true,
+                                              product: product,
+                                              changeBasket: BasketChangedDel,
+                                              changeBasketAdd: BasketChangedAdd,
+                                              counters: counters,
+                                            )
+                                          ],
                                         );
                                       },
                                     ),
@@ -216,7 +222,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                 ),
                 alignment: Alignment.center,
                 child: Text(
-                  basket.length.toString(),
+                  sum.toString(),
                   style: TextStyle(color: Colors.white),
                 ))),
       ),
@@ -378,12 +384,10 @@ class _SalesWidgetState extends State<SalesWidget> {
                 SushiListPhone(
                   sushiList: firmovi_roll,
                   changeBasket: widget.changeBasket,
-                  row: 0,
                 ),
                 SushiListPhone(
                   sushiList: firmovi_roll,
                   changeBasket: widget.changeBasket,
-                  row: 1,
                 )
               ],
             )),
@@ -679,7 +683,7 @@ class _BottomInfoState extends State<BottomInfo> {
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.fromLTRB(20, 0, 60, 20),
               child: Text(
-                "At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.",
+                "Ми пропонуємо три способи доставки: \"на зараз\" з середнім часом 60-90 хвилин, на відведену годину з +/- 10 хвилинами та замовлення на доставку, які приймаються не пізніше 60 хвилин до закінчення робочого дня. Час доставки рахується після повної оплати замовлення.",
               )),
         ],
       ),
@@ -702,14 +706,14 @@ class _BottomContactsState extends State<BottomContacts> {
         Container(
           alignment: Alignment.topCenter,
           color: Colors.white,
-          height: 260,
+          height: 140,
           width: MediaQuery.of(context).size.width,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: 240,
+                height: 140,
                 child: Column(
                   children: [
                     Container(
@@ -717,7 +721,7 @@ class _BottomContactsState extends State<BottomContacts> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
-                            height: 180,
+                            height: 80,
                             width: 140,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -726,34 +730,6 @@ class _BottomContactsState extends State<BottomContacts> {
                                   width: 1,
                                   height: 1,
                                 ),
-                                Container(
-                                    child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.location_on,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " Панікахи, 17",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ],
-                                )),
-                                Container(
-                                    child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.location_on,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " Панікахи, 17",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ],
-                                )),
                                 Container(
                                     child: Row(
                                   children: [
@@ -781,7 +757,7 @@ class _BottomContactsState extends State<BottomContacts> {
                           ),
                           Container(
                             width: 180,
-                            height: 180,
+                            height: 80,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
@@ -789,34 +765,6 @@ class _BottomContactsState extends State<BottomContacts> {
                                   width: 1,
                                   height: 1,
                                 ),
-                                Container(
-                                    child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.local_phone_sharp,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " +38 (050) 20 500 55",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ],
-                                )),
-                                Container(
-                                    child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.local_phone_sharp,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " +38 (050) 20 500 55",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ],
-                                )),
                                 Container(
                                     child: Row(
                                   children: [
@@ -1047,5 +995,20 @@ class CarouselWidget extends StatelessWidget {
         },
       ),
     );
+  }
+}
+
+
+class TotalPriceWidget extends StatefulWidget {
+  const TotalPriceWidget({super.key});
+
+  @override
+  State<TotalPriceWidget> createState() => _TotalPriceWidgetState();
+}
+
+class _TotalPriceWidgetState extends State<TotalPriceWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Text(totalPrice.toString());
   }
 }

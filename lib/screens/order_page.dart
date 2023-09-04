@@ -128,101 +128,8 @@ class _OrderPageState extends State<OrderPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            TextButton(
-                              style: ButtonStyle(
-                                padding: MaterialStateProperty.all<EdgeInsets>(
-                                    EdgeInsets.zero),
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  cash = true;
-                                });
-                              },
-                              child: Container(
-                                alignment: Alignment.center,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(Icons.attach_money_rounded,
-                                        size: 22,
-                                        color: cash
-                                            ? Colors.white
-                                            : Color.fromRGBO(157, 155, 155, 1)),
-                                    Text(
-                                      "Готівкою",
-                                      style: TextStyle(
-                                          color: cash
-                                              ? Colors.white
-                                              : Color.fromRGBO(
-                                                  157, 155, 155, 1)),
-                                    ),
-                                  ],
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular((10))),
-                                  color: cash
-                                      ? Color.fromRGBO(255, 141, 64, 1)
-                                      : Colors.white,
-                                ),
-                                width: 90,
-                                height: 50,
-                              ),
-                            ),
-                            TextButton(
-                                style: ButtonStyle(
-                                  padding:
-                                      MaterialStateProperty.all<EdgeInsets>(
-                                          EdgeInsets.zero),
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    cash = false;
-                                  });
-                                },
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.credit_card_outlined,
-                                          size: 22,
-                                          color: cash
-                                              ? Color.fromRGBO(157, 155, 155, 1)
-                                              : Colors.white,
-                                        ),
-                                        Text(
-                                          "Карткою",
-                                          style: TextStyle(
-                                            color: cash
-                                                ? Color.fromRGBO(
-                                                    157, 155, 155, 1)
-                                                : Colors.white,
-                                          ),
-                                        ),
-                                      ]),
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular((10))),
-                                    color: cash
-                                        ? Colors.white
-                                        : Color.fromRGBO(255, 141, 64, 1),
-                                  ),
-                                  width: 90,
-                                  height: 50,
-                                )),
-                          ],
-                        ),
-                      ),
-                      Container(
                         width: 200,
-                        height: 75,
-                        margin: EdgeInsets.only(top: 40),
+                        height: 70,
                         padding: EdgeInsets.all(0),
                         child: TextField(
                           controller: commentController,
@@ -251,6 +158,33 @@ class _OrderPageState extends State<OrderPage> {
                           color: Colors.white,
                         ),
                       ),
+                      !courier?
+                      Container(
+                          width: 200,
+                          height: 50,
+                          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          child: TextField(
+                            controller: streetController,
+                            decoration: InputDecoration(
+                              hintText: 'Адреса',
+                              hintStyle: TextStyle(
+                                color: Color.fromRGBO(157, 155, 155, 1),
+                              ),
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                borderSide: BorderSide.none, // Скрываем границу
+                              ),
+                            ),
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.left,
+                            keyboardType: TextInputType.text,
+                            minLines: 1,
+                            maxLines: 1,
+                          )):Container(),
                     ],
                   ),
                 ),
@@ -424,104 +358,8 @@ class _OrderPageState extends State<OrderPage> {
                         width: 200,
                         height: 50,
                       ),
-                      Container(
-                          width: 200,
-                          height: 50,
-                          margin: EdgeInsets.fromLTRB(0, 20, 0, 40),
-                          child: TextField(
-                            controller: streetController,
-                            decoration: InputDecoration(
-                              hintText: 'Вулиця',
-                              hintStyle: TextStyle(
-                                color: Color.fromRGBO(157, 155, 155, 1),
-                              ),
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                borderSide: BorderSide.none, // Скрываем границу
-                              ),
-                            ),
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                            textAlign: TextAlign.left,
-                            keyboardType: TextInputType.text,
-                            minLines: 1,
-                            maxLines: 1,
-                          )),
-                      Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              width: 90,
-                              height: 50,
-                              child: TextField(
-                                controller: houseController,
-                                decoration: InputDecoration(
-                                  hintText: 'Дім',
-                                  hintStyle: TextStyle(
-                                    color: Color.fromRGBO(157, 155, 155, 1),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide:
-                                        BorderSide.none, // Скрываем границу
-                                  ),
-                                ),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                                textAlign: TextAlign.left,
-                                keyboardType: TextInputType.text,
-                                minLines: 1,
-                                maxLines: 1,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular((10))),
-                                color: Colors.white,
-                              ),
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              child: TextField(
-                                controller: apartmentController,
-                                decoration: InputDecoration(
-                                  hintText: 'Кв.',
-                                  hintStyle: TextStyle(
-                                    color: Color.fromRGBO(157, 155, 155, 1),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide:
-                                        BorderSide.none, // Скрываем границу
-                                  ),
-                                ),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                                textAlign: TextAlign.left,
-                                keyboardType: TextInputType.text,
-                                minLines: 1,
-                                maxLines: 1,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular((10))),
-                                color: Colors.white,
-                              ),
-                              width: 90,
-                              height: 50,
-                            ),
-                          ],
-                        ),
-                      ),
+
+
                     ],
                   ),
                 ),
@@ -554,7 +392,7 @@ class _OrderPageState extends State<OrderPage> {
                       Container(
                         margin: EdgeInsets.only(top: 20),
                         height: 40,
-                        width: 200,
+                        width: 205,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular((10))),
                         ),
@@ -562,9 +400,9 @@ class _OrderPageState extends State<OrderPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
-                              width: 110,
+                              width: 115,
                               child: Text(
-                                "Палички та соус",
+                                "Кількість персон",
                                 style: TextStyle(
                                   fontSize: 14,
                                 ),
@@ -638,11 +476,32 @@ class _OrderPageState extends State<OrderPage> {
                           ],
                         ),
                       ),
+                      Container(
+                        width: 210,
+                        child: Text("Імбир, васабі та соєвий соус входять до замовлення",
+                        style: TextStyle(
+                          fontSize: 12,
+                        ),),
+                      ),
                     ],
                   ),
                 ),
               ],
             ),
+          ),
+          !courier?Container(
+            padding: EdgeInsets.only(left: 40),
+            alignment: Alignment.centerLeft,
+           // color: Colors.red,
+            height: 27,
+            child: Text(
+              "Oплата проводиться лише переказом на розрахунковий рахунок в повному обсязі!",
+              style: TextStyle(
+                color: Colors.black54
+              ),
+            ),
+          ):Container(
+            height: 27,
           ),
           Container(
             child: Row(
@@ -718,13 +577,9 @@ _startBot() async {
   Order += "\nІм'я: ${nameController.text}\n" +
       "Телефон: ${phoneController.text}\n" +
       "Коментарі: ${commentController.text}\n" +
-      "Вулиця: ${streetController.text}\n" +
-      "Дім: ${houseController.text}\n" +
-      "Кв.: ${apartmentController.text}\n"
-          "Палички та соуси: " +
-      sauces.toString() +
-      "шт.";
-  cash ? Order += "\nОплата готівкою" : Order += "\nОплата карткою";
+      "Адреса: ${streetController.text}\n" +
+          "кількість людей: " +
+      sauces.toString();
   !courier ? Order += "\nДоставка кур'єром" : Order += "\nСамовивіз";
   courier ? Order += "\nПункт видачі: " + selectedValue.toString() : "";
   Order += "\nЗамовлення: ";

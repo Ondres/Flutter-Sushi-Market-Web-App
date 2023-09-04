@@ -48,365 +48,230 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(bottom: 20),
-        height: !basket.isEmpty?1100:900,
-        width: MediaQuery
-            .of(context)
-            .size
-            .width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                // color: Colors.blue,
-                margin: EdgeInsets.only(top: 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 160,
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.8,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width * 0.8,
-                              height: 50,
-                              margin: EdgeInsets.only(bottom: 20),
-                              child: TextField(
-                                controller: phoneController,
-                                decoration: InputDecoration(
-                                  hintText: 'Телефон',
-                                  hintStyle: TextStyle(
-                                    color: Color.fromRGBO(157, 155, 155, 1),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide: BorderSide.none,
-                                  ),
-                                ),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                                textAlign: TextAlign.left,
-                                keyboardType: TextInputType.phone,
-                                // задайте необходимые размеры для поля ввода
-                                minLines: 1,
-                                maxLines: 1,
-                                // maxLength: 15,
-                              )),
-                          Container(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width * 0.8,
-                              height: 50,
-                              margin: EdgeInsets.only(bottom: 20),
-                              child: TextField(
-                                controller: nameController,
-                                decoration: InputDecoration(
-                                  hintText: 'Ім`я',
-                                  hintStyle: TextStyle(
-                                    color: Color.fromRGBO(157, 155, 155, 1),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide: BorderSide.none,
-                                  ),
-                                ),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                                textAlign: TextAlign.left,
-                                keyboardType: TextInputType.text,
-                                minLines: 1,
-                                maxLines: 1,
-                              )),
-                        ],
+      margin: EdgeInsets.only(bottom: 20),
+      height: !basket.isEmpty ? 1100 : 900,
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            // color: Colors.blue,
+            margin: EdgeInsets.only(top: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  height: 160,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          height: 50,
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: TextField(
+                            controller: phoneController,
+                            decoration: InputDecoration(
+                              hintText: 'Телефон',
+                              hintStyle: TextStyle(
+                                color: Color.fromRGBO(157, 155, 155, 1),
+                              ),
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                borderSide: BorderSide.none,
+                              ),
+                            ),
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.left,
+                            keyboardType: TextInputType.phone,
+                            // задайте необходимые размеры для поля ввода
+                            minLines: 1,
+                            maxLines: 1,
+                            // maxLength: 15,
+                          )),
+                      Container(
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          height: 50,
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: TextField(
+                            controller: nameController,
+                            decoration: InputDecoration(
+                              hintText: 'Ім`я',
+                              hintStyle: TextStyle(
+                                color: Color.fromRGBO(157, 155, 155, 1),
+                              ),
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                borderSide: BorderSide.none,
+                              ),
+                            ),
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.left,
+                            keyboardType: TextInputType.text,
+                            minLines: 1,
+                            maxLines: 1,
+                          )),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: 160,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: 75,
+                        margin: EdgeInsets.only(top: 20),
+                        padding: EdgeInsets.all(0),
+                        child: TextField(
+                          controller: commentController,
+                          decoration: InputDecoration(
+                            hintText: 'Коментарі',
+                            hintStyle: TextStyle(
+                              color: Color.fromRGBO(157, 155, 155, 1),
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              borderSide: BorderSide.none, // Скрываем границу
+                            ),
+                          ),
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.left,
+                          keyboardType: TextInputType.text,
+                          minLines: 3,
+                          maxLines: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular((10))),
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.8,
-                      height: 160,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                TextButton(
-                                  style: ButtonStyle(
-                                    padding:
-                                    MaterialStateProperty.all<EdgeInsets>(
-                                        EdgeInsets.zero),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: !courier ? 320 : 180,
+                  alignment: Alignment.topCenter,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                                style: ButtonStyle(
+                                  padding:
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.zero),
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    courier = true;
+                                  });
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "Самовивіз",
+                                    style: TextStyle(
+                                        color: courier
+                                            ? Colors.white
+                                            : Color.fromRGBO(157, 155, 155, 1)),
                                   ),
-                                  onPressed: () {
-                                    setState(() {
-                                      cash = true;
-                                    });
-                                  },
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
-                                      children: [
-                                        Icon(Icons.attach_money_rounded,
-                                            size: 22,
-                                            color: cash
-                                                ? Colors.white
-                                                : Color.fromRGBO(
-                                                157, 155, 155, 1)),
-                                        Text(
-                                          "Готівкою",
-                                          style: TextStyle(
-                                              color: cash
-                                                  ? Colors.white
-                                                  : Color.fromRGBO(
-                                                  157, 155, 155, 1)),
-                                        ),
-                                      ],
-                                    ),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular((10))),
-                                      color: cash
-                                          ? Color.fromRGBO(255, 141, 64, 1)
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular((10))),
+                                    color: courier
+                                        ? Color.fromRGBO(255, 141, 64, 1)
+                                        : Colors.white,
+                                  ),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.38,
+                                  height: 50,
+                                )),
+                            TextButton(
+                                style: ButtonStyle(
+                                  padding:
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.zero),
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    courier = false;
+                                  });
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "Кур'єром",
+                                    style: TextStyle(
+                                      color: courier
+                                          ? Color.fromRGBO(157, 155, 155, 1)
                                           : Colors.white,
                                     ),
-                                    width: MediaQuery
-                                        .of(context)
-                                        .size
-                                        .width *
-                                        0.38,
-                                    height: 50,
                                   ),
-                                ),
-                                TextButton(
-                                    style: ButtonStyle(
-                                      padding:
-                                      MaterialStateProperty.all<EdgeInsets>(
-                                          EdgeInsets.zero),
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        cash = false;
-                                      });
-                                    },
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      child: Column(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.credit_card_outlined,
-                                              size: 22,
-                                              color: cash
-                                                  ? Color.fromRGBO(
-                                                  157, 155, 155, 1)
-                                                  : Colors.white,
-                                            ),
-                                            Text(
-                                              "Карткою",
-                                              style: TextStyle(
-                                                color: cash
-                                                    ? Color.fromRGBO(
-                                                    157, 155, 155, 1)
-                                                    : Colors.white,
-                                              ),
-                                            ),
-                                          ]),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular((10))),
-                                        color: cash
-                                            ? Colors.white
-                                            : Color.fromRGBO(255, 141, 64, 1),
-                                      ),
-                                      width: MediaQuery
-                                          .of(context)
-                                          .size
-                                          .width *
-                                          0.38,
-                                      height: 50,
-                                    )),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width * 0.8,
-                            height: 75,
-                            margin: EdgeInsets.only(top: 20),
-                            padding: EdgeInsets.all(0),
-                            child: TextField(
-                              controller: commentController,
-                              decoration: InputDecoration(
-                                hintText: 'Коментарі',
-                                hintStyle: TextStyle(
-                                  color: Color.fromRGBO(157, 155, 155, 1),
-                                ),
-                                filled: true,
-                                fillColor: Colors.white,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  borderSide:
-                                  BorderSide.none, // Скрываем границу
-                                ),
-                              ),
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                              textAlign: TextAlign.left,
-                              keyboardType: TextInputType.text,
-                              minLines: 3,
-                              maxLines: 5,
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular((10))),
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular((10))),
+                                    color: courier
+                                        ? Colors.white
+                                        : Color.fromRGBO(255, 141, 64, 1),
+                                  ),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.38,
+                                  height: 50,
+                                )),
+                          ],
+                        ),
                       ),
-                    ),
-                    Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.8,
-                      height: !courier?320:180,
-                      alignment: Alignment.topCenter,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.only(top: 20),
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton2<String>(
+                            isExpanded: true,
+                            hint: const Row(
                               children: [
-                                TextButton(
-                                    style: ButtonStyle(
-                                      padding:
-                                      MaterialStateProperty.all<EdgeInsets>(
-                                          EdgeInsets.zero),
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        courier = true;
-                                      });
-                                    },
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "Самовивіз",
-                                        style: TextStyle(
-                                            color: courier
-                                                ? Colors.white
-                                                : Color.fromRGBO(
-                                                157, 155, 155, 1)),
-                                      ),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular((10))),
-                                        color: courier
-                                            ? Color.fromRGBO(255, 141, 64, 1)
-                                            : Colors.white,
-                                      ),
-                                      width: MediaQuery
-                                          .of(context)
-                                          .size
-                                          .width *
-                                          0.38,
-                                      height: 50,
-                                    )),
-                                TextButton(
-                                    style: ButtonStyle(
-                                      padding:
-                                      MaterialStateProperty.all<EdgeInsets>(
-                                          EdgeInsets.zero),
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        courier = false;
-                                      });
-                                    },
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "Кур'єром",
-                                        style: TextStyle(
-                                          color: courier
-                                              ? Color.fromRGBO(157, 155, 155, 1)
-                                              : Colors.white,
-                                        ),
-                                      ),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular((10))),
-                                        color: courier
-                                            ? Colors.white
-                                            : Color.fromRGBO(255, 141, 64, 1),
-                                      ),
-                                      width: MediaQuery
-                                          .of(context)
-                                          .size
-                                          .width *
-                                          0.38,
-                                      height: 50,
-                                    )),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.only(top: 20),
-                            child: DropdownButtonHideUnderline(
-                              child: DropdownButton2<String>(
-                                isExpanded: true,
-                                hint: const Row(
-                                  children: [
-                                    Icon(
-                                      Icons.list,
-                                      size: 16,
+                                Icon(
+                                  Icons.list,
+                                  size: 16,
+                                  color: Colors.yellow,
+                                ),
+                                SizedBox(
+                                  width: 4,
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    'Select Item',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
                                       color: Colors.yellow,
                                     ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        'Select Item',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.yellow,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
-                                items: items
-                                    .map((String item) =>
-                                    DropdownMenuItem<String>(
+                              ],
+                            ),
+                            items: items
+                                .map((String item) => DropdownMenuItem<String>(
                                       value: item,
                                       child: Text(
                                         item,
@@ -417,85 +282,69 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                     ))
-                                    .toList(),
-                                value: selectedValue,
-                                onChanged: (String? value) {
-                                  setState(() {
-                                    selectedValue = value;
-                                  });
-                                },
-                                buttonStyleData: ButtonStyleData(
-                                  height: 50,
-                                  width:
-                                  MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width * 0.8,
-                                  padding: const EdgeInsets.only(
-                                      left: 14, right: 14),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(14),
-                                    color: Colors.white,
-                                  ),
-                                  elevation: 2,
-                                ),
-                                iconStyleData: const IconStyleData(
-                                  icon: Icon(
-                                    Icons.arrow_drop_down,
-                                    size: 20,
-                                  ),
-                                  iconSize: 14,
-                                  iconEnabledColor: Colors.black54,
-                                  iconDisabledColor: Colors.grey,
-                                ),
-                                dropdownStyleData: DropdownStyleData(
-                                  maxHeight: 200,
-                                  width:
-                                  MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width * 0.8,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(14),
-                                    color: Colors.white,
-                                  ),
-                                  scrollbarTheme: ScrollbarThemeData(
-                                    radius: const Radius.circular(40),
-                                    thickness:
-                                    MaterialStateProperty.all<double>(6),
-                                    thumbVisibility:
+                                .toList(),
+                            value: selectedValue,
+                            onChanged: (String? value) {
+                              setState(() {
+                                selectedValue = value;
+                              });
+                            },
+                            buttonStyleData: ButtonStyleData(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              padding:
+                                  const EdgeInsets.only(left: 14, right: 14),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(14),
+                                color: Colors.white,
+                              ),
+                              elevation: 2,
+                            ),
+                            iconStyleData: const IconStyleData(
+                              icon: Icon(
+                                Icons.arrow_drop_down,
+                                size: 20,
+                              ),
+                              iconSize: 14,
+                              iconEnabledColor: Colors.black54,
+                              iconDisabledColor: Colors.grey,
+                            ),
+                            dropdownStyleData: DropdownStyleData(
+                              maxHeight: 200,
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(14),
+                                color: Colors.white,
+                              ),
+                              scrollbarTheme: ScrollbarThemeData(
+                                radius: const Radius.circular(40),
+                                thickness: MaterialStateProperty.all<double>(6),
+                                thumbVisibility:
                                     MaterialStateProperty.all<bool>(true),
-                                  ),
-                                ),
-                                menuItemStyleData: const MenuItemStyleData(
-                                  height: 50,
-                                  padding: EdgeInsets.only(left: 14, right: 14),
-                                ),
                               ),
                             ),
-                            decoration: BoxDecoration(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
+                            menuItemStyleData: const MenuItemStyleData(
+                              height: 50,
+                              padding: EdgeInsets.only(left: 14, right: 14),
                             ),
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width * 0.8,
-                            height: 50,
                           ),
-                          !courier?
-                          Container(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width * 0.8,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          color: Colors.white,
+                        ),
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: 50,
+                      ),
+                      !courier
+                          ? Container(
+                              width: MediaQuery.of(context).size.width * 0.8,
                               height: 50,
                               margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
                               child: TextField(
                                 controller: streetController,
                                 decoration: InputDecoration(
-                                  hintText: 'Вулиця',
+                                  hintText: 'Адреса',
                                   hintStyle: TextStyle(
                                     color: Color.fromRGBO(157, 155, 155, 1),
                                   ),
@@ -504,7 +353,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10.0),
                                     borderSide:
-                                    BorderSide.none, // Скрываем границу
+                                        BorderSide.none, // Скрываем границу
                                   ),
                                 ),
                                 style: TextStyle(
@@ -514,315 +363,202 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                 keyboardType: TextInputType.text,
                                 minLines: 1,
                                 maxLines: 1,
-                              )):Container(),
-                          !courier?
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  width:
-                                  MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width * 0.38,
-                                  height: 50,
-                                  child: TextField(
-                                    controller: houseController,
-                                    decoration: InputDecoration(
-                                      hintText: 'Дім',
-                                      hintStyle: TextStyle(
-                                        color: Color.fromRGBO(157, 155, 155, 1),
-                                      ),
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      border: OutlineInputBorder(
-                                        borderRadius:
-                                        BorderRadius.circular(10.0),
-                                        borderSide:
-                                        BorderSide.none, // Скрываем границу
-                                      ),
-                                    ),
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                    ),
-                                    textAlign: TextAlign.left,
-                                    keyboardType: TextInputType.text,
-                                    minLines: 1,
-                                    maxLines: 1,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular((10))),
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Container(
-                                  alignment: Alignment.center,
-                                  child: TextField(
-                                    controller: apartmentController,
-                                    decoration: InputDecoration(
-                                      hintText: 'Кв.',
-                                      hintStyle: TextStyle(
-                                        color: Color.fromRGBO(157, 155, 155, 1),
-                                      ),
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      border: OutlineInputBorder(
-                                        borderRadius:
-                                        BorderRadius.circular(10.0),
-                                        borderSide:
-                                        BorderSide.none, // Скрываем границу
-                                      ),
-                                    ),
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                    ),
-                                    textAlign: TextAlign.left,
-                                    keyboardType: TextInputType.text,
-                                    minLines: 1,
-                                    maxLines: 1,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular((10))),
-                                    color: Colors.white,
-                                  ),
-                                  width:
-                                  MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width * 0.38,
-                                  height: 50,
-                                ),
-                              ],
-                            ),
-                          ):Container(),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.8,
-                      height: !basket.isEmpty ? 260 : 60,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          !basket.isEmpty ?
-                          Container(
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width * 0.8,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular((10))),
-                              color: Colors.white,
-                            ),
-                            child: ListView.builder(
-                              itemCount: basket.length,
-                              itemBuilder: (context, index) {
-                                Product product = basket[index];
-                                return AddedSushiItem(
-                                  product: product,
-                                  changeBasket: widget.changeBasket,
-                                  changeBasketAdd: widget.changeBasketAdd,
-                                  counters: counters,
-                                );
-                              },
-                            ),
-                          ) : Container(),
-                          Container(
-                            margin: EdgeInsets.only(top: 20),
-                            height: 24,
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width * 0.8,
-                            padding: EdgeInsets.only(left: 10),
-                            decoration: BoxDecoration(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular((10))),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Container(
-                                  width: 130,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    "Палички та соус",
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                    width: MediaQuery
-                                        .of(context)
-                                        .size
-                                        .width *
-                                        0.38,
-                                    alignment: Alignment.centerLeft,
-                                    child: Container(
-                                        width:
-                                        MediaQuery
-                                            .of(context)
-                                            .size
-                                            .width *
-                                            0.38,
-                                        child: Row(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Container(
-                                                width: 30,
-                                                child: TextButton(
-                                                    style: ButtonStyle(
-                                                      padding:
-                                                      MaterialStateProperty
-                                                          .all<EdgeInsets>(
-                                                          EdgeInsets
-                                                              .zero),
-                                                    ),
-                                                    onPressed: () {
-                                                      setState(() {
-                                                        sauces--;
-                                                      });
-                                                    },
-                                                    child: Container(
-                                                        width: 30,
-                                                        alignment:
-                                                        Alignment.center,
-                                                        child: Icon(
-                                                            Icons.dangerous,
-                                                            size: 24,
-                                                            color: Colors
-                                                                .black54)))),
-                                            Container(
-                                              alignment: Alignment.center,
-                                              width: 30,
-                                              child: Text(
-                                                sauces.toString(),
-                                                style: TextStyle(
-                                                  fontSize: 18,
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                                width: 30,
-                                                child: TextButton(
-                                                    style: ButtonStyle(
-                                                      padding:
-                                                      MaterialStateProperty
-                                                          .all<EdgeInsets>(
-                                                          EdgeInsets
-                                                              .zero),
-                                                    ),
-                                                    onPressed: () {
-                                                      setState(() {
-                                                        sauces++;
-                                                      });
-                                                    },
-                                                    child: Container(
-                                                        width: 30,
-                                                        alignment:
-                                                        Alignment.center,
-                                                        child: Icon(
-                                                            Icons.add_circle,
-                                                            size: 24,
-                                                            color:
-                                                            Color.fromRGBO(
-                                                                255,
-                                                                141,
-                                                                64,
-                                                                1))))),
-                                          ],
-                                        ))),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                              ))
+                          : Container(),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                height: 120,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                        width: MediaQuery
-                            .of(context)
-                            .size
-                            .width * 0.8,
-                        padding: EdgeInsets.only(left: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              child: Text(
-                                "Сума до сплати:  ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: !basket.isEmpty ? 260 : 60,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      !basket.isEmpty
+                          ? Container(
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              height: 200,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular((10))),
+                                color: Colors.white,
                               ),
-                            ),
-                            Container(
-                              child: Text(
-                                totalPrice.toString() + '  ₴',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
+                              child: ListView.builder(
+                                itemCount: basket.length,
+                                itemBuilder: (context, index) {
+                                  Product product = basket[index];
+                                  return AddedSushiItem(
+                                    product: product,
+                                    changeBasket: widget.changeBasket,
+                                    changeBasketAdd: widget.changeBasketAdd,
+                                    counters: counters,
+                                  );
+                                },
                               ),
-                            ),
-                          ],
-                        )),
-                    TextButton(
-                      style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(
-                            EdgeInsets.zero),
-                      ),
-                      onPressed: () async {
-                        await _startBot();
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return CustomAlertDialog(); // Вызов нашего алерт-диалога
-                          },
-                        );
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: MediaQuery
-                            .of(context)
-                            .size
-                            .width * 0.8,
-                        margin: EdgeInsets.only(bottom: 20),
-                        height: 50,
-                        child: Text(
-                          "Відправити форму",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
+                            )
+                          : Container(),
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        height: 24,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        padding: EdgeInsets.only(left: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular((10))),
-                          color: Color.fromRGBO(255, 141, 64, 1),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Container(
+                              width: 130,
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Кількість персон",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            Container(
+                                width: MediaQuery.of(context).size.width * 0.38,
+                                alignment: Alignment.centerLeft,
+                                child: Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.38,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Container(
+                                            width: 30,
+                                            child: TextButton(
+                                                style: ButtonStyle(
+                                                  padding: MaterialStateProperty
+                                                      .all<EdgeInsets>(
+                                                          EdgeInsets.zero),
+                                                ),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    sauces--;
+                                                  });
+                                                },
+                                                child: Container(
+                                                    width: 30,
+                                                    alignment: Alignment.center,
+                                                    child: Icon(Icons.dangerous,
+                                                        size: 24,
+                                                        color:
+                                                            Colors.black54)))),
+                                        Container(
+                                          alignment: Alignment.center,
+                                          width: 30,
+                                          child: Text(
+                                            sauces.toString(),
+                                            style: TextStyle(
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                            width: 30,
+                                            child: TextButton(
+                                                style: ButtonStyle(
+                                                  padding: MaterialStateProperty
+                                                      .all<EdgeInsets>(
+                                                          EdgeInsets.zero),
+                                                ),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    sauces++;
+                                                  });
+                                                },
+                                                child: Container(
+                                                    width: 30,
+                                                    alignment: Alignment.center,
+                                                    child: Icon(
+                                                        Icons.add_circle,
+                                                        size: 24,
+                                                        color: Color.fromRGBO(
+                                                            255,
+                                                            141,
+                                                            64,
+                                                            1))))),
+                                      ],
+                                    ))),
+                          ],
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        );
+          Container(
+            height: 120,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    padding: EdgeInsets.only(left: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          child: Text(
+                            "Сума до сплати:  ",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            totalPrice.toString() + '  ₴',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )),
+                TextButton(
+                  style: ButtonStyle(
+                    padding:
+                        MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
+                  ),
+                  onPressed: () async {
+                    await _startBot();
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return CustomAlertDialog(); // Вызов нашего алерт-диалога
+                      },
+                    );
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    margin: EdgeInsets.only(bottom: 20),
+                    height: 50,
+                    child: Text(
+                      "Відправити форму",
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular((10))),
+                      color: Color.fromRGBO(255, 141, 64, 1),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 

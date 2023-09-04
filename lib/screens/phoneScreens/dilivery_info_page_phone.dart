@@ -64,7 +64,7 @@ class _DeliveryInfoPhoneState extends State<DeliveryInfoPhone> {
                       Container(
                         width: MediaQuery.of(context).size.width/3,
                         child: Text(
-                          " At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.",
+                          "Замовлення можна зробити по телефону або на сайті, обираючи страви та визначаючи доставку",
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -101,7 +101,7 @@ class _DeliveryInfoPhoneState extends State<DeliveryInfoPhone> {
                       Container(
                         width: MediaQuery.of(context).size.width/3,
                         child: Text(
-                          " At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.",
+                          "Оплата доступна готівкою при самовивозі та переказом на рахунок при доставці",
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -156,7 +156,7 @@ class _DeliveryInfoPhoneState extends State<DeliveryInfoPhone> {
                       Container(
                         width: MediaQuery.of(context).size.width/3,
                         child: Text(
-                          " At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.",
+                          "Середній час доставки 60-90 хвилин",
                           style: TextStyle(
                             fontSize: 16,
                           ),

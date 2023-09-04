@@ -64,7 +64,7 @@ class _AboutUsPhoneState extends State<AboutUsPhone> {
                       Container(
                         width: MediaQuery.of(context).size.width/3,
                         child: Text(
-                          " At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.",
+                          "Наша команда - це професіонали з багатим досвідом у мистецтві суші.",
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -101,7 +101,7 @@ class _AboutUsPhoneState extends State<AboutUsPhone> {
                       Container(
                         width: MediaQuery.of(context).size.width/3,
                         child: Text(
-                          " At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.",
+                          "Кожен знайде щось за своїм смаком у нашому різноманітному асортименті.",
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -122,52 +122,7 @@ class _AboutUsPhoneState extends State<AboutUsPhone> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(bottom: 80),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                    width: MediaQuery.of(context).size.width/2,
-                    height: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular((40))),
-                        image: DecorationImage(
-                          image: AssetImage('assets/teamInfo.png'),
-                          fit: BoxFit.cover,
-                        ))),
-                Container(
-                  height: 200,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(bottom: 20),
-                        child: Text(
-                          "Команда",
-                          style: TextStyle(
-                            color: Color.fromRGBO(255, 141, 64, 1),
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        width: MediaQuery.of(context).size.width/3,
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width/3,
-                        child: Text(
-                          " At in mauris condimentum onec duis scelerisque lobortis arcu, urna purus pulvinar.",
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+
         ],
       ),
     );

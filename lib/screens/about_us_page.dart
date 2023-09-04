@@ -57,8 +57,11 @@ class _AboutUsState extends State<AboutUs> {
                         width: 560,
                       ),
                       Container(
+                        padding: EdgeInsets.only(right: 50),
                         width: 560,
-                        child: Text("Amet amet, ornare ipsum, praesent. Sollicitudin suspendisse fames leo, volutpat at. A mi, sapien et et nulla massa. Rhoncus vel maecenas est nisi aliquet. Neque elementum faucibus scelerisque ultrices netus aliquam neque. Interdum quis auctor felis cras velit mauris. Eros in tellus pellentesque gravida feugiat facilisi mauris. At in mauris condimentum ornare auctor feugiat nullam ut. Donec duis scelerisque lobortis arcu, urna purus pulvinar.", style: TextStyle(
+                        child: Text(
+                          "Наша команда - це висококваліфіковані фахівці з багаторічним досвідом у приготуванні смачних суші та ролів. Ми вкладаємо велику душу у кожну страву, віддаючи перевагу найкращим інгредієнтам та техніці. Наша мета - подарувати вам незабутню кулінарну подорож, де кожен ковзаючий рол є маленьким шедевром. Долучайтеся до нашого смачного світу суші!",
+                          style: TextStyle(
                           fontSize: 16,
                         ),),
                       )
@@ -90,7 +93,9 @@ class _AboutUsState extends State<AboutUs> {
                       ),
                       Container(
                         width: 560,
-                        child: Text("Amet amet, ornare ipsum, praesent. Sollicitudin suspendisse fames leo, volutpat at. A mi, sapien et et nulla massa. Rhoncus vel maecenas est nisi aliquet. Neque elementum faucibus scelerisque ultrices netus aliquam neque. Interdum quis auctor felis cras velit mauris. Eros in tellus pellentesque gravida feugiat facilisi mauris. At in mauris condimentum ornare auctor feugiat nullam ut. Donec duis scelerisque lobortis arcu, urna purus pulvinar.", style: TextStyle(
+                        child: Text(
+                          "Наше меню - це справжній шлях у світ смаків, де кожен знайде своє улюблене блюдо. Від смаку Аляски до аромату Пекіна, від класичних Філадельфії до сучасних Каліфорній – ми пропонуємо різноманітність, щоб задовольнити ваші гастрономічні побажання. Наші суші - це подорож на непередбачуваній кулінарній карті, де смаки зустрічаються та танцюють у гармонії.",
+                           style: TextStyle(
                           fontSize: 16,
                         ),),
                       )
@@ -110,49 +115,6 @@ class _AboutUsState extends State<AboutUs> {
               ],
             ),
           ),
-
-          Container(
-            margin: EdgeInsets.only(bottom: 80),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                    width: 300,
-                    height: 300,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular((40))),
-                        image: DecorationImage(
-                          image: AssetImage('assets/teamInfo.png'),
-                          fit: BoxFit.cover,
-                        )
-                    )),
-                Container(
-                  height: 300,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(bottom: 20),
-                        child: Text("Команда", style: TextStyle(
-                          color: Color.fromRGBO(255, 141, 64, 1),
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
-                        ),),
-                        width: 560,
-                      ),
-                      Container(
-                        width: 560,
-                        child: Text("Amet amet, ornare ipsum, praesent. Sollicitudin suspendisse fames leo, volutpat at. A mi, sapien et et nulla massa. Rhoncus vel maecenas est nisi aliquet. Neque elementum faucibus scelerisque ultrices netus aliquam neque. Interdum quis auctor felis cras velit mauris. Eros in tellus pellentesque gravida feugiat facilisi mauris. At in mauris condimentum ornare auctor feugiat nullam ut. Donec duis scelerisque lobortis arcu, urna purus pulvinar.", style: TextStyle(
-                          fontSize: 16,
-                        ),),
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-
         ],
       ),
     );

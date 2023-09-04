@@ -130,9 +130,10 @@ class _MainPageState extends State<MainPage> {
                               child: ListView.builder(
                                 itemCount: 5,
                                 itemBuilder: (context, index) {
+                                  print(index);
                                   return TextButton(
                                     onPressed: () {
-                                      if (index == 0)
+                                      if (index == 1)
                                         setState(() {
                                           contentWidget = Column(
                                             children: [
@@ -150,25 +151,17 @@ class _MainPageState extends State<MainPage> {
                                               ),
                                               SushiList(
                                                 changeBasket: BasketChangedAdd,
-                                                sushiList: firmovi,
+                                                sushiList: firmovi.sublist(0,4),
                                               ),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: firmovi),
-                                              SushiList(
-                                                  changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: firmovi),
-                                              SushiList(
-                                                  changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: firmovi),
+                                                  sushiList: firmovi.sublist(4,7)),
                                             ],
                                           );
                                         });
 
-                                      if (index == 1)
+                                      if (index == 0)
                                         setState(() {
                                           contentWidget = Column(
                                             children: [
@@ -176,7 +169,7 @@ class _MainPageState extends State<MainPage> {
                                                 alignment: Alignment.centerLeft,
                                                 margin: EdgeInsets.fromLTRB(
                                                     30, 50, 30, 50),
-                                                child: Text("Філадельфія",
+                                                child: Text("Набори",
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
@@ -187,23 +180,11 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: philadelphia),
+                                                  sushiList: philadelphia.sublist(0,4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: philadelphia),
-                                              SushiList(
-                                                  changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: philadelphia),
-                                              SushiList(
-                                                  changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: philadelphia),
-                                              SushiList(
-                                                  changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: philadelphia),
+                                                  sushiList: philadelphia.sublist(4,6)),
                                             ],
                                           );
                                         });
@@ -216,7 +197,7 @@ class _MainPageState extends State<MainPage> {
                                                 alignment: Alignment.centerLeft,
                                                 margin: EdgeInsets.fromLTRB(
                                                     30, 50, 30, 50),
-                                                child: Text("Класичні роли",
+                                                child: Text("Великі роли",
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
@@ -227,19 +208,19 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: classic),
+                                                  sushiList: classic.sublist(0,4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: classic),
+                                                  sushiList: classic.sublist(4,8)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: classic),
+                                                  sushiList: classic.sublist(8,12)),
                                               SushiList(
                                                   changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: classic),
+                                                  BasketChangedAdd,
+                                                  sushiList: classic.sublist(12,14)),
                                             ],
                                           );
                                         });
@@ -252,7 +233,7 @@ class _MainPageState extends State<MainPage> {
                                                 alignment: Alignment.centerLeft,
                                                 margin: EdgeInsets.fromLTRB(
                                                     30, 50, 30, 50),
-                                                child: Text("Макі",
+                                                child: Text("Роли в норі",
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
@@ -263,19 +244,11 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: maki),
+                                                  sushiList: maki.sublist(0,4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: maki),
-                                              SushiList(
-                                                  changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: maki),
-                                              SushiList(
-                                                  changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: maki),
+                                                  sushiList: maki.sublist(4,6)),
                                             ],
                                           );
                                         });
@@ -288,7 +261,7 @@ class _MainPageState extends State<MainPage> {
                                                 alignment: Alignment.centerLeft,
                                                 margin: EdgeInsets.fromLTRB(
                                                     30, 50, 30, 50),
-                                                child: Text("Суші",
+                                                child: Text("Суші та гункани",
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
@@ -299,15 +272,11 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: sushi),
+                                                  sushiList: sushi.sublist(0,4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: sushi),
-                                              SushiList(
-                                                  changeBasket:
-                                                      BasketChangedAdd,
-                                                  sushiList: sushi),
+                                                  sushiList: sushi.sublist(4,6)),
                                             ],
                                           );
                                         });
@@ -1764,7 +1733,7 @@ class _BottomContactsState extends State<BottomContacts> {
             child: Text("© 2023 SuCheff Все права защищены"),
           ),
         ),
-    
+
       ],
     );
   }
