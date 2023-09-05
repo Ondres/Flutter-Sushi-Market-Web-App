@@ -23,7 +23,7 @@ class _DeliveryInfoState extends State<DeliveryInfo> {
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.fromLTRB(20, 40, 0, 60),
             child: Text("Доставка та оплата", style: TextStyle(
-              color: Color.fromRGBO(255, 141, 64, 1),
+              color: Color.fromRGBO(27, 57, 119, 1),
               fontSize: 30,
               fontWeight: FontWeight.bold,
             ),),
@@ -50,7 +50,7 @@ class _DeliveryInfoState extends State<DeliveryInfo> {
                       Container(
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text("Оформлення замовлень", style: TextStyle(
-                          color: Color.fromRGBO(255, 141, 64, 1),
+                          color: Color.fromRGBO(27, 57, 119, 1),
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
                         ),),
@@ -82,7 +82,7 @@ class _DeliveryInfoState extends State<DeliveryInfo> {
                       Container(
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text("Оплата", style: TextStyle(
-                          color: Color.fromRGBO(255, 141, 64, 1),
+                          color: Color.fromRGBO(27, 57, 119, 1),
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
                         ),),
@@ -134,7 +134,7 @@ class _DeliveryInfoState extends State<DeliveryInfo> {
                       Container(
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text("Доставка", style: TextStyle(
-                          color: Color.fromRGBO(255, 141, 64, 1),
+                          color: Color.fromRGBO(27, 57, 119, 1),
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
                         ),),

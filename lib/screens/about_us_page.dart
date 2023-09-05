@@ -23,7 +23,7 @@ class _AboutUsState extends State<AboutUs> {
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.fromLTRB(20, 40, 0, 60),
             child: Text("про SuCheff", style: TextStyle(
-              color: Color.fromRGBO(255, 141, 64, 1),
+              color: Color.fromRGBO(27, 57, 119, 1),
               fontSize: 30,
               fontWeight: FontWeight.bold,
             ),),
@@ -50,7 +50,7 @@ class _AboutUsState extends State<AboutUs> {
                       Container(
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text("Команда", style: TextStyle(
-                          color: Color.fromRGBO(255, 141, 64, 1),
+                          color: Color.fromRGBO(27, 57, 119, 1),
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
                         ),),
@@ -85,7 +85,7 @@ class _AboutUsState extends State<AboutUs> {
                       Container(
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text("Меню", style: TextStyle(
-                          color: Color.fromRGBO(255, 141, 64, 1),
+                          color: Color.fromRGBO(27, 57, 119, 1),
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
                         ),),

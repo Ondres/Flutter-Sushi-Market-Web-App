@@ -25,7 +25,7 @@ class _DeliveryInfoPhoneState extends State<DeliveryInfoPhone> {
             child: Text(
               "Доставка та оплата",
               style: TextStyle(
-                color: Color.fromRGBO(255, 141, 64, 1),
+                color: Color.fromRGBO(27, 57, 119, 1),
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
@@ -54,7 +54,7 @@ class _DeliveryInfoPhoneState extends State<DeliveryInfoPhone> {
                         child: Text(
                           "Ваше \nзамовлення",
                           style: TextStyle(
-                            color: Color.fromRGBO(255, 141, 64, 1),
+                            color: Color.fromRGBO(27, 57, 119, 1),
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
@@ -91,7 +91,7 @@ class _DeliveryInfoPhoneState extends State<DeliveryInfoPhone> {
                         child: Text(
                           "Оплата",
                           style: TextStyle(
-                            color: Color.fromRGBO(255, 141, 64, 1),
+                            color: Color.fromRGBO(27, 57, 119, 1),
                             fontSize: 26,
                             fontWeight: FontWeight.bold,
                           ),
@@ -146,7 +146,7 @@ class _DeliveryInfoPhoneState extends State<DeliveryInfoPhone> {
                         child: Text(
                           "Доставка",
                           style: TextStyle(
-                            color: Color.fromRGBO(255, 141, 64, 1),
+                            color: Color.fromRGBO(27, 57, 119, 1),
                             fontSize: 26,
                             fontWeight: FontWeight.bold,
                           ),

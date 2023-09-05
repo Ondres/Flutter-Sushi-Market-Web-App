@@ -136,7 +136,7 @@ class _AddedSushiItemState extends State<AddedSushiItem> {
                                           child: Icon(Icons.add_circle,
                                               size: 24,
                                               color: Color.fromRGBO(
-                                                  255, 141, 64, 1))))),
+                                                  27, 57, 119, 1))))),
                             ],
                           ))),
                   Container(
@@ -181,6 +181,3 @@ class _AddedSushiItemState extends State<AddedSushiItem> {
     return Container();
   }
 }
-
-
-

@@ -95,24 +95,13 @@ class _MainPagePhoneState extends State<MainPagePhone> {
               child: Text("Фірмові роли",
                   style: TextStyle(
                       fontSize: 35,
-                      color: Color.fromRGBO(255, 141, 64, 1),
+                      color: Color.fromRGBO(27, 57, 119, 1),
                       fontWeight: FontWeight.bold)),
             ),
             SushiListPhone(
+              changeBasketDel: BasketChangedDel,
               changeBasket: BasketChangedAdd,
-              sushiList: classic,
-            ),
-            SushiListPhone(
-              changeBasket: BasketChangedAdd,
-              sushiList: classic,
-            ),
-            SushiListPhone(
-              changeBasket: BasketChangedAdd,
-              sushiList: classic,
-            ),
-            SushiListPhone(
-              changeBasket: BasketChangedAdd,
-              sushiList: classic,
+              sushiList: firmovi,
             ),
           ],
         );
@@ -154,54 +143,94 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                       size: 30,
                     ),
                     onPressed: () {
-                      !basket.isEmpty?
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return Dialog(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Container(
-                              padding: EdgeInsets.only(top: 10),
-                              width: 220,
-                              height: 230,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                 TotalPriceWidget(),
-                                  Container(
+                      !basket.isEmpty
+                          ? showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Dialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Container(
+                                    padding: EdgeInsets.only(top: 10),
                                     width: 220,
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      color: Colors.white,
-                                    ),
-                                    child: ListView.builder(
-                                      itemCount: basket.length,
-                                      itemBuilder: (context, index) {
-                                        Product product = basket[index];
-                                        return Column(
-                                          children: [
-                                            AddedSushiItem(
-                                              empty: true,
-                                              product: product,
-                                              changeBasket: BasketChangedDel,
-                                              changeBasketAdd: BasketChangedAdd,
-                                              counters: counters,
-                                            )
-                                          ],
-                                        );
-                                      },
+                                    height: 280,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Всього до сплати: " +
+                                              totalPrice.toString() +
+                                              "₴",
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 220,
+                                          height: 200,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10)),
+                                            color: Colors.white,
+                                          ),
+                                          child: ListView.builder(
+                                            itemCount: basket.length,
+                                            itemBuilder: (context, index) {
+                                              Product product = basket[index];
+                                              return Column(
+                                                children: [
+                                                  AddedSushiItem(
+                                                    empty: true,
+                                                    product: product,
+                                                    changeBasket:
+                                                        BasketChangedDel,
+                                                    changeBasketAdd:
+                                                        BasketChangedAdd,
+                                                    counters: counters,
+                                                  )
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.all(10),
+                                            decoration: BoxDecoration(
+                                              color: Color.fromRGBO(
+                                                  27, 57, 119, 1),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: TextButton(
+                                              onPressed: () {
+                                                ChangeContentWidget(
+                                                    OrderPagePhone(
+                                                        key: contentWidgetKey,
+                                                        price: totalPrice,
+                                                        changeBasket:
+                                                            BasketChangedDel,
+                                                        changeBasketAdd:
+                                                            BasketChangedAdd));
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                "Перейти до замовлення",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                ),
+                                              ),
+                                            )),
+                                      ],
                                     ),
                                   ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ):Container();
+                                );
+                              },
+                            )
+                          : Container();
                     },
                   )))),
       Positioned(
@@ -232,8 +261,10 @@ class _MainPagePhoneState extends State<MainPagePhone> {
 
 class SalesWidget extends StatefulWidget {
   final Function(Product, bool) changeBasket;
+  final Function(Product, bool, {int? items}) changeBasketDel;
 
-  const SalesWidget({super.key, required this.changeBasket});
+  const SalesWidget(
+      {super.key, required this.changeBasket, required this.changeBasketDel});
 
   @override
   State<SalesWidget> createState() => _SalesWidgetState();
@@ -289,91 +320,12 @@ class _SalesWidgetState extends State<SalesWidget> {
           ),
         ),
         Container(
-          margin: EdgeInsets.fromLTRB(30, 55, 30, 90),
-          child: CarouselWidget(
-            widgets: [
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      image: AssetImage('assets/sushi2.png'),
-                      fit: BoxFit.fitWidth,
-                    )),
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: 180,
-                child: Text("Суші з лососем",
-                    style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      image: AssetImage('assets/sushi2.png'),
-                      fit: BoxFit.fitWidth,
-                    )),
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: 180,
-                child: Text("З вугрем",
-                    style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      image: AssetImage('assets/sushi2.png'),
-                      fit: BoxFit.fitWidth,
-                    )),
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: 180,
-                child: Text("Гострі роли",
-                    style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      image: AssetImage('assets/sushi2.png'),
-                      fit: BoxFit.fitWidth,
-                    )),
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: 180,
-                child: Text("Веганські роли",
-                    style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-            ],
-          ),
-        ),
-        Container(
           alignment: Alignment.centerLeft,
           margin: EdgeInsets.fromLTRB(30, 0, 30, 50),
           child: Text("Hot deals",
               style: TextStyle(
                   fontSize: 35,
-                  color: Color.fromRGBO(255, 141, 64, 1),
+                  color: Color.fromRGBO(27, 57, 119, 1),
                   fontWeight: FontWeight.bold)),
         ),
         Container(
@@ -382,13 +334,10 @@ class _SalesWidgetState extends State<SalesWidget> {
             child: Column(
               children: [
                 SushiListPhone(
+                  changeBasketDel: widget.changeBasketDel,
                   sushiList: firmovi_roll,
                   changeBasket: widget.changeBasket,
                 ),
-                SushiListPhone(
-                  sushiList: firmovi_roll,
-                  changeBasket: widget.changeBasket,
-                )
               ],
             )),
         Container(
@@ -450,192 +399,6 @@ class _SalesWidgetState extends State<SalesWidget> {
                   ],
                 ),
               )
-            ],
-          ),
-        ),
-        Container(
-          alignment: Alignment.centerLeft,
-          margin: EdgeInsets.fromLTRB(30, 0, 30, 40),
-          child: Text("Ми - Sucheff",
-              style: TextStyle(
-                  fontSize: 35,
-                  color: Color.fromRGBO(255, 141, 64, 1),
-                  fontWeight: FontWeight.bold)),
-        ),
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: 530,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                child: CarouselWidget(
-                  widgets: [
-                    Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 140,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                    Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 140,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                    Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 140,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                  ],
-                ),
-              ),
-              Container(
-                child: CarouselWidget(
-                  widgets: [
-                    Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 140,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                    Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 140,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                    Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.cover,
-                                  )),
-                              height: 140,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                  ],
-                ),
-              ),
             ],
           ),
         ),
@@ -998,9 +761,13 @@ class CarouselWidget extends StatelessWidget {
   }
 }
 
-
 class TotalPriceWidget extends StatefulWidget {
-  const TotalPriceWidget({super.key});
+  const TotalPriceWidget({
+    super.key,
+    required this.k,
+  });
+
+  final k;
 
   @override
   State<TotalPriceWidget> createState() => _TotalPriceWidgetState();
@@ -1009,6 +776,12 @@ class TotalPriceWidget extends StatefulWidget {
 class _TotalPriceWidgetState extends State<TotalPriceWidget> {
   @override
   Widget build(BuildContext context) {
-    return Text(totalPrice.toString());
+    return Text(
+      "Всього до сплати: " + widget.k.toString() + "₴",
+      style: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      ),
+    );
   }
 }

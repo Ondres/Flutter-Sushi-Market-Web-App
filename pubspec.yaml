@@ -88,48 +88,49 @@ flutter:
     - assets/1.jpg
     - assets/Facebook.png
     - assets/Instagram.png
-    - assets/menu/332A6450.jpg
-    - assets/menu/Alyaska.jpg
-    - assets/menu/Blu-fіn.jpg
-    - assets/menu/Bonіto.jpg
-    - assets/menu/Bіlij drakon.jpg
-    - assets/menu/CHervonij drakon.jpg
-    - assets/menu/CHorna mamba.jpg
-    - assets/menu/CHorna perlina.jpg
-    - assets/menu/CHornij drakon.jpg
-    - assets/menu/Ebі-rol.jpg
-    - assets/menu/Futomakі z grebіntsem.jpg
-    - assets/menu/Futomakі z lososem.jpg
-    - assets/menu/Futomakі z tuntsem.jpg
-    - assets/menu/Fyudzhi.jpg
-    - assets/menu/Fіladelfіya klasichna.jpg
-    - assets/menu/Fіladelfіya lyuks.jpg
-    - assets/menu/Fіladelfіya mіks.jpg
-    - assets/menu/Fіladelfіya v kunzhutі.jpg
-    - assets/menu/Fіladelfіya z krevetkoyu.jpg
-    - assets/menu/Fіladelfіya z vugrem.jpg
-    - assets/menu/Gunkan z grebіntsem.jpg
-    - assets/menu/Gunkan z lososem.jpg
-    - assets/menu/Gunkan z tuntsem.jpg
-    - assets/menu/Gunkan z vugrem.jpg
-    - assets/menu/Kalіfornіya z krevetkoyu ta krabom.jpg
-    - assets/menu/Kalіfornіya z lososem.jpg
-    - assets/menu/Kalіfornіya z tuntsem.jpg
-    - assets/menu/Kalіfornіya z vugrem.jpg
-    - assets/menu/Lanch rol.jpg
-    - assets/menu/Lanch-rol.jpg
-    - assets/menu/Makі z avokado.jpg
-    - assets/menu/Makі z lososem.jpg
-    - assets/menu/Makі z ogіrkom.jpg
-    - assets/menu/Makі z tuntsem.jpg
-    - assets/menu/Makі z vugrem.jpg
-    - assets/menu/Osaka.jpg
-    - assets/menu/Pekіn.jpg
-    - assets/menu/Raj-taj.jpg
-    - assets/menu/Sushі z lososem.jpg
-    - assets/menu/Sushі z vugrem.jpg
-    - assets/menu/Vegan.jpg
-    - assets/menu/Іmperator.jpg
+    - assets/332A6450.jpg
+    - assets/Alyaska.jpg
+    - assets/Blu-fіn.jpg
+    - assets/Bonіto.jpg
+    - assets/Bіlij drakon.jpg
+    - assets/CHervonij drakon.jpg
+    - assets/CHorna mamba.jpg
+    - assets/CHorna perlina.jpg
+    - assets/CHornij drakon.jpg
+    - assets/Ebі-rol.jpg
+    - assets/Futomakі z grebіntsem.jpg
+    - assets/Futomakі z lososem.jpg
+    - assets/Futomakі z tuntsem.jpg
+    - assets/Fyudzhi.jpg
+    - assets/Fіladelfіya klasichna.jpg
+    - assets/Fіladelfіya lyuks.jpg
+    - assets/Fіladelfіya mіks.jpg
+    - assets/Fіladelfіya v kunzhutі.jpg
+    - assets/Fіladelfіya z krevetkoyu.jpg
+    - assets/Fіladelfіya z vugrem.jpg
+    - assets/Gunkan z grebіntsem.jpg
+    - assets/Gunkan z lososem.jpg
+    - assets/Gunkan z tuntsem.jpg
+    - assets/Gunkan z vugrem.jpg
+    - assets/Kalіfornіya z krevetkoyu ta krabom.jpg
+    - assets/Kalіfornіya z lososem.jpg
+    - assets/Kalіfornіya z tuntsem.jpg
+    - assets/Kalіfornіya z vugrem.jpg
+    - assets/Lanch rol.jpg
+    - assets/Lanch-rol.jpg
+    - assets/Makі z avokado.jpg
+    - assets/Makі z lososem.jpg
+    - assets/Makі z ogіrkom.jpg
+    - assets/Makі z tuntsem.jpg
+    - assets/Makі z vugrem.jpg
+    - assets/Osaka.jpg
+    - assets/Pekіn.jpg
+    - assets/Raj-taj.jpg
+    - assets/Sushі z lososem.jpg
+    - assets/Sushі z vugrem.jpg
+    - assets/Vegan.jpg
+    - assets/Іmperator.jpg
+    - assets/UMI_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

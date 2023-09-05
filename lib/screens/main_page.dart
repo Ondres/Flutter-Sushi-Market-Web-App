@@ -112,16 +112,18 @@ class _MainPageState extends State<MainPage> {
                                 padding: EdgeInsets.zero,
                               ),
                               child: Container(
-                                width: 200,
-                                height: 200,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                  image: AssetImage('assets/big_logo.png'),
-                                  fit: BoxFit.fitHeight,
-                                )),
-                                alignment: Alignment.topCenter,
-                              ))
-                          : Container(),
+                                padding: EdgeInsets.all(25),
+                                child:  Container(
+                                  width: 150,
+                                  height: 150,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/UMI_logo.png'),
+                                        fit: BoxFit.contain,
+                                      )),
+                                  alignment: Alignment.topCenter,
+                                ))
+                              ): Container(),
                       MediaQuery.of(context).size.width >= 1400
                           ? Container(
                               padding: EdgeInsets.only(left: 20),
@@ -145,7 +147,7 @@ class _MainPageState extends State<MainPage> {
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
-                                                            255, 141, 64, 1),
+                                                            27, 57, 119, 1),
                                                         fontWeight:
                                                             FontWeight.bold)),
                                               ),
@@ -173,7 +175,7 @@ class _MainPageState extends State<MainPage> {
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
-                                                            255, 141, 64, 1),
+                                                            27, 57, 119, 1),
                                                         fontWeight:
                                                             FontWeight.bold)),
                                               ),
@@ -201,7 +203,7 @@ class _MainPageState extends State<MainPage> {
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
-                                                            255, 141, 64, 1),
+                                                            27, 57, 119, 1),
                                                         fontWeight:
                                                             FontWeight.bold)),
                                               ),
@@ -237,7 +239,7 @@ class _MainPageState extends State<MainPage> {
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
-                                                            255, 141, 64, 1),
+                                                            27, 57, 119, 1),
                                                         fontWeight:
                                                             FontWeight.bold)),
                                               ),
@@ -265,7 +267,7 @@ class _MainPageState extends State<MainPage> {
                                                     style: TextStyle(
                                                         fontSize: 35,
                                                         color: Color.fromRGBO(
-                                                            255, 141, 64, 1),
+                                                            27, 57, 119, 1),
                                                         fontWeight:
                                                             FontWeight.bold)),
                                               ),
@@ -421,7 +423,7 @@ class _MainPageState extends State<MainPage> {
                                                         'Безкоштовна доставка\n',
                                                     style: TextStyle(
                                                       color: Color.fromRGBO(
-                                                          255, 141, 64, 1),
+                                                          27, 57, 119, 1),
                                                     ),
                                                   ),
                                                   TextSpan(
@@ -580,93 +582,14 @@ class _SalesWidgetState extends State<SalesWidget> {
             ],
           ),
         ),
-        Container(
-          margin: EdgeInsets.fromLTRB(30, 85, 30, 90),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      image: AssetImage('assets/sushi2.png'),
-                      fit: BoxFit.fitWidth,
-                    )),
-                width: 220,
-                height: 220,
-                child: Text("Суші з лососем",
-                    style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      image: AssetImage('assets/sushi2.png'),
-                      fit: BoxFit.fitWidth,
-                    )),
-                width: 220,
-                height: 220,
-                child: Text("З вугрем",
-                    style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      image: AssetImage('assets/sushi2.png'),
-                      fit: BoxFit.fitWidth,
-                    )),
-                width: 220,
-                height: 220,
-                child: Text("Гострі роли",
-                    style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      image: AssetImage('assets/sushi2.png'),
-                      fit: BoxFit.fitWidth,
-                    )),
-                width: 220,
-                height: 220,
-                child: Text("Веганські роли",
-                    style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-            ],
-          ),
-        ),
+
         Container(
           alignment: Alignment.centerLeft,
           margin: EdgeInsets.fromLTRB(30, 0, 30, 50),
           child: Text("Hot deals",
               style: TextStyle(
                   fontSize: 35,
-                  color: Color.fromRGBO(255, 141, 64, 1),
+                  color: Color.fromRGBO(27, 57, 119, 1),
                   fontWeight: FontWeight.bold)),
         ),
         Container(
@@ -743,7 +666,7 @@ class _SalesWidgetState extends State<SalesWidget> {
                           ),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.orange,
+                              primary: Color.fromRGBO(27, 57, 119, 1),
                               onPrimary: Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4),
@@ -836,194 +759,7 @@ class _SalesWidgetState extends State<SalesWidget> {
             ],
           ),
         ),
-        Container(
-          alignment: Alignment.centerLeft,
-          margin: EdgeInsets.fromLTRB(30, 0, 30, 40),
-          child: Text("Ми - Sucheff",
-              style: TextStyle(
-                  fontSize: 35,
-                  color: Color.fromRGBO(255, 141, 64, 1),
-                  fontWeight: FontWeight.bold)),
-        ),
-        Container(
-          width: 1000,
-          height: 530,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                        width: 250,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 110,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                    Container(
-                        width: 250,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 110,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                    Container(
-                        width: 250,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 110,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                  ],
-                ),
-              ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                        width: 250,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 110,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                    Container(
-                        width: 250,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.fitWidth,
-                                  )),
-                              height: 110,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                    Container(
-                        width: 250,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/cheff.png'),
-                                    fit: BoxFit.cover,
-                                  )),
-                              height: 110,
-                            ),
-                            Text(
-                                "Професіоналізм та відданість своїй справі нашого майстра"),
-                          ],
-                        )),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+
       ],
     );
   }
@@ -1185,7 +921,7 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                                           style: TextStyle(
                                               fontSize: 35,
                                               color: Color.fromRGBO(
-                                                  255, 141, 64, 1),
+                                                  27, 57, 119, 1),
                                               fontWeight: FontWeight.bold)),
                                     ),
                                     SushiList(
@@ -1216,7 +952,7 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                                           style: TextStyle(
                                               fontSize: 35,
                                               color: Color.fromRGBO(
-                                                  255, 141, 64, 1),
+                                                  27, 57, 119, 1),
                                               fontWeight: FontWeight.bold)),
                                     ),
                                     SushiList(
@@ -1249,7 +985,7 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                                           style: TextStyle(
                                               fontSize: 35,
                                               color: Color.fromRGBO(
-                                                  255, 141, 64, 1),
+                                                  27, 57, 119, 1),
                                               fontWeight: FontWeight.bold)),
                                     ),
                                     SushiList(
@@ -1278,7 +1014,7 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                                           style: TextStyle(
                                               fontSize: 35,
                                               color: Color.fromRGBO(
-                                                  255, 141, 64, 1),
+                                                  27, 57, 119, 1),
                                               fontWeight: FontWeight.bold)),
                                     ),
                                     SushiList(
@@ -1306,7 +1042,7 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                                           style: TextStyle(
                                               fontSize: 35,
                                               color: Color.fromRGBO(
-                                                  255, 141, 64, 1),
+                                                  27, 57, 119, 1),
                                               fontWeight: FontWeight.bold)),
                                     ),
                                     SushiList(
@@ -1429,7 +1165,7 @@ class _BottomInfoState extends State<BottomInfo> {
         children: [
           Container(
             alignment: Alignment.centerLeft,
-            margin: EdgeInsets.fromLTRB(60, 80, 60, 20),
+            margin: EdgeInsets.fromLTRB(60, 0, 60, 20),
             child: Text("Суші у Дніпрі",
                 style: TextStyle(
                     fontSize: 35,
@@ -1554,7 +1290,7 @@ class _BottomContactsState extends State<BottomContacts> {
                               children: [
                                 SizedBox(
                                   width: 1,
-                                  height: 1,
+                                  height: 50,
                                 ),
                                 Container(
                                     child: Row(
@@ -1565,43 +1301,11 @@ class _BottomContactsState extends State<BottomContacts> {
                                       size: 20,
                                     ),
                                     Text(
-                                      "м. Дніпро, Панікахи, 17",
+                                      " м. Дніпро, Панікахи, 17",
                                       style: TextStyle(fontSize: 16),
                                     ),
                                   ],
                                 )),
-                                Container(
-                                    child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.location_on,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      "м. Дніпро, Панікахи, 17",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ],
-                                )),
-                                Container(
-                                    child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.location_on,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      "м. Дніпро, Панікахи, 17",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ],
-                                )),
-                                SizedBox(
-                                  width: 1,
-                                  height: 1,
-                                ),
                               ],
                             ),
                           ),
@@ -1612,7 +1316,7 @@ class _BottomContactsState extends State<BottomContacts> {
                               children: [
                                 SizedBox(
                                   width: 1,
-                                  height: 1,
+                                  height: 50,
                                 ),
                                 Container(
                                     child: Row(
@@ -1623,43 +1327,11 @@ class _BottomContactsState extends State<BottomContacts> {
                                       size: 20,
                                     ),
                                     Text(
-                                      "+38 (050) 20 500 55",
+                                      " +38 (050) 20 500 55",
                                       style: TextStyle(fontSize: 16),
                                     ),
                                   ],
                                 )),
-                                Container(
-                                    child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.local_phone_sharp,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      "+38 (050) 20 500 55",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ],
-                                )),
-                                Container(
-                                    child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.local_phone_sharp,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      "+38 (050) 20 500 55",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ],
-                                )),
-                                SizedBox(
-                                  width: 1,
-                                  height: 1,
-                                ),
                               ],
                             ),
                           ),
@@ -1673,6 +1345,7 @@ class _BottomContactsState extends State<BottomContacts> {
                             Container(
                               width: 75,
                               child: Row(
+
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
@@ -1771,48 +1444,6 @@ class _AdressesWidgetState extends State<AdressesWidget> {
                   fit: BoxFit.cover,
                 )),
           ),
-          Container(
-              padding: EdgeInsets.only(right: 20),
-              width: 200,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(242, 242, 242, 1),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(
-                    Icons.location_on,
-                    color: Color.fromRGBO(122, 187, 102, 1),
-                    size: 20,
-                  ),
-                  Text(
-                    "м. Дніпро, Панікахи, 17",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
-              )),
-          Container(
-              padding: EdgeInsets.only(right: 20),
-              width: 200,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(242, 242, 242, 1),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(
-                    Icons.location_on,
-                    color: Color.fromRGBO(122, 187, 102, 1),
-                    size: 20,
-                  ),
-                  Text(
-                    "м. Дніпро, Панікахи, 17",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
-              )),
           Container(
               padding: EdgeInsets.only(right: 20),
               width: 200,

@@ -89,10 +89,8 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                             ),
                             textAlign: TextAlign.left,
                             keyboardType: TextInputType.phone,
-                            // задайте необходимые размеры для поля ввода
                             minLines: 1,
                             maxLines: 1,
-                            // maxLength: 15,
                           )),
                       Container(
                           width: MediaQuery.of(context).size.width * 0.8,
@@ -199,7 +197,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                     borderRadius:
                                         BorderRadius.all(Radius.circular((10))),
                                     color: courier
-                                        ? Color.fromRGBO(255, 141, 64, 1)
+                                        ? Color.fromRGBO(27, 57, 119, 1)
                                         : Colors.white,
                                   ),
                                   width:
@@ -232,7 +230,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                         BorderRadius.all(Radius.circular((10))),
                                     color: courier
                                         ? Colors.white
-                                        : Color.fromRGBO(255, 141, 64, 1),
+                                        : Color.fromRGBO(27, 57, 119, 1),
                                   ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.38,
@@ -549,7 +547,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular((10))),
-                      color: Color.fromRGBO(255, 141, 64, 1),
+                      color: Color.fromRGBO(27, 57, 119, 1),
                     ),
                   ),
                 ),

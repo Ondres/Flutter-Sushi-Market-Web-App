@@ -114,7 +114,6 @@ class _OrderPageState extends State<OrderPage> {
                             ),
                             textAlign: TextAlign.left,
                             keyboardType: TextInputType.text,
-                            // задайте необходимые размеры для поля ввода
                             minLines: 1,
                             maxLines: 1,
                           )),
@@ -223,7 +222,7 @@ class _OrderPageState extends State<OrderPage> {
                                     borderRadius:
                                         BorderRadius.all(Radius.circular((10))),
                                     color: courier
-                                        ? Color.fromRGBO(255, 141, 64, 1)
+                                        ? Color.fromRGBO(27, 57, 119, 1)
                                         : Colors.white,
                                   ),
                                   width: 90,
@@ -255,7 +254,7 @@ class _OrderPageState extends State<OrderPage> {
                                         BorderRadius.all(Radius.circular((10))),
                                     color: courier
                                         ? Colors.white
-                                        : Color.fromRGBO(255, 141, 64, 1),
+                                        : Color.fromRGBO(27, 57, 119, 1),
                                   ),
                                   width: 90,
                                   height: 50,
@@ -531,7 +530,7 @@ class _OrderPageState extends State<OrderPage> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular((10))),
-                      color: Color.fromRGBO(255, 141, 64, 1),
+                      color: Color.fromRGBO(27, 57, 119, 1),
                     ),
                   ),
                 ),

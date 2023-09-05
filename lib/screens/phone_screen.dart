@@ -59,6 +59,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                         TextButton(
                           onPressed: () {
                             widget.changeContentWidget(SalesWidget(
+                              changeBasketDel: widget.BasketChangedDel,
                               changeBasket: widget.BasketChangedAdd,
                             ));
                             Navigator.pop(context);
@@ -130,24 +131,13 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                       style: TextStyle(
                                           fontSize: 35,
                                           color:
-                                              Color.fromRGBO(255, 141, 64, 1),
+                                              Color.fromRGBO(27, 57, 119, 1),
                                           fontWeight: FontWeight.bold)),
                                 ),
                                 SushiListPhone(
+                                  changeBasketDel: widget.BasketChangedDel,
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
+                                  sushiList: firmovi,
                                 ),
                               ],
                             ));
@@ -164,40 +154,13 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                       style: TextStyle(
                                           fontSize: 35,
                                           color:
-                                              Color.fromRGBO(255, 141, 64, 1),
+                                              Color.fromRGBO(27, 57, 119, 1),
                                           fontWeight: FontWeight.bold)),
                                 ),
                                 SushiListPhone(
+                                  changeBasketDel: widget.BasketChangedDel,
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
+                                  sushiList: firmovi,
                                 ),
                               ],
                             ));
@@ -208,29 +171,19 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                 Container(
                                   alignment: Alignment.centerLeft,
                                   margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
-                                  child: Text("Класичні роли",
+                                  child: Text("Великі роли",
                                       style: TextStyle(
                                           fontSize: 35,
                                           color:
-                                              Color.fromRGBO(255, 141, 64, 1),
+                                              Color.fromRGBO(27, 57, 119, 1),
                                           fontWeight: FontWeight.bold)),
                                 ),
                                 SushiListPhone(
+                                  changeBasketDel: widget.BasketChangedDel,
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
+                                  sushiList: firmovi,
                                 ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
+
                               ],
                             ));
 
@@ -244,25 +197,15 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                       style: TextStyle(
                                           fontSize: 35,
                                           color:
-                                              Color.fromRGBO(255, 141, 64, 1),
+                                              Color.fromRGBO(27, 57, 119, 1),
                                           fontWeight: FontWeight.bold)),
                                 ),
                                 SushiListPhone(
+                                  changeBasketDel: widget.BasketChangedDel,
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
+                                  sushiList: firmovi,
                                 ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: firmovi_roll,
-                                ),
+
                               ],
                             ));
 
@@ -276,24 +219,13 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                       style: TextStyle(
                                           fontSize: 35,
                                           color:
-                                              Color.fromRGBO(255, 141, 64, 1),
+                                              Color.fromRGBO(27, 57, 119, 1),
                                           fontWeight: FontWeight.bold)),
                                 ),
                                 SushiListPhone(
+                                  changeBasketDel: widget.BasketChangedDel,
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: sushi.sublist(0,2),
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: sushi.sublist(2,4),
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: sushi.sublist(4,6),
-                                ),
-                                SushiListPhone(
-                                  changeBasket: widget.BasketChangedAdd,
-                                  sushiList: sushi.sublist(5,7),
+                                  sushiList: sushi,
                                 ),
                               ],
                             ));
@@ -473,6 +405,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
           child: ListView(
             children: [
               PhoneTopWidget(
+                changeBasketDel: widget.BasketChangedDel,
                 changeContentWidget: widget.changeContentWidget,
                 BasketChangedAdd: widget.BasketChangedAdd,
               ),
@@ -492,9 +425,11 @@ class _PhoneScreenState extends State<PhoneScreen> {
 class PhoneTopWidget extends StatefulWidget {
   final Function(Product product, bool same) BasketChangedAdd;
   final Function(Widget) changeContentWidget;
+  final Function(Product, bool, {int? items}) changeBasketDel;
 
   const PhoneTopWidget(
       {super.key,
+        required this.changeBasketDel,
       required this.BasketChangedAdd,
       required this.changeContentWidget});
 
@@ -515,7 +450,7 @@ class _PhoneTopWidgetState extends State<PhoneTopWidget> {
           IconButton(
             icon: Icon(
               Icons.menu,
-              color: Color.fromRGBO(255, 141, 64, 1),
+              color: Color.fromRGBO(27, 57, 119, 1),
               size: 30,
             ),
             onPressed: () {
@@ -525,6 +460,7 @@ class _PhoneTopWidgetState extends State<PhoneTopWidget> {
           InkWell(
             onTap: () {
               widget.changeContentWidget(SalesWidget(
+                changeBasketDel: widget.changeBasketDel,
                 changeBasket: widget.BasketChangedAdd,
               ));
             },

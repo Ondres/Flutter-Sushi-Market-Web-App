@@ -97,7 +97,7 @@ class _SushiListState extends State<SushiList> {
                           ),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.orange,
+                              primary: Color.fromRGBO(27, 57, 119, 1),
                               onPrimary: Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4),
@@ -212,7 +212,7 @@ void showAlertDialog(BuildContext context, Product sushiTtem, Function func,) {
                           SizedBox(height: 10, width: 30),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.orange,
+                              primary: Color.fromRGBO(27, 57, 119, 1),
                               onPrimary: Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4),
