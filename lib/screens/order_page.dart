@@ -262,103 +262,6 @@ class _OrderPageState extends State<OrderPage> {
                           ],
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.only(top: 40),
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton2<String>(
-                            isExpanded: true,
-                            hint: const Row(
-                              children: [
-                                Icon(
-                                  Icons.list,
-                                  size: 16,
-                                  color: Colors.yellow,
-                                ),
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    'Select Item',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.yellow,
-                                    ),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            items: items
-                                .map((String item) => DropdownMenuItem<String>(
-                                      value: item,
-                                      child: Text(
-                                        item,
-                                        style: const TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black54,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ))
-                                .toList(),
-                            value: selectedValue,
-                            onChanged: (String? value) {
-                              setState(() {
-                                selectedValue = value;
-                              });
-                            },
-                            buttonStyleData: ButtonStyleData(
-                              height: 50,
-                              width: 200,
-                              padding:
-                                  const EdgeInsets.only(left: 14, right: 14),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(14),
-                                color: Colors.white,
-                              ),
-                              elevation: 2,
-                            ),
-                            iconStyleData: const IconStyleData(
-                              icon: Icon(
-                                Icons.arrow_drop_down,
-                                size: 20,
-                              ),
-                              iconSize: 14,
-                              iconEnabledColor: Colors.black54,
-                              iconDisabledColor: Colors.grey,
-                            ),
-                            dropdownStyleData: DropdownStyleData(
-                              maxHeight: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(14),
-                                color: Colors.white,
-                              ),
-                              scrollbarTheme: ScrollbarThemeData(
-                                radius: const Radius.circular(40),
-                                thickness: MaterialStateProperty.all<double>(6),
-                                thumbVisibility:
-                                    MaterialStateProperty.all<bool>(true),
-                              ),
-                            ),
-                            menuItemStyleData: const MenuItemStyleData(
-                              height: 40,
-                              padding: EdgeInsets.only(left: 14, right: 14),
-                            ),
-                          ),
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          color: Colors.white,
-                        ),
-                        width: 200,
-                        height: 50,
-                      ),
-
-
                     ],
                   ),
                 ),
@@ -465,11 +368,7 @@ class _OrderPageState extends State<OrderPage> {
                                                     child: Icon(
                                                         Icons.add_circle,
                                                         size: 24,
-                                                        color: Color.fromRGBO(
-                                                            255,
-                                                            141,
-                                                            64,
-                                                            1))))),
+                                                        color: Color.fromRGBO(27, 57, 119, 1),)))),
                                       ],
                                     ))),
                           ],

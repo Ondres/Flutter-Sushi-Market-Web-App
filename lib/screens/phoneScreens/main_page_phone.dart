@@ -154,23 +154,15 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                   child: Container(
                                     padding: EdgeInsets.only(top: 10),
                                     width: 220,
-                                    height: 280,
+                                    height: 200,
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          "Всього до сплати: " +
-                                              totalPrice.toString() +
-                                              "₴",
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
                                         Container(
+                                          margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
                                           width: 220,
-                                          height: 200,
+                                          height: 67,
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(10)),
@@ -180,29 +172,43 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                             itemCount: basket.length,
                                             itemBuilder: (context, index) {
                                               Product product = basket[index];
-                                              return Column(
-                                                children: [
-                                                  AddedSushiItem(
-                                                    empty: true,
-                                                    product: product,
-                                                    changeBasket:
-                                                        BasketChangedDel,
-                                                    changeBasketAdd:
-                                                        BasketChangedAdd,
-                                                    counters: counters,
-                                                  )
-                                                ],
+                                              return Container(
+                                                child: Text(product.name+" "+counters[product].toString()+" шт.",
+                                                  style: TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),),
                                               );
                                             },
                                           ),
                                         ),
                                         Container(
-                                            margin: EdgeInsets.all(10),
+                                          margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                                          width: 220,
+                                          height: 30,
+                                          child: Text(
+                                            " Ви можете додатково редагувати корзину перейшовши до замовлення ",
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          "Всього до сплати: " +
+                                              totalPrice.toString() +
+                                              "₴",
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
                                             decoration: BoxDecoration(
                                               color: Color.fromRGBO(
                                                   27, 57, 119, 1),
                                               borderRadius:
-                                                  BorderRadius.circular(10),
+                                                  BorderRadius.circular(5),
                                             ),
                                             child: TextButton(
                                               onPressed: () {
@@ -330,12 +336,12 @@ class _SalesWidgetState extends State<SalesWidget> {
         ),
         Container(
             width: MediaQuery.of(context).size.width,
-            height: 520,
+            height: 530,
             child: Column(
               children: [
                 SushiListPhone(
                   changeBasketDel: widget.changeBasketDel,
-                  sushiList: firmovi_roll,
+                  sushiList: firmovi_roll.sublist(0,4),
                   changeBasket: widget.changeBasket,
                 ),
               ],
@@ -357,7 +363,7 @@ class _SalesWidgetState extends State<SalesWidget> {
                 child: Text("Інші акції та новини",
                     style: TextStyle(
                         fontSize: 30,
-                        color: Color.fromRGBO(122, 187, 102, 1),
+                        color: Color.fromRGBO(27, 57, 119, 1),
                         fontWeight: FontWeight.bold)),
               ),
               Container(
@@ -429,7 +435,7 @@ class _BottomInfoState extends State<BottomInfo> {
             child: Text("Суші у Дніпрі",
                 style: TextStyle(
                     fontSize: 35,
-                    color: Color.fromRGBO(122, 187, 102, 1),
+                    color: Color.fromRGBO(27, 57, 119, 1),
                     fontWeight: FontWeight.bold)),
           ),
           Container(
@@ -498,7 +504,7 @@ class _BottomContactsState extends State<BottomContacts> {
                                   children: [
                                     Icon(
                                       Icons.location_on,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
+                                      color: Color.fromRGBO(27, 57, 119, 1),
                                       size: 20,
                                     ),
                                     Text(
@@ -533,7 +539,7 @@ class _BottomContactsState extends State<BottomContacts> {
                                   children: [
                                     Icon(
                                       Icons.local_phone_sharp,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
+                                      color: Color.fromRGBO(27, 57, 119, 1),
                                       size: 20,
                                     ),
                                     Text(
@@ -667,7 +673,7 @@ class _AdressesWidgetState extends State<AdressesWidget> {
                 children: [
                   Icon(
                     Icons.location_on,
-                    color: Color.fromRGBO(122, 187, 102, 1),
+                    color: Color.fromRGBO(27, 57, 119, 1),
                     size: 20,
                   ),
                   Text(
@@ -688,7 +694,7 @@ class _AdressesWidgetState extends State<AdressesWidget> {
                 children: [
                   Icon(
                     Icons.location_on,
-                    color: Color.fromRGBO(122, 187, 102, 1),
+                    color: Color.fromRGBO(27, 57, 119, 1),
                     size: 20,
                   ),
                   Text(
@@ -709,7 +715,7 @@ class _AdressesWidgetState extends State<AdressesWidget> {
                 children: [
                   Icon(
                     Icons.location_on,
-                    color: Color.fromRGBO(122, 187, 102, 1),
+                    color: Color.fromRGBO(27, 57, 119, 1),
                     size: 20,
                   ),
                   Text(

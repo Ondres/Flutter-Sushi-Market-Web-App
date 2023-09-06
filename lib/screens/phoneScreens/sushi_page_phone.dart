@@ -23,950 +23,157 @@ class _SushiListPhoneState extends State<SushiListPhone> {
   Widget build(BuildContext context) {
     List<Product> sushiList = widget.sushiList;
     List<int?> cntN = List<int?>.filled(18, 0);
-    for(int i = 0; i<sushiList.length;i++)
-      {
-        cntN[i] = counters[sushiList[i]];
-      }
+    for (int i = 0; i < sushiList.length; i++) {
+      cntN[i] = counters[sushiList[i]];
+    }
     return Column(
       children: [
         Container(
             width: MediaQuery.of(context).size.width,
-            height: 260,
-            child: Row(children: [
-              Container(
-                margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                height: 250,
-                width: 165,
-                child: Column(
-                  children: [
-                    TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        onPressed: () {
-                          showAlertDialog(
-                              context, sushiList[0], widget.changeBasket);
-                        },
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                topLeft: Radius.circular(30),
-                              ),
-                              color: Colors.black26,
-                              image: DecorationImage(
-                                image: AssetImage(sushiList[0].image),
-                                fit: BoxFit.fitWidth,
-                              )),
-                        )),
-                    Container(
-                      height: 35,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text(
-                        sushiList[0].name,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      height: 15,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text("Вага: " + sushiList[0].weight),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 1,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 40,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            sushiList[0].price,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          cntN[0] != null && cntN[0] != 0
-                              ? ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              if (counters.containsKey(sushiList[0])) {
-                                setState(() {
-                                  int k = counters[sushiList[0]]!;
-                                  if (k != 0) {
-                                    k--;
-                                    widget.changeBasketDel(
-                                        sushiList[0], true);
-                                  }
-                                  counters[sushiList[0]] = k;
-                                });
-                              } else
-                                counters[sushiList[0]] = 0;
-
-                              setState(() {
-                                if (cntN[0] != 0 && cntN[0] != null) {
-                                  int c = cntN[0]!;
-                                  c--;
-                                  cntN[0] = c;
-                                }
-                              });
-                            },
-                            child: Text('-'),
-                          )
-                              : Container(
-                            width: 35,
-                          ),
-                          cntN[0] != null && cntN[0] != 0
-                              ? Text(
-                            cntN[0].toString(),
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                              : Container(),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              print(cntN[0]);
-                              setState(() {
-                                if (cntN[0] == null)
-                                  cntN[0] = 1;
-                                else {
-                                  int c = cntN[0]!;
-                                  c++;
-                                  cntN[0] = c;
-                                }
-                              });
-                              print(cntN[0]);
-                              if (counters.containsKey(sushiList[0])) {
-                                setState(() {
-                                  int k = counters[sushiList[0]]!;
-                                  k++;
-                                  counters[sushiList[0]] = k;
-                                });
-                              } else
-                                counters[sushiList[0]] = 1;
-                              widget.changeBasket(sushiList[0], false);
-                            },
-                            child: Text('+'),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-
-              Container(
-                margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                height: 250,
-                width: 165,
-                child: Column(
-                  children: [
-                    TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        onPressed: () {
-                          showAlertDialog(
-                              context, sushiList[1], widget.changeBasket);
-                        },
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                topLeft: Radius.circular(30),
-                              ),
-                              color: Colors.black26,
-                              image: DecorationImage(
-                                image: AssetImage(sushiList[1].image),
-                                fit: BoxFit.fitWidth,
-                              )),
-                        )),
-                    Container(
-                      height: 35,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text(
-                        sushiList[1].name,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      height: 15,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text("Вага: " + sushiList[1].weight),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 1,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 40,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            sushiList[1].price,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          cntN[1] != null && cntN[1] != 0
-                              ? ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              if (counters.containsKey(sushiList[1])) {
-                                setState(() {
-                                  int k = counters[sushiList[1]]!;
-                                  if (k != 0) {
-                                    k--;
-                                    widget.changeBasketDel(
-                                        sushiList[1], true);
-                                  }
-                                  counters[sushiList[1]] = k;
-                                });
-                              } else
-                                counters[sushiList[1]] = 0;
-
-                              setState(() {
-                                if (cntN[1] != 0 && cntN[1] != null) {
-                                  int c = cntN[1]!;
-                                  c--;
-                                  cntN[1] = c;
-                                }
-                              });
-                            },
-                            child: Text('-'),
-                          )
-                              : Container(
-                            width: 35,
-                          ),
-                          cntN[1] != null && cntN[1] != 0
-                              ? Text(
-                            cntN[1].toString(),
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                              : Container(),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              print(cntN[1]);
-                              setState(() {
-                                if (cntN[1] == null)
-                                  cntN[1] = 1;
-                                else {
-                                  int c = cntN[1]!;
-                                  c++;
-                                  cntN[1] = c;
-                                }
-                              });
-                              print(cntN[1]);
-                              if (counters.containsKey(sushiList[1])) {
-                                setState(() {
-                                  int k = counters[sushiList[1]]!;
-                                  k++;
-                                  counters[sushiList[1]] = k;
-                                });
-                              } else
-                                counters[sushiList[1]] = 1;
-                              widget.changeBasket(sushiList[1], false);
-                            },
-                            child: Text('+'),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ])),
-
+            height: 265,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SushiItem(
+                      index: 0,
+                      sushiList: sushiList,
+                      changeBasket: widget.changeBasket,
+                      changeBasketDel: widget.changeBasketDel,
+                      cntN: cntN),
+                  SushiItem(
+                      index: 1,
+                      sushiList: sushiList,
+                      changeBasket: widget.changeBasket,
+                      changeBasketDel: widget.changeBasketDel,
+                      cntN: cntN),
+                ])),
         Container(
             width: MediaQuery.of(context).size.width,
-            height: 260,
-            child: Row(children: [
-              Container(
-                margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                height: 250,
-                width: 165,
-                child: Column(
-                  children: [
-                    TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        onPressed: () {
-                          showAlertDialog(
-                              context, sushiList[2], widget.changeBasket);
-                        },
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                topLeft: Radius.circular(30),
-                              ),
-                              color: Colors.black26,
-                              image: DecorationImage(
-                                image: AssetImage(sushiList[2].image),
-                                fit: BoxFit.fitWidth,
-                              )),
-                        )),
-                    Container(
-                      height: 35,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text(
-                        sushiList[2].name,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      height: 15,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text("Вага: " + sushiList[2].weight),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 1,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 40,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            sushiList[2].price,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          cntN[2] != null && cntN[2] != 0
-                              ? ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              if (counters.containsKey(sushiList[2])) {
-                                setState(() {
-                                  int k = counters[sushiList[2]]!;
-                                  if (k != 0) {
-                                    k--;
-                                    widget.changeBasketDel(
-                                        sushiList[2], true);
-                                  }
-                                  counters[sushiList[2]] = k;
-                                });
-                              } else
-                                counters[sushiList[2]] = 0;
-
-                              setState(() {
-                                if (cntN[2] != 0 && cntN[2] != null) {
-                                  int c = cntN[2]!;
-                                  c--;
-                                  cntN[2] = c;
-                                }
-                              });
-                            },
-                            child: Text('-'),
-                          )
-                              : Container(
-                            width: 35,
-                          ),
-                          cntN[2] != null && cntN[2] != 0
-                              ? Text(
-                            cntN[2].toString(),
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                              : Container(),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              print(cntN[2]);
-                              setState(() {
-                                if (cntN[2] == null)
-                                  cntN[2] = 1;
-                                else {
-                                  int c = cntN[2]!;
-                                  c++;
-                                  cntN[2] = c;
-                                }
-                              });
-                              print(cntN[2]);
-                              if (counters.containsKey(sushiList[2])) {
-                                setState(() {
-                                  int k = counters[sushiList[2]]!;
-                                  k++;
-                                  counters[sushiList[2]] = k;
-                                });
-                              } else
-                                counters[sushiList[2]] = 1;
-                              widget.changeBasket(sushiList[2], false);
-                            },
-                            child: Text('+'),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-
-              Container(
-                margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                height: 250,
-                width: 165,
-                child: Column(
-                  children: [
-                    TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        onPressed: () {
-                          showAlertDialog(
-                              context, sushiList[3], widget.changeBasket);
-                        },
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                topLeft: Radius.circular(30),
-                              ),
-                              color: Colors.black26,
-                              image: DecorationImage(
-                                image: AssetImage(sushiList[3].image),
-                                fit: BoxFit.fitWidth,
-                              )),
-                        )),
-                    Container(
-                      height: 35,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text(
-                        sushiList[3].name,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      height: 15,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text("Вага: " + sushiList[3].weight),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 1,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 40,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            sushiList[3].price,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          cntN[3] != null && cntN[3] != 0
-                              ? ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              if (counters.containsKey(sushiList[3])) {
-                                setState(() {
-                                  int k = counters[sushiList[3]]!;
-                                  if (k != 0) {
-                                    k--;
-                                    widget.changeBasketDel(
-                                        sushiList[3], true);
-                                  }
-                                  counters[sushiList[3]] = k;
-                                });
-                              } else
-                                counters[sushiList[3]] = 0;
-
-                              setState(() {
-                                if (cntN[3] != 0 && cntN[3] != null) {
-                                  int c = cntN[3]!;
-                                  c--;
-                                  cntN[3] = c;
-                                }
-                              });
-                            },
-                            child: Text('-'),
-                          )
-                              : Container(
-                            width: 35,
-                          ),
-                          cntN[3] != null && cntN[3] != 0
-                              ? Text(
-                            cntN[3].toString(),
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                              : Container(),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              print(cntN[3]);
-                              setState(() {
-                                if (cntN[3] == null)
-                                  cntN[3] = 1;
-                                else {
-                                  int c = cntN[3]!;
-                                  c++;
-                                  cntN[3] = c;
-                                }
-                              });
-                              print(cntN[3]);
-                              if (counters.containsKey(sushiList[3])) {
-                                setState(() {
-                                  int k = counters[sushiList[3]]!;
-                                  k++;
-                                  counters[sushiList[3]] = k;
-                                });
-                              } else
-                                counters[sushiList[3]] = 1;
-                              widget.changeBasket(sushiList[3], false);
-                            },
-                            child: Text('+'),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ])),
-
+            height: 265,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SushiItem(
+                      index: 2,
+                      sushiList: sushiList,
+                      changeBasket: widget.changeBasket,
+                      changeBasketDel: widget.changeBasketDel,
+                      cntN: cntN),
+                  SushiItem(
+                      index: 3,
+                      sushiList: sushiList,
+                      changeBasket: widget.changeBasket,
+                      changeBasketDel: widget.changeBasketDel,
+                      cntN: cntN),
+                ])),
+        sushiList.length > 4?
         Container(
             width: MediaQuery.of(context).size.width,
-            height: 260,
-            child: Row(children: [
-              Container(
-                margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                height: 250,
-                width: 165,
+            height: 265,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SushiItem(
+                      index: 4,
+                      sushiList: sushiList,
+                      changeBasket: widget.changeBasket,
+                      changeBasketDel: widget.changeBasketDel,
+                      cntN: cntN),
+                  SushiItem(
+                      index: 5,
+                      sushiList: sushiList,
+                      changeBasket: widget.changeBasket,
+                      changeBasketDel: widget.changeBasketDel,
+                      cntN: cntN),
+                ])):Container(),
+        sushiList.length == 7
+            ? Container(
+                width: MediaQuery.of(context).size.width,
+                height: 265,
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  SushiItem(
+                      index: 6,
+                      sushiList: sushiList,
+                      changeBasket: widget.changeBasket,
+                      changeBasketDel: widget.changeBasketDel,
+                      cntN: cntN),
+                ]))
+            : Container(),
+        sushiList.length > 7
+            ? Container(
+                width: MediaQuery.of(context).size.width,
+             //   height: 265,
                 child: Column(
                   children: [
-                    TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        onPressed: () {
-                          showAlertDialog(
-                              context, sushiList[4], widget.changeBasket);
-                        },
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                topLeft: Radius.circular(30),
-                              ),
-                              color: Colors.black26,
-                              image: DecorationImage(
-                                image: AssetImage(sushiList[4].image),
-                                fit: BoxFit.fitWidth,
-                              )),
-                        )),
-                    Container(
-                      height: 35,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text(
-                        sushiList[4].name,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      height: 15,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text("Вага: " + sushiList[4].weight),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 1,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 40,
-                      alignment: Alignment.center,
-                      child: Row(
+                    Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text(
-                            sushiList[4].price,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          cntN[4] != null && cntN[4] != 0
-                              ? ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              if (counters.containsKey(sushiList[4])) {
-                                setState(() {
-                                  int k = counters[sushiList[4]]!;
-                                  if (k != 0) {
-                                    k--;
-                                    widget.changeBasketDel(
-                                        sushiList[4], true);
-                                  }
-                                  counters[sushiList[4]] = k;
-                                });
-                              } else
-                                counters[sushiList[4]] = 0;
-
-                              setState(() {
-                                if (cntN[4] != 0 && cntN[4] != null) {
-                                  int c = cntN[4]!;
-                                  c--;
-                                  cntN[4] = c;
-                                }
-                              });
-                            },
-                            child: Text('-'),
-                          )
-                              : Container(
-                            width: 35,
-                          ),
-                          cntN[4] != null && cntN[4] != 0
-                              ? Text(
-                            cntN[4].toString(),
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                              : Container(),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              print(cntN[4]);
-                              setState(() {
-                                if (cntN[4] == null)
-                                  cntN[4] = 1;
-                                else {
-                                  int c = cntN[4]!;
-                                  c++;
-                                  cntN[4] = c;
-                                }
-                              });
-                              print(cntN[4]);
-                              if (counters.containsKey(sushiList[4])) {
-                                setState(() {
-                                  int k = counters[sushiList[4]]!;
-                                  k++;
-                                  counters[sushiList[4]] = k;
-                                });
-                              } else
-                                counters[sushiList[4]] = 1;
-                              widget.changeBasket(sushiList[4], false);
-                            },
-                            child: Text('+'),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-
-              Container(
-                margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                height: 250,
-                width: 165,
-                child: Column(
-                  children: [
-                    TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        onPressed: () {
-                          showAlertDialog(
-                              context, sushiList[5], widget.changeBasket);
-                        },
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                topLeft: Radius.circular(30),
-                              ),
-                              color: Colors.black26,
-                              image: DecorationImage(
-                                image: AssetImage(sushiList[5].image),
-                                fit: BoxFit.fitWidth,
-                              )),
-                        )),
-                    Container(
-                      height: 35,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text(
-                        sushiList[5].name,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      height: 15,
-                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Text("Вага: " + sushiList[5].weight),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 1,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      height: 40,
-                      alignment: Alignment.center,
-                      child: Row(
+                          SushiItem(
+                              index: 6,
+                              sushiList: sushiList,
+                              changeBasket: widget.changeBasket,
+                              changeBasketDel: widget.changeBasketDel,
+                              cntN: cntN),
+                          SushiItem(
+                              index: 7,
+                              sushiList: sushiList,
+                              changeBasket: widget.changeBasket,
+                              changeBasketDel: widget.changeBasketDel,
+                              cntN: cntN),
+                        ]),
+                    Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text(
-                            sushiList[5].price,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          cntN[5] != null && cntN[5] != 0
-                              ? ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              if (counters.containsKey(sushiList[5])) {
-                                setState(() {
-                                  int k = counters[sushiList[5]]!;
-                                  if (k != 0) {
-                                    k--;
-                                    widget.changeBasketDel(
-                                        sushiList[5], true);
-                                  }
-                                  counters[sushiList[5]] = k;
-                                });
-                              } else
-                                counters[sushiList[5]] = 0;
-
-                              setState(() {
-                                if (cntN[5] != 0 && cntN[5] != null) {
-                                  int c = cntN[5]!;
-                                  c--;
-                                  cntN[5] = c;
-                                }
-                              });
-                            },
-                            child: Text('-'),
-                          )
-                              : Container(
-                            width: 35,
-                          ),
-                          cntN[5] != null && cntN[5] != 0
-                              ? Text(
-                            cntN[5].toString(),
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                              : Container(),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0),
-                              primary: Color.fromRGBO(27, 57, 119, 1),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              minimumSize: Size(35, 35),
-                            ),
-                            onPressed: () {
-                              print(cntN[5]);
-                              setState(() {
-                                if (cntN[5] == null)
-                                  cntN[5] = 1;
-                                else {
-                                  int c = cntN[5]!;
-                                  c++;
-                                  cntN[5] = c;
-                                }
-                              });
-                              print(cntN[5]);
-                              if (counters.containsKey(sushiList[5])) {
-                                setState(() {
-                                  int k = counters[sushiList[5]]!;
-                                  k++;
-                                  counters[sushiList[5]] = k;
-                                });
-                              } else
-                                counters[sushiList[5]] = 1;
-                              widget.changeBasket(sushiList[5], false);
-                            },
-                            child: Text('+'),
-                          ),
-                        ],
-                      ),
-                    )
+                          SushiItem(
+                              index: 8,
+                              sushiList: sushiList,
+                              changeBasket: widget.changeBasket,
+                              changeBasketDel: widget.changeBasketDel,
+                              cntN: cntN),
+                          SushiItem(
+                              index: 9,
+                              sushiList: sushiList,
+                              changeBasket: widget.changeBasket,
+                              changeBasketDel: widget.changeBasketDel,
+                              cntN: cntN),
+                        ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SushiItem(
+                              index: 10,
+                              sushiList: sushiList,
+                              changeBasket: widget.changeBasket,
+                              changeBasketDel: widget.changeBasketDel,
+                              cntN: cntN),
+                          SushiItem(
+                              index: 11,
+                              sushiList: sushiList,
+                              changeBasket: widget.changeBasket,
+                              changeBasketDel: widget.changeBasketDel,
+                              cntN: cntN),
+                        ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SushiItem(
+                              index: 12,
+                              sushiList: sushiList,
+                              changeBasket: widget.changeBasket,
+                              changeBasketDel: widget.changeBasketDel,
+                              cntN: cntN),
+                          SushiItem(
+                              index: 13,
+                              sushiList: sushiList,
+                              changeBasket: widget.changeBasket,
+                              changeBasketDel: widget.changeBasketDel,
+                              cntN: cntN),
+                        ]),
                   ],
                 ),
-              ),
-            ]))
+              )
+            : Container(),
       ],
     );
   }
@@ -1026,7 +233,7 @@ void showAlertDialog(
                           sushiTtem.weight,
                           style: TextStyle(
                             fontSize: 16,
-                            color: Colors.orange,
+                            color: Color.fromRGBO(27, 57, 119, 1),
                           ),
                         ),
                       ),
@@ -1089,4 +296,185 @@ void showAlertDialog(
       );
     },
   );
+}
+
+class SushiItem extends StatefulWidget {
+  SushiItem(
+      {super.key,
+      required this.index,
+      required this.sushiList,
+      required this.changeBasket,
+      required this.changeBasketDel,
+      required this.cntN});
+
+  int index;
+  final Function(Product, bool) changeBasket;
+  final List<Product> sushiList;
+  final Function(Product, bool, {int? items}) changeBasketDel;
+  List<int?> cntN;
+
+  @override
+  State<SushiItem> createState() => _SushiItemState();
+}
+
+class _SushiItemState extends State<SushiItem> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      height: 260,
+      width: MediaQuery.of(context).size.width * 0.4,
+      child: Column(
+        children: [
+          TextButton(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+              ),
+              onPressed: () {
+                showAlertDialog(context, widget.sushiList[widget.index],
+                    widget.changeBasket);
+              },
+              child: Container(
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(30),
+                      topLeft: Radius.circular(30),
+                    ),
+                    color: Colors.black26,
+                    image: DecorationImage(
+                      image: AssetImage(widget.sushiList[widget.index].image),
+                      fit: BoxFit.fitWidth,
+                    )),
+              )),
+          Container(
+            height: 45,
+            margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
+            child: Text(
+              widget.sushiList[widget.index].name,
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            alignment: Alignment.centerLeft,
+          ),
+          Container(
+            height: 15,
+            margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
+            child: Text("Вага: " + widget.sushiList[widget.index].weight),
+            alignment: Alignment.centerLeft,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 5),
+            height: 1,
+            color: Colors.black,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 5),
+            height: 40,
+            alignment: Alignment.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  widget.sushiList[widget.index].price,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                widget.cntN[widget.index] != null &&
+                        widget.cntN[widget.index] != 0
+                    ? ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(0),
+                          primary: Color.fromRGBO(27, 57, 119, 1),
+                          onPrimary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          minimumSize: Size(35, 35),
+                        ),
+                        onPressed: () {
+                          if (counters
+                              .containsKey(widget.sushiList[widget.index])) {
+                            setState(() {
+                              int k = counters[widget.sushiList[widget.index]]!;
+                              if (k != 0) {
+                                k--;
+                                widget.changeBasketDel(
+                                    widget.sushiList[widget.index], true);
+                              }
+                              counters[widget.sushiList[widget.index]] = k;
+                            });
+                          } else
+                            counters[widget.sushiList[widget.index]] = 0;
+
+                          setState(() {
+                            if (widget.cntN[widget.index] != 0 &&
+                                widget.cntN[widget.index] != null) {
+                              int c = widget.cntN[widget.index]!;
+                              c--;
+                              widget.cntN[widget.index] = c;
+                            }
+                          });
+                        },
+                        child: Text('-'),
+                      )
+                    : Container(
+                        width: 35,
+                      ),
+                widget.cntN[widget.index] != null &&
+                        widget.cntN[widget.index] != 0
+                    ? Text(
+                        widget.cntN[widget.index].toString(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    : Container(),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.all(0),
+                    primary: Color.fromRGBO(27, 57, 119, 1),
+                    onPrimary: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    minimumSize: Size(35, 35),
+                  ),
+                  onPressed: () {
+                    print(widget.cntN[widget.index]);
+                    setState(() {
+                      if (widget.cntN[widget.index] == null)
+                        widget.cntN[widget.index] = 1;
+                      else {
+                        int c = widget.cntN[widget.index]!;
+                        c++;
+                        widget.cntN[widget.index] = c;
+                      }
+                    });
+                    print(widget.cntN[widget.index]);
+                    if (counters.containsKey(widget.sushiList[widget.index])) {
+                      setState(() {
+                        int k = counters[widget.sushiList[widget.index]]!;
+                        k++;
+                        counters[widget.sushiList[widget.index]] = k;
+                      });
+                    } else
+                      counters[widget.sushiList[widget.index]] = 1;
+                    widget.changeBasket(widget.sushiList[widget.index], false);
+                  },
+                  child: Text('+'),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }

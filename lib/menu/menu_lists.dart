@@ -401,21 +401,6 @@ List<Product> firmovi_roll = [
     name: 'Зелений дракон',
     price: '200₴',
   ),
-
-  Product(
-    image: 'assets/sushi1.png',
-    weight: '300 г',
-    description: 'Червоний дракон, Лосось, вугор, крем-сир, масаго, огірок, червона ікра, спайси соус',
-    name: 'Червоний дракон',
-    price: '270₴',
-  ),
-  Product(
-    image: 'assets/sushi2.png',
-    weight: '250 г',
-    description: 'Синій дракон, Лосось, авокадо, креветка, спайси соус',
-    name: 'Синій дракон',
-    price: '230₴',
-  ),
   Product(
     image: 'assets/sushi3.png',
     weight: '200 г',
@@ -437,78 +422,4 @@ List<Product> firmovi_roll = [
     name: 'Зелений дракон',
     price: '200₴',
   ),
-
-  Product(
-    image: 'assets/sushi1.png',
-    weight: '300 г',
-    description: 'Червоний дракон, Лосось, вугор, крем-сир, масаго, огірок, червона ікра, спайси соус',
-    name: 'Червоний дракон',
-    price: '270₴',
-  ),
-  Product(
-    image: 'assets/sushi2.png',
-    weight: '250 г',
-    description: 'Синій дракон, Лосось, авокадо, креветка, спайси соус',
-    name: 'Синій дракон',
-    price: '230₴',
-  ),
-  Product(
-    image: 'assets/sushi3.png',
-    weight: '200 г',
-    description: 'Зелений дракон, Лосось, огірок, авокадо, зелена ікра, масаго',
-    name: 'Зелений дракон',
-    price: '200₴',
-  ),
-  Product(
-    image: 'assets/sushi3.png',
-    weight: '200 г',
-    description: 'Зелений дракон, Лосось, огірок, авокадо, зелена ікра, масаго',
-    name: 'Зелений дракон',
-    price: '200₴',
-  ),
-  Product(
-    image: 'assets/sushi3.png',
-    weight: '200 г',
-    description: 'Зелений дракон, Лосось, огірок, авокадо, зелена ікра, масаго',
-    name: 'Зелений дракон',
-    price: '200₴',
-  ),
-
-  Product(
-    image: 'assets/sushi1.png',
-    weight: '300 г',
-    description: 'Червоний дракон, Лосось, вугор, крем-сир, масаго, огірок, червона ікра, спайси соус',
-    name: 'Червоний дракон',
-    price: '270₴',
-  ),
-  Product(
-    image: 'assets/sushi2.png',
-    weight: '250 г',
-    description: 'Синій дракон, Лосось, авокадо, креветка, спайси соус',
-    name: 'Синій дракон',
-    price: '230₴',
-  ),
-  Product(
-    image: 'assets/sushi3.png',
-    weight: '200 г',
-    description: 'Зелений дракон, Лосось, огірок, авокадо, зелена ікра, масаго',
-    name: 'Зелений дракон',
-    price: '200₴',
-  ),
-  Product(
-    image: 'assets/sushi3.png',
-    weight: '200 г',
-    description: 'Зелений дракон, Лосось, огірок, авокадо, зелена ікра, масаго',
-    name: 'Зелений дракон',
-    price: '200₴',
-  ),
-  Product(
-    image: 'assets/sushi3.png',
-    weight: '200 г',
-    description: 'Зелений дракон, Лосось, огірок, авокадо, зелена ікра, масаго',
-    name: 'Зелений дракон',
-    price: '200₴',
-  ),
-
-
 ];

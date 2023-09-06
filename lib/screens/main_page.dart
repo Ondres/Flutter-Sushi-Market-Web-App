@@ -713,7 +713,7 @@ class _SalesWidgetState extends State<SalesWidget> {
                 child: Text("Інші акції та новини",
                     style: TextStyle(
                         fontSize: 35,
-                        color: Color.fromRGBO(122, 187, 102, 1),
+                        color: Color.fromRGBO(27, 57, 119, 1),
                         fontWeight: FontWeight.bold)),
               ),
               Container(
@@ -1169,7 +1169,7 @@ class _BottomInfoState extends State<BottomInfo> {
             child: Text("Суші у Дніпрі",
                 style: TextStyle(
                     fontSize: 35,
-                    color: Color.fromRGBO(122, 187, 102, 1),
+                    color: Color.fromRGBO(27, 57, 119, 1),
                     fontWeight: FontWeight.bold)),
           ),
           Container(
@@ -1297,7 +1297,7 @@ class _BottomContactsState extends State<BottomContacts> {
                                   children: [
                                     Icon(
                                       Icons.location_on,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
+                                      color: Color.fromRGBO(27, 57, 119, 1),
                                       size: 20,
                                     ),
                                     Text(
@@ -1323,7 +1323,7 @@ class _BottomContactsState extends State<BottomContacts> {
                                   children: [
                                     Icon(
                                       Icons.local_phone_sharp,
-                                      color: Color.fromRGBO(122, 187, 102, 1),
+                                      color: Color.fromRGBO(27, 57, 119, 1),
                                       size: 20,
                                     ),
                                     Text(
@@ -1456,7 +1456,7 @@ class _AdressesWidgetState extends State<AdressesWidget> {
                 children: [
                   Icon(
                     Icons.location_on,
-                    color: Color.fromRGBO(122, 187, 102, 1),
+                    color: Color.fromRGBO(27, 57, 119, 1),
                     size: 20,
                   ),
                   Text(

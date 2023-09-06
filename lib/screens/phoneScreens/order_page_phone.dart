@@ -49,7 +49,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 20),
-      height: !basket.isEmpty ? 1100 : 900,
+      height: !basket.isEmpty ? 880 : 680,
       width: MediaQuery.of(context).size.width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -164,7 +164,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.8,
-                  height: !courier ? 320 : 180,
+                  height: !courier ? 160 : 100,
                   alignment: Alignment.topCenter,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -239,101 +239,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                           ],
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.only(top: 20),
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton2<String>(
-                            isExpanded: true,
-                            hint: const Row(
-                              children: [
-                                Icon(
-                                  Icons.list,
-                                  size: 16,
-                                  color: Colors.yellow,
-                                ),
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    'Select Item',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.yellow,
-                                    ),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            items: items
-                                .map((String item) => DropdownMenuItem<String>(
-                                      value: item,
-                                      child: Text(
-                                        item,
-                                        style: const TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black54,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ))
-                                .toList(),
-                            value: selectedValue,
-                            onChanged: (String? value) {
-                              setState(() {
-                                selectedValue = value;
-                              });
-                            },
-                            buttonStyleData: ButtonStyleData(
-                              height: 50,
-                              width: MediaQuery.of(context).size.width * 0.8,
-                              padding:
-                                  const EdgeInsets.only(left: 14, right: 14),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(14),
-                                color: Colors.white,
-                              ),
-                              elevation: 2,
-                            ),
-                            iconStyleData: const IconStyleData(
-                              icon: Icon(
-                                Icons.arrow_drop_down,
-                                size: 20,
-                              ),
-                              iconSize: 14,
-                              iconEnabledColor: Colors.black54,
-                              iconDisabledColor: Colors.grey,
-                            ),
-                            dropdownStyleData: DropdownStyleData(
-                              maxHeight: 200,
-                              width: MediaQuery.of(context).size.width * 0.8,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(14),
-                                color: Colors.white,
-                              ),
-                              scrollbarTheme: ScrollbarThemeData(
-                                radius: const Radius.circular(40),
-                                thickness: MaterialStateProperty.all<double>(6),
-                                thumbVisibility:
-                                    MaterialStateProperty.all<bool>(true),
-                              ),
-                            ),
-                            menuItemStyleData: const MenuItemStyleData(
-                              height: 50,
-                              padding: EdgeInsets.only(left: 14, right: 14),
-                            ),
-                          ),
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          color: Colors.white,
-                        ),
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: 50,
-                      ),
+
                       !courier
                           ? Container(
                               width: MediaQuery.of(context).size.width * 0.8,
@@ -473,13 +379,11 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                                                     width: 30,
                                                     alignment: Alignment.center,
                                                     child: Icon(
-                                                        Icons.add_circle,
-                                                        size: 24,
-                                                        color: Color.fromRGBO(
-                                                            255,
-                                                            141,
-                                                            64,
-                                                            1))))),
+                                                      Icons.add_circle,
+                                                      size: 24,
+                                                      color: Color.fromRGBO(
+                                                          27, 57, 119, 1),
+                                                    )))),
                                       ],
                                     ))),
                           ],
@@ -569,15 +473,10 @@ _startBot() async {
   Order += "\nІм'я: ${nameController.text}\n" +
       "Телефон: ${phoneController.text}\n" +
       "Коментарі: ${commentController.text}\n" +
-      "Вулиця: ${streetController.text}\n" +
-      "Дім: ${houseController.text}\n" +
-      "Кв.: ${apartmentController.text}\n"
-          "Палички та соуси: " +
-      sauces.toString() +
-      "шт.";
-  cash ? Order += "\nОплата готівкою" : Order += "\nОплата карткою";
+      "адреса: ${streetController.text}\n" +
+      "кількість персон: " +
+      sauces.toString();
   !courier ? Order += "\nДоставка кур'єром" : Order += "\nСамовивіз";
-  courier ? Order += "\nПункт видачі: " + selectedValue.toString() : "";
   Order += "\nЗамовлення: ";
   for (int i = 0; i < basket.length; i++)
     Order += basket[i].name + " " + counters[basket[i]].toString() + " шт., \n";
