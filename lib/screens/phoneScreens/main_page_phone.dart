@@ -154,7 +154,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                   child: Container(
                                     padding: EdgeInsets.only(top: 10),
                                     width: 220,
-                                    height: 200,
+                                    height: 250,
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -173,7 +173,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                             itemBuilder: (context, index) {
                                               Product product = basket[index];
                                               return Container(
-                                                child: Text(product.name+" "+counters[product].toString()+" шт.",
+                                                child: Text(product.name+", "+counters[product].toString()+" шт.",
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.bold,
