@@ -157,7 +157,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                     height: 250,
                                     child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                          MainAxisAlignment.spaceAround,
                                       children: [
                                         Container(
                                           margin: EdgeInsets.fromLTRB(10, 10, 10, 10),

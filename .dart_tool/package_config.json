@@ -39,13 +39,13 @@
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.5",
+      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.6",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.19"
     },
     {
       "name": "dropdown_button2",
-      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/dropdown_button2-2.3.4",
+      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/dropdown_button2-2.3.9",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -54,12 +54,6 @@
       "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
-    },
-    {
-      "name": "file",
-      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/file-7.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
     },
     {
       "name": "flutter",
@@ -75,9 +69,9 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.2",
+      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.3",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.19"
     },
     {
       "name": "flutter_test",
@@ -93,9 +87,9 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/http-0.13.6",
+      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "http_parser",
@@ -146,12 +140,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "platform",
-      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/platform-3.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "sky_engine",
       "rootUri": "file:///D:/android%20studio/flutter_windows_3.10.4-stable/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -183,9 +171,9 @@
     },
     {
       "name": "teledart",
-      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/teledart-0.5.6",
+      "rootUri": "file:///C:/Users/Andrei/AppData/Local/Pub/Cache/hosted/pub.dev/teledart-0.6.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "term_glyph",
@@ -218,7 +206,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-09-04T05:44:44.251570Z",
+  "generated": "2023-09-11T15:27:38.831641Z",
   "generator": "pub",
   "generatorVersion": "3.0.3"
 }

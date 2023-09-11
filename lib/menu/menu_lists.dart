@@ -379,7 +379,7 @@ List<Product> maki = [
     price: '180₴',
   ),
   Product(
-    image: ' assets/Makі z vugrem.jpg',
+    image: 'assets/Makі z vugrem.jpg',
     weight: '160 г',
     description: 'Вугор, Соус унагі, Кунжут',
     name: 'Макі з вугрем',
