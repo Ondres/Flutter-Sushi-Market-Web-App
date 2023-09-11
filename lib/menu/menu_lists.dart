@@ -32,6 +32,10 @@ List<String> images = [
   "assets/Sushi.png",
 ];
 
+
+
+
+
 Product pr =   Product(
   image: 'assets/sushi1.png',
   weight: '300 г',
@@ -39,6 +43,64 @@ Product pr =   Product(
   name: 'Червоний дракон',
   price: '270₴',
 );
+
+List<Product> sets = [
+  Product(
+    image: 'assets/Blu-fіn.jpg',
+    weight: '580 г',
+    description:
+    'Філадельфія класична, Каліфорнія креветка з крабом',
+    name: 'Набор 1',
+    price: '450₴',
+  ),
+
+  Product(
+    image: 'assets/Blu-fіn.jpg',
+    weight: '580 г',
+    description:
+    'Білий дракон, Макі з лососем, Гункан з гребінцем',
+    name: 'Набор 2',
+    price: '640₴',
+  ),
+
+  Product(
+    image: 'assets/Blu-fіn.jpg',
+    weight: '830 г',
+    description:
+    'Імператор, Рай-тай, Фьюджи',
+    name: 'Набор 3',
+    price: '700₴',
+  ),
+
+  Product(
+    image: 'assets/Blu-fіn.jpg',
+    weight: '860 г',
+    description:
+    'Філадельфія мікс, Каліфорнія з тунцем, Гункан з гребінцем, Гункан з креветкою',
+    name: 'Набор 4',
+    price: '970₴',
+  ),
+
+  Product(
+    image: 'assets/Blu-fіn.jpg',
+    weight: '1300 г',
+    description:
+    'Філадельфія люкс,  Канада, Ебі-рол, Блу-фін',
+    name: 'Набор 5',
+    price: '1200₴',
+  ),
+
+  Product(
+    image: 'assets/Blu-fіn.jpg',
+    weight: '1800 г',
+    description:
+    'Чорна перлина, Осака, Чорний дракон, Монако, Філадельфія мікс, Каліфорнія з тунцем ',
+    name: 'Набор 6',
+    price: '1620₴',
+  ),
+
+];
+
 
 List<Product> firmovi = [
   Product(
@@ -95,9 +157,64 @@ List<Product> firmovi = [
     name: 'Ебі-рол',
     price: '250₴',
   ),
+  Product(
+    image: 'assets/332A6450.jpg',
+    weight: '335 г',
+    description:
+    'Авокадо, Лосось, Вугор, Соус унагі, Вершковий сир, Фісташки, Огірок',
+    name: 'Канада',
+    price: '360₴',
+  ),
+
+  Product(
+    image: 'assets/Bonіto.jpg',
+    weight: '255 г',
+    description:
+    'Листя салату, Огірок, Масаго, Лосось смажений, Стружка тунця, Вершковий сир',
+    name: 'Боніто',
+    price: '195₴',
+  ),
+  Product(
+    image: 'assets/Bіlij drakon.jpg',
+    weight: '300 г',
+    description: 'Огірок, Чеддер, Сніговий краб, Соус унагі, Тунець',
+    name: 'Білий дракон',
+    price: '270₴',
+  ),
+  Product(
+    image: 'assets/CHervonij drakon.jpg',
+    weight: '340 г',
+    description: 'Огірок, Вугор, Масаго, Вершковий сир, Червона ікра, Лосось',
+    name: 'Червоний дракон',
+    price: '420₴',
+  ),
+  Product(
+    image: 'assets/CHornij drakon.jpg',
+    weight: '330 г',
+    description:
+    'Вершковий сир, Томго, Креветка, Огірок, Фісташки, Вугор, Соус унагі',
+    name: 'Чорний дракон',
+    price: '380₴',
+  ),
+  Product(
+    image: 'assets/CHorna mamba.jpg',
+    weight: '270 г',
+    description: 'Огірок, Тунець, Вершковий сир, Масаго',
+    name: 'Чорна мамба',
+    price: '270₴',
+  ),
+  Product(
+    image: 'assets/Vegan.jpg',
+    weight: '180 г',
+    description: 'Огірок, Салат чука, Листя салату, Авокадо',
+    name: 'Вегана - нету',
+    price: '180₴',
+  ),
 ];
 
-List<Product> philadelphia = [
+
+
+List<Product> classic = [
   Product(
     image: 'assets/Fіladelfіya klasichna.jpg',
     weight: '300 г',
@@ -140,58 +257,6 @@ List<Product> philadelphia = [
     name: 'Філадельфія з вугрем',
     price: '270₴',
   ),
-];
-
-List<Product> classic = [
-  Product(
-    image: 'assets/332A6450.jpg',
-    weight: '335 г',
-    description:
-    'Авокадо, Лосось, Вугор, Соус унагі, Вершковий сир, Фісташки, Огірок',
-    name: 'Канада',
-    price: '360₴',
-  ),
-
-
-  Product(
-    image: 'assets/Bonіto.jpg',
-    weight: '255 г',
-    description:
-    'Листя салату, Огірок, Масаго, Лосось смажений, Стружка тунця, Вершковий сир',
-    name: 'Боніто',
-    price: '195₴',
-  ),
-  Product(
-    image: 'assets/Bіlij drakon.jpg',
-    weight: '300 г',
-    description: 'Огірок, Чеддер, Сніговий краб, Соус унагі, Тунець',
-    name: 'Білий дракон',
-    price: '270₴',
-  ),
-  Product(
-    image: 'assets/CHervonij drakon.jpg',
-    weight: '340 г',
-    description: 'Огірок, Вугор, Масаго, Вершковий сир, Червона ікра, Лосось',
-    name: 'Червоний дракон',
-    price: '420₴',
-  ),
-  Product(
-    image: 'assets/CHornij drakon.jpg',
-    weight: '330 г',
-    description:
-    'Вершковий сир, Томго, Креветка, Огірок, Фісташки, Вугор, Соус унагі',
-    name: 'Чорний дракон',
-    price: '380₴',
-  ),
-  Product(
-    image: 'assets/CHorna mamba.jpg',
-    weight: '270 г',
-    description: 'Огірок, Тунець, Вершковий сир, Масаго',
-    name: 'Чорна мамба',
-    price: '270₴',
-  ),
-
-
   Product(
     image: 'assets/Kalіfornіya z krevetkoyu ta krabom.jpg',
     weight: '280 г',
@@ -246,6 +311,7 @@ List<Product> classic = [
     name: 'Футомакі з тунцем',
     price: '280₴',
   ),
+
   Product(
     image: 'assets/Osaka.jpg',
     weight: '275 г',
@@ -354,13 +420,7 @@ List<Product> sushi = [
     name: 'Суші з вугрем - нету',
     price: '180₴',
   ),
-  Product(
-    image: 'assets/Vegan.jpg',
-    weight: '180 г',
-    description: 'Огірок, Салат чука, Листя салату, Авокадо',
-    name: 'Вегана - нету',
-    price: '180₴',
-  ),
+
 ];
 
 

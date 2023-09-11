@@ -158,7 +158,15 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: firmovi.sublist(4,7)),
+                                                  sushiList: firmovi.sublist(4,8)),
+                                              SushiList(
+                                                  changeBasket:
+                                                  BasketChangedAdd,
+                                                  sushiList: firmovi.sublist(8,12)),
+                                              SushiList(
+                                                  changeBasket:
+                                                  BasketChangedAdd,
+                                                  sushiList: firmovi.sublist(12,14)),
                                             ],
                                           );
                                         });
@@ -182,11 +190,11 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: philadelphia.sublist(0,4)),
+                                                  sushiList: sets.sublist(0,4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: philadelphia.sublist(4,6)),
+                                                  sushiList: sets.sublist(4,6)),
                                             ],
                                           );
                                         });
@@ -941,7 +949,7 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                                 ));
                               }
                               if (value ==
-                                  "Філадельфія*assets/SushiPhiladelphia.png")
+                                  "Філадельфія*assets/Sushisets.png")
                                 widget.changeContentWidget(Column(
                                   children: [
                                     Container(
@@ -957,19 +965,19 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                                     ),
                                     SushiList(
                                         changeBasket: widget.BasketChangedAdd,
-                                        sushiList: philadelphia),
+                                        sushiList: sets),
                                     SushiList(
                                         changeBasket: widget.BasketChangedAdd,
-                                        sushiList: philadelphia),
+                                        sushiList: sets),
                                     SushiList(
                                         changeBasket: widget.BasketChangedAdd,
-                                        sushiList: philadelphia),
+                                        sushiList: sets),
                                     SushiList(
                                         changeBasket: widget.BasketChangedAdd,
-                                        sushiList: philadelphia),
+                                        sushiList: sets),
                                     SushiList(
                                         changeBasket: widget.BasketChangedAdd,
-                                        sushiList: philadelphia),
+                                        sushiList: sets),
                                   ],
                                 ));
 

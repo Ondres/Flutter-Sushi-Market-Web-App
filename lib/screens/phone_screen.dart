@@ -160,7 +160,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                 SushiListPhone(
                                   changeBasketDel: widget.BasketChangedDel,
                                   changeBasket: widget.BasketChangedAdd,
-                                  sushiList: philadelphia,
+                                  sushiList: sets,
                                 ),
                               ],
                             ));
