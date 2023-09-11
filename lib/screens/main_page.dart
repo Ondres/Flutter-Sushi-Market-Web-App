@@ -158,15 +158,15 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: firmovi.sublist(4,8)),
+                                                  sushiList: firmovi.sublist(4,6)+others.sublist(0,2)),
                                               SushiList(
                                                   changeBasket:
                                                   BasketChangedAdd,
-                                                  sushiList: firmovi.sublist(8,12)),
+                                                  sushiList: others.sublist(2,6)),
                                               SushiList(
                                                   changeBasket:
                                                   BasketChangedAdd,
-                                                  sushiList: firmovi.sublist(12,14)),
+                                                  sushiList: cal.sublist(4,6)),
                                             ],
                                           );
                                         });
@@ -222,15 +222,15 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: classic.sublist(4,8)),
+                                                  sushiList: classic.sublist(4,6)+cal.sublist(0,2)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: classic.sublist(8,12)),
+                                                  sushiList: cal.sublist(2,4)+fila.sublist(0,2)),
                                               SushiList(
                                                   changeBasket:
                                                   BasketChangedAdd,
-                                                  sushiList: classic.sublist(12,14)),
+                                                  sushiList: fila.sublist(2,6)),
                                             ],
                                           );
                                         });

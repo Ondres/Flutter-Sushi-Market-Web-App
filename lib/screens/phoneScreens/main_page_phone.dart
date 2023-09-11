@@ -92,7 +92,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
-              child: Text("Фірмові роли",
+              child: Text("Набори",
                   style: TextStyle(
                       fontSize: 35,
                       color: Color.fromRGBO(27, 57, 119, 1),
@@ -101,7 +101,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
             SushiListPhone(
               changeBasketDel: BasketChangedDel,
               changeBasket: BasketChangedAdd,
-              sushiList: firmovi,
+              sushiList: sets,
             ),
           ],
         );

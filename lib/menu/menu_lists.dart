@@ -7,13 +7,18 @@ Map<Product, int> counters = {};
 List<Product> basket = [
 ];
 
-String? currentValue =  "Фірмові роли*assets/SignatureSushi.png";
+String? currentValue =  "Набори*assets/SushiPhiladelphia.png";
+
 final List<String> menu_items = [
-  "Фірмові роли*assets/SignatureSushi.png",
   "Набори*assets/SushiPhiladelphia.png",
+  "Фірмові роли*assets/SignatureSushi.png",
   "Великі роли*assets/ClassicSushi.png",
   "Роли в норі*assets/SushiMaki.png",
-  "Суші та гункани*assets/Sushi.png"
+  "Суші та гункани*assets/Sushi.png",
+
+  "Новинки*assets/SushiPhiladelphia.png",
+  "Філадельфія*assets/ClassicSushi.png",
+  "Класичні*assets/SignatureSushi.png",
 ];
 
 List<String> chapters = [
@@ -36,7 +41,7 @@ List<String> images = [
 
 
 
-Product pr =   Product(
+Product pr = Product(
   image: 'assets/sushi1.png',
   weight: '300 г',
   description: 'Червоний дракон, Лосось, вугор, крем-сир, масаго, огірок, червона ікра, спайси соус',
@@ -53,7 +58,6 @@ List<Product> sets = [
     name: 'Набор 1',
     price: '450₴',
   ),
-
   Product(
     image: 'assets/Blu-fіn.jpg',
     weight: '580 г',
@@ -100,39 +104,35 @@ List<Product> sets = [
   ),
 
 ];
-
-
-List<Product> firmovi = [
+///////////////////////////
+List<Product> cal = [
   Product(
-    image: 'assets/Blu-fіn.jpg',
-    weight: '340 г',
-    description:
-    'Лосось, Тунець, Креветка, Огірок, Масаго, Соус унагі, Вершковий сир',
-    name: 'Блу-фін',
-    price: '350₴',
+    image: 'assets/Kalіfornіya z krevetkoyu ta krabom.jpg',
+    weight: '280 г',
+    description: 'Огірок, Авокадо, Сніговий краб, Масаго, Майонез, Креветка',
+    name: 'Каліфорнія з крабом та криветкою',
+    price: '200₴',
   ),
   Product(
-    image: 'assets/Alyaska.jpg',
-    weight: '250 г',
-    description:
-    'Лосось, вугор, Вершковий сир, Авокадо, Огірок, Фисташка, Унагі соус',
-    name: 'Аляска - нету',
-    price: '230₴',
+    image: 'assets/Kalіfornіya z lososem.jpg',
+    weight: '270 г',
+    description: 'Лосось, Огірок, Авокадо, Масаго, Майонез',
+    name: 'Каліфорнія з лососем',
+    price: '250₴',
   ),
   Product(
-    image: 'assets/Lanch rol.jpg',
-    weight: '340 г',
-    description:
-    'Лосось, Вершковий сир, Масаго, Огірок, Соус унагі, Чеддер, Мигдаль',
-    name: 'Ланч-рол',
-    price: '300₴',
+    image: 'assets/Kalіfornіya z tuntsem.jpg',
+    weight: '270 г',
+    description: 'Огарок, Авокадо, Масаго, Тунець',
+    name: 'Каліфорная з тунцем',
+    price: '270₴',
   ),
   Product(
-    image: 'assets/Іmperator.jpg',
-    weight: '300 г',
-    description: 'Лосось, Огірок, Тунець, Масаго, Креветки',
-    name: 'Імператор',
-    price: '300₴',
+    image: 'assets/Kalіfornіya z vugrem.jpg',
+    weight: '290 г',
+    description: 'Огірок, Авокадо, Майонез, Вугор, Соус унагі, Кунжут',
+    name: 'Каліфорнія з вугрем',
+    price: '290₴',
   ),
   Product(
     image: 'assets/Pekіn.jpg',
@@ -142,79 +142,16 @@ List<Product> firmovi = [
     price: '270₴',
   ),
   Product(
-    image: 'assets/CHorna perlina.jpg',
-    weight: '300 г',
+    image: 'assets/Alyaska.jpg',
+    weight: '250 г',
     description:
-    'Огірок, Вершковий сир, Чеддер, Соус унагі, Лосось, Соус солодкий чілі',
-    name: 'Чорна перлина',
-    price: '250₴',
-  ),
-  Product(
-    image: 'assets/Ebі-rol.jpg',
-    weight: '295 г',
-    description:
-    'Креветка, Масаго, Чеддер, Вершковий сир, Авокадо, Соус унагі, Пармезан, Соус солодкий чілі',
-    name: 'Ебі-рол',
-    price: '250₴',
-  ),
-  Product(
-    image: 'assets/332A6450.jpg',
-    weight: '335 г',
-    description:
-    'Авокадо, Лосось, Вугор, Соус унагі, Вершковий сир, Фісташки, Огірок',
-    name: 'Канада',
-    price: '360₴',
-  ),
-
-  Product(
-    image: 'assets/Bonіto.jpg',
-    weight: '255 г',
-    description:
-    'Листя салату, Огірок, Масаго, Лосось смажений, Стружка тунця, Вершковий сир',
-    name: 'Боніто',
-    price: '195₴',
-  ),
-  Product(
-    image: 'assets/Bіlij drakon.jpg',
-    weight: '300 г',
-    description: 'Огірок, Чеддер, Сніговий краб, Соус унагі, Тунець',
-    name: 'Білий дракон',
-    price: '270₴',
-  ),
-  Product(
-    image: 'assets/CHervonij drakon.jpg',
-    weight: '340 г',
-    description: 'Огірок, Вугор, Масаго, Вершковий сир, Червона ікра, Лосось',
-    name: 'Червоний дракон',
-    price: '420₴',
-  ),
-  Product(
-    image: 'assets/CHornij drakon.jpg',
-    weight: '330 г',
-    description:
-    'Вершковий сир, Томго, Креветка, Огірок, Фісташки, Вугор, Соус унагі',
-    name: 'Чорний дракон',
-    price: '380₴',
-  ),
-  Product(
-    image: 'assets/CHorna mamba.jpg',
-    weight: '270 г',
-    description: 'Огірок, Тунець, Вершковий сир, Масаго',
-    name: 'Чорна мамба',
-    price: '270₴',
-  ),
-  Product(
-    image: 'assets/Vegan.jpg',
-    weight: '180 г',
-    description: 'Огірок, Салат чука, Листя салату, Авокадо',
-    name: 'Вегана - нету',
-    price: '180₴',
+    'Лосось, вугор, Вершковий сир, Авокадо, Огірок, Фисташка, Унагі соус',
+    name: 'Аляска',
+    price: '230₴',
   ),
 ];
-
-
-
-List<Product> classic = [
+////////////////////////////////
+List<Product> fila = [
   Product(
     image: 'assets/Fіladelfіya klasichna.jpg',
     weight: '300 г',
@@ -257,35 +194,118 @@ List<Product> classic = [
     name: 'Філадельфія з вугрем',
     price: '270₴',
   ),
+];
+///////////////////////////////////
+List<Product> firmovi = [
   Product(
-    image: 'assets/Kalіfornіya z krevetkoyu ta krabom.jpg',
-    weight: '280 г',
-    description: 'Огірок, Авокадо, Сніговий краб, Масаго, Майонез, Креветка',
-    name: 'Каліфорнія з крабом та криветкою',
-    price: '200₴',
+    image: 'assets/Blu-fіn.jpg',
+    weight: '340 г',
+    description:
+    'Лосось, Тунець, Креветка, Огірок, Масаго, Соус унагі, Вершковий сир',
+    name: 'Блу-фін',
+    price: '350₴',
   ),
   Product(
-    image: 'assets/Kalіfornіya z lososem.jpg',
-    weight: '270 г',
-    description: 'Лосось, Огірок, Авокадо, Масаго, Майонез',
-    name: 'Каліфорнія з лососем',
+    image: 'assets/Іmperator.jpg',
+    weight: '300 г',
+    description: 'Лосось, Огірок, Тунець, Масаго, Креветки',
+    name: 'Імператор',
+    price: '300₴',
+  ),
+
+  Product(
+    image: 'assets/CHorna perlina.jpg',
+    weight: '300 г',
+    description:
+    'Огірок, Вершковий сир, Чеддер, Соус унагі, Лосось, Соус солодкий чілі',
+    name: 'Чорна перлина',
     price: '250₴',
   ),
   Product(
-    image: 'assets/Kalіfornіya z tuntsem.jpg',
-    weight: '270 г',
-    description: 'Огарок, Авокадо, Масаго, Тунець',
-    name: 'Каліфорная з тунцем',
+    image: 'assets/Bіlij drakon.jpg',
+    weight: '300 г',
+    description: 'Огірок, Чеддер, Сніговий краб, Соус унагі, Тунець',
+    name: 'Білий дракон',
     price: '270₴',
   ),
   Product(
-    image: 'assets/Kalіfornіya z vugrem.jpg',
-    weight: '290 г',
-    description: 'Огірок, Авокадо, Майонез, Вугор, Соус унагі, Кунжут',
-    name: 'Каліфорнія з вугрем',
-    price: '290₴',
+    image: 'assets/CHervonij drakon.jpg',
+    weight: '340 г',
+    description: 'Огірок, Вугор, Масаго, Вершковий сир, Червона ікра, Лосось',
+    name: 'Червоний дракон',
+    price: '420₴',
+  ),
+  Product(
+    image: 'assets/CHornij drakon.jpg',
+    weight: '330 г',
+    description:
+    'Вершковий сир, Томго, Креветка, Огірок, Фісташки, Вугор, Соус унагі',
+    name: 'Чорний дракон',
+    price: '380₴',
   ),
 
+
+];
+/////////////////////////
+List<Product> others = [
+  Product(
+    image: 'assets/Bonіto.jpg',
+    weight: '255 г',
+    description:
+    'Листя салату, Огірок, Масаго, Лосось смажений, Стружка тунця, Вершковий сир',
+    name: 'Боніто',
+    price: '195₴',
+  ),
+  Product(
+    image: 'assets/Ebі-rol.jpg',
+    weight: '295 г',
+    description:
+    'Креветка, Масаго, Чеддер, Вершковий сир, Авокадо, Соус унагі, Пармезан, Соус солодкий чілі',
+    name: 'Ебі-рол',
+    price: '250₴',
+  ),
+  Product(
+    image: 'assets/Lanch rol.jpg',
+    weight: '340 г',
+    description:
+    'Лосось, Вершковий сир, Масаго, Огірок, Соус унагі, Чеддер, Мигдаль',
+    name: 'Ланч-рол',
+    price: '300₴',
+  ),
+  Product(
+    image: 'assets/Vegan.jpg',
+    weight: '180 г',
+    description: 'Огірок, Салат чука, Листя салату, Авокадо',
+    name: 'Вегана',
+    price: '180₴',
+  ),
+  Product(
+    image: 'assets/CHorna mamba.jpg',
+    weight: '270 г',
+    description: 'Огірок, Тунець, Вершковий сир, Масаго',
+    name: 'Чорна мамба',
+    price: '270₴',
+  ),
+  Product(
+    image: 'assets/332A6450.jpg',
+    weight: '335 г',
+    description:
+    'Авокадо, Лосось, Вугор, Соус унагі, Вершковий сир, Фісташки, Огірок',
+    name: 'Канада',
+    price: '360₴',
+  ),
+];
+
+
+
+List<Product> classic = [
+  Product(
+    image: 'assets/Raj-taj.jpg',
+    weight: '265 г',
+    description: 'Авокадо, Огірок, Майонез, Лосось, Креветка',
+    name: 'Рай-тай',
+    price: '190₴',
+  ),
 
   Product(
     image: 'assets/Futomakі z grebіntsem.jpg',
@@ -311,7 +331,6 @@ List<Product> classic = [
     name: 'Футомакі з тунцем',
     price: '280₴',
   ),
-
   Product(
     image: 'assets/Osaka.jpg',
     weight: '275 г',
@@ -320,15 +339,22 @@ List<Product> classic = [
     name: 'Осака',
     price: '180₴',
   ),
+  Product(
+    image: 'assets/Іmperator.jpg',
+    weight: '300 г',
+    description: 'Лосось, Огірок, Тунець, Масаго, Креветки',
+    name: 'Імператор',
+    price: '300₴',
+  ),
 ];
 
-
+/////////////////////////
 List<Product> maki = [
   Product(
     image: 'assets/Makі z avokado.jpg',
     weight: '200 г',
     description: 'Авокадо, Соус унагі',
-    name: 'Макі з авокадо - нету',
+    name: 'Макі з авокадо',
     price: '200₴',
   ),
   Product(
@@ -367,13 +393,7 @@ List<Product> maki = [
     name: 'Фьюджи',
     price: '250₴',
   ),
-  Product(
-    image: 'assets/Raj-taj.jpg',
-    weight: '265 г',
-    description: 'Авокадо, Огірок, Майонез, Лосось, Креветка',
-    name: 'Рай-тай',
-    price: '190₴',
-  ),
+
 ];
 
 
@@ -389,7 +409,7 @@ List<Product> sushi = [
     image: 'assets/Gunkan z lososem.jpg',
     weight: '250 г',
     description: 'Соус спайсі, Масаго, Лосось',
-    name: 'Гункан з лососем - нету',
+    name: 'Гункан з лососем',
     price: '230₴',
   ),
   Product(
@@ -410,14 +430,14 @@ List<Product> sushi = [
     image: 'assets/Sushі z lososem.jpg',
     weight: '180 г',
     description: 'Лосось, Рис',
-    name: 'Суші з лососем - нету',
+    name: 'Суші з лососем',
     price: '180₴',
   ),
   Product(
     image: 'assets/Sushі z vugrem.jpg',
     weight: '180 г',
     description: 'Вугор, Соус унагі, Кунжут',
-    name: 'Суші з вугрем - нету',
+    name: 'Суші з вугрем',
     price: '180₴',
   ),
 

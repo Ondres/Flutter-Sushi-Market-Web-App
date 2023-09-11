@@ -230,6 +230,69 @@ class _PhoneScreenState extends State<PhoneScreen> {
                               ],
                             ));
 
+                          if (value == "Класичні*assets/SignatureSushi.png")
+                            widget.changeContentWidget(Column(
+                              children: [
+                                Container(
+                                  alignment: Alignment.centerLeft,
+                                  margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
+                                  child: Text("Класичні",
+                                      style: TextStyle(
+                                          fontSize: 35,
+                                          color:
+                                          Color.fromRGBO(27, 57, 119, 1),
+                                          fontWeight: FontWeight.bold)),
+                                ),
+                                SushiListPhone(
+                                  changeBasketDel: widget.BasketChangedDel,
+                                  changeBasket: widget.BasketChangedAdd,
+                                  sushiList: cal,
+                                ),
+                              ],
+                            ));
+
+                          if (value == "Філадельфія*assets/ClassicSushi.png")
+                            widget.changeContentWidget(Column(
+                              children: [
+                                Container(
+                                  alignment: Alignment.centerLeft,
+                                  margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
+                                  child: Text("Філадельфія",
+                                      style: TextStyle(
+                                          fontSize: 35,
+                                          color:
+                                          Color.fromRGBO(27, 57, 119, 1),
+                                          fontWeight: FontWeight.bold)),
+                                ),
+                                SushiListPhone(
+                                  changeBasketDel: widget.BasketChangedDel,
+                                  changeBasket: widget.BasketChangedAdd,
+                                  sushiList: fila,
+                                ),
+                              ],
+                            ));
+
+                          if (value == "Новинки*assets/SushiPhiladelphia.png")
+                            widget.changeContentWidget(Column(
+                              children: [
+                                Container(
+                                  alignment: Alignment.centerLeft,
+                                  margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
+                                  child: Text("Новинки",
+                                      style: TextStyle(
+                                          fontSize: 35,
+                                          color:
+                                          Color.fromRGBO(27, 57, 119, 1),
+                                          fontWeight: FontWeight.bold)),
+                                ),
+                                SushiListPhone(
+                                  changeBasketDel: widget.BasketChangedDel,
+                                  changeBasket: widget.BasketChangedAdd,
+                                  sushiList: others,
+                                ),
+                              ],
+                            ));
+
                           Navigator.pop(context);
                         },
                         buttonStyleData: ButtonStyleData(
@@ -250,7 +313,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                           iconDisabledColor: Colors.grey,
                         ),
                         dropdownStyleData: DropdownStyleData(
-                          maxHeight: 200,
+                          maxHeight: 330,
                           width: MediaQuery.of(context).size.width * 0.75,
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(250, 249, 249, 1.0),

@@ -62,8 +62,8 @@ class _SushiListState extends State<SushiList> {
                               )),
                         )),
                     Container(
-                      height: 35,
-                      margin: EdgeInsets.fromLTRB(5, 20, 0, 0),
+                      height: 45,
+                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
                       child: Text(
                         sushiList[index].name,
                         style: TextStyle(
@@ -73,18 +73,30 @@ class _SushiListState extends State<SushiList> {
                       alignment: Alignment.centerLeft,
                     ),
                     Container(
+                      height: 45,
+                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
+                      child: Text(
+                        sushiList[index].description,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color.fromRGBO(27, 57, 119, 1),
+                        ),
+                      ),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
                       height: 15,
-                      margin: EdgeInsets.fromLTRB(5, 50, 0, 0),
+                      margin: EdgeInsets.fromLTRB(5, 10, 0, 0),
                       child: Text("Вага: " + sushiList[index].weight),
                       alignment: Alignment.centerLeft,
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: EdgeInsets.only(top: 3),
                       height: 1,
                       color: Colors.black,
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: EdgeInsets.only(top: 3),
                       height: 40,
                       alignment: Alignment.center,
                       child: Row(
@@ -182,7 +194,7 @@ void showAlertDialog(BuildContext context, Product sushiTtem, Function func,) {
                         sushiTtem.weight,
                         style: TextStyle(
                           fontSize: 12,
-                          color: Colors.orange,
+                          color: Color.fromRGBO(27, 57, 119, 1),
                         ),
                       ),
                     ),
