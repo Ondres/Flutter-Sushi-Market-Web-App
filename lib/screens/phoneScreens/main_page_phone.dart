@@ -172,6 +172,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                             itemCount: basket.length,
                                             itemBuilder: (context, index) {
                                               Product product = basket[index];
+                                              if(counters[product].toString()!='0')
                                               return Container(
                                                 child: Text(product.name+", "+counters[product].toString()+" шт.",
                                                   style: TextStyle(
@@ -179,6 +180,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
                                                     fontWeight: FontWeight.bold,
                                                   ),),
                                               );
+                                              return Container();
                                             },
                                           ),
                                         ),
@@ -341,7 +343,7 @@ class _SalesWidgetState extends State<SalesWidget> {
               children: [
                 SushiListPhone(
                   changeBasketDel: widget.changeBasketDel,
-                  sushiList: firmovi_roll.sublist(0,4),
+                  sushiList: firmovi_roll.sublist(0,3),
                   changeBasket: widget.changeBasket,
                 ),
               ],

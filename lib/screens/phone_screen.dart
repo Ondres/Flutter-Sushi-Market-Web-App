@@ -41,20 +41,20 @@ class _PhoneScreenState extends State<PhoneScreen> {
                       children: [
                         Container(
                           margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                          padding: EdgeInsets.only(right: 100),
+                          padding: EdgeInsets.only(right: 200),
                           child: Container(
-                            width: 190,
+                            width: 80,
                             height: 80,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage('assets/small_logo.png'),
-                                fit: BoxFit.fitWidth,
+                                image: AssetImage('assets/UMI_logo.png'),
+                                fit: BoxFit.fitHeight,
                               ),
                             ),
                           ),
                         ),
                         SizedBox(
-                          height: 40,
+                          height: 20,
                         ),
                         TextButton(
                           onPressed: () {
@@ -528,9 +528,9 @@ class _PhoneTopWidgetState extends State<PhoneTopWidget> {
               ));
             },
             child: Image.asset(
-              'assets/small_logo.png',
-              width: 200,
-              height: 100,
+              'assets/UMI_logo.png',
+              width: 100,
+              height: 80,
             ),
           )
         ],

@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   void BasketChangedAdd(Product product, bool same) {
-    if (!same&&!basket.contains(product)) {
+    if (!same && !basket.contains(product)) {
       setState(() {
         basket.add(product);
         totalPrice += int.parse(product.price.replaceAll("₴", ""));
@@ -112,18 +112,18 @@ class _MainPageState extends State<MainPage> {
                                 padding: EdgeInsets.zero,
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(25),
-                                child:  Container(
-                                  width: 150,
-                                  height: 150,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage('assets/UMI_logo.png'),
-                                        fit: BoxFit.contain,
-                                      )),
-                                  alignment: Alignment.topCenter,
-                                ))
-                              ): Container(),
+                                  padding: EdgeInsets.all(25),
+                                  child: Container(
+                                    width: 150,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                      image: AssetImage('assets/UMI_logo.png'),
+                                      fit: BoxFit.fitHeight,
+                                    )),
+                                    alignment: Alignment.topCenter,
+                                  )))
+                          : Container(),
                       MediaQuery.of(context).size.width >= 1400
                           ? Container(
                               padding: EdgeInsets.only(left: 20),
@@ -153,20 +153,24 @@ class _MainPageState extends State<MainPage> {
                                               ),
                                               SushiList(
                                                 changeBasket: BasketChangedAdd,
-                                                sushiList: firmovi.sublist(0,4),
+                                                sushiList:
+                                                    firmovi.sublist(0, 4),
                                               ),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: firmovi.sublist(4,6)+others.sublist(0,2)),
+                                                  sushiList:
+                                                      firmovi.sublist(4, 6) +
+                                                          others.sublist(0, 2)),
                                               SushiList(
                                                   changeBasket:
-                                                  BasketChangedAdd,
-                                                  sushiList: others.sublist(2,6)),
+                                                      BasketChangedAdd,
+                                                  sushiList:
+                                                      others.sublist(2, 6)),
                                               SushiList(
                                                   changeBasket:
-                                                  BasketChangedAdd,
-                                                  sushiList: cal.sublist(4,6)),
+                                                      BasketChangedAdd,
+                                                  sushiList: cal.sublist(4, 6)),
                                             ],
                                           );
                                         });
@@ -190,11 +194,13 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: sets.sublist(0,4)),
+                                                  sushiList:
+                                                      sets.sublist(0, 4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: sets.sublist(4,6)),
+                                                  sushiList:
+                                                      sets.sublist(4, 6)),
                                             ],
                                           );
                                         });
@@ -218,19 +224,24 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: classic.sublist(0,4)),
+                                                  sushiList:
+                                                      classic.sublist(0, 4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: classic.sublist(4,6)+cal.sublist(0,2)),
+                                                  sushiList:
+                                                      classic.sublist(4, 6) +
+                                                          cal.sublist(0, 2)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: cal.sublist(2,4)+fila.sublist(0,2)),
+                                                  sushiList: cal.sublist(2, 4) +
+                                                      fila.sublist(0, 2)),
                                               SushiList(
                                                   changeBasket:
-                                                  BasketChangedAdd,
-                                                  sushiList: fila.sublist(2,6)),
+                                                      BasketChangedAdd,
+                                                  sushiList:
+                                                      fila.sublist(2, 6)),
                                             ],
                                           );
                                         });
@@ -254,11 +265,13 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: maki.sublist(0,4)),
+                                                  sushiList:
+                                                      maki.sublist(0, 4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: maki.sublist(4,6)),
+                                                  sushiList:
+                                                      maki.sublist(4, 6)),
                                             ],
                                           );
                                         });
@@ -282,11 +295,13 @@ class _MainPageState extends State<MainPage> {
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: sushi.sublist(0,4)),
+                                                  sushiList:
+                                                      sushi.sublist(0, 4)),
                                               SushiList(
                                                   changeBasket:
                                                       BasketChangedAdd,
-                                                  sushiList: sushi.sublist(4,6)),
+                                                  sushiList:
+                                                      sushi.sublist(4, 6)),
                                             ],
                                           );
                                         });
@@ -590,7 +605,6 @@ class _SalesWidgetState extends State<SalesWidget> {
             ],
           ),
         ),
-
         Container(
           alignment: Alignment.centerLeft,
           margin: EdgeInsets.fromLTRB(30, 0, 30, 50),
@@ -682,14 +696,13 @@ class _SalesWidgetState extends State<SalesWidget> {
                               minimumSize: Size(100, 45),
                             ),
                             onPressed: () {
-                              if(counters.containsKey(pr)) {
+                              if (counters.containsKey(pr)) {
                                 setState(() {
                                   int k = counters[pr]!;
                                   k++;
                                   counters[pr] = k;
                                 });
-                              }
-                              else
+                              } else
                                 counters[pr] = 1;
                               widget.changeBasket(pr, false);
                             },
@@ -767,7 +780,6 @@ class _SalesWidgetState extends State<SalesWidget> {
             ],
           ),
         ),
-
       ],
     );
   }
@@ -948,8 +960,7 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                                   ],
                                 ));
                               }
-                              if (value ==
-                                  "Філадельфія*assets/Sushisets.png")
+                              if (value == "Філадельфія*assets/Sushisets.png")
                                 widget.changeContentWidget(Column(
                                   children: [
                                     Container(
@@ -1134,7 +1145,6 @@ class _TopBoardWidgetState extends State<TopBoardWidget> {
                     ),
                   ),
                 ),
-
                 TextButton(
                   onPressed: () {
                     widget.changeContentWidget(DeliveryInfo());
@@ -1202,9 +1212,10 @@ class BottomContacts extends StatefulWidget {
   final Function(Product, bool) changeBasketAdd;
   final Function(Widget) changeContentWidget;
 
-  const BottomContacts({
-    required this.changeBasketAdd,
-    required this.changeContentWidget, super.key});
+  const BottomContacts(
+      {required this.changeBasketAdd,
+      required this.changeContentWidget,
+      super.key});
 
   @override
   State<BottomContacts> createState() => _BottomContactsState();
@@ -1229,20 +1240,25 @@ class _BottomContactsState extends State<BottomContacts> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                        image: AssetImage('assets/small_logo.png'),
-                        fit: BoxFit.fitWidth,
-                      )),
-                      height: 64,
                       width: 200,
+                      padding: EdgeInsets.only(right: 136),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                          image: AssetImage('assets/UMI_logo.png'),
+                          fit: BoxFit.fitHeight,
+                        )),
+                        height: 64,
+                        width: 64,
+                      ),
                     ),
                     TextButton(
                         onPressed: () {
-                          widget.changeContentWidget(contentWidget = SalesWidget(
+                          widget
+                              .changeContentWidget(contentWidget = SalesWidget(
                             changeBasket: widget.changeBasketAdd,
                           ));
-                          },
+                        },
                         child: Container(
                           width: 200,
                           child: Text(
@@ -1250,7 +1266,6 @@ class _BottomContactsState extends State<BottomContacts> {
                             style: TextStyle(fontSize: 16, color: Colors.black),
                           ),
                         )),
-
                     TextButton(
                         onPressed: () {
                           widget.changeContentWidget(AboutUs());
@@ -1262,7 +1277,6 @@ class _BottomContactsState extends State<BottomContacts> {
                             style: TextStyle(fontSize: 16, color: Colors.black),
                           ),
                         )),
-
                     TextButton(
                         onPressed: () {
                           widget.changeContentWidget(DeliveryInfo());
@@ -1353,7 +1367,6 @@ class _BottomContactsState extends State<BottomContacts> {
                             Container(
                               width: 75,
                               child: Row(
-
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
@@ -1414,7 +1427,6 @@ class _BottomContactsState extends State<BottomContacts> {
             child: Text("© 2023 SuCheff Все права защищены"),
           ),
         ),
-
       ],
     );
   }
