@@ -18,12 +18,13 @@ final TextEditingController streetController = TextEditingController();
 final TextEditingController houseController = TextEditingController();
 final TextEditingController apartmentController = TextEditingController();
 var sauces = 1;
+bool C = true;
 bool cash = true;
 bool courier = true;
-String? selectedValue = "м.Дніпро, Панікахи, 17";
+String? selectedValue = "Святослава Хороброго, 24";
 
 final List<String> items = [
-  'м.Дніпро, Панікахи, 17',
+  'Святослава Хороброго, 24',
   'м.Дніпро, Роторна, 23',
   'м.Дніпро, Чкалова, 24',
 ];
@@ -49,7 +50,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 20),
-      height: !basket.isEmpty ? 880 : 680,
+      height: !basket.isEmpty ? 910 : 680,
       width: MediaQuery.of(context).size.width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -72,6 +73,11 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                           margin: EdgeInsets.only(bottom: 20),
                           child: TextField(
                             controller: phoneController,
+                            onChanged: (value) {
+                              setState(() {
+                                C = !C;
+                              });
+                            },
                             decoration: InputDecoration(
                               hintText: 'Телефон',
                               hintStyle: TextStyle(
@@ -239,7 +245,6 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                           ],
                         ),
                       ),
-
                       !courier
                           ? Container(
                               width: MediaQuery.of(context).size.width * 0.8,
@@ -247,6 +252,11 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                               margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
                               child: TextField(
                                 controller: streetController,
+                                onChanged: (value) {
+                                  setState(() {
+                                    C = !C;
+                                  });
+                                },
                                 decoration: InputDecoration(
                                   hintText: 'Адреса',
                                   hintStyle: TextStyle(
@@ -396,7 +406,7 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
             ),
           ),
           Container(
-            height: 120,
+            height: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -426,19 +436,34 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                         ),
                       ],
                     )),
+                Container(
+                  height: 20,
+                  margin: EdgeInsets.all(10),
+                  child: Text((streetController.text.isEmpty || phoneController.text.isEmpty)&&
+                          !courier
+                      ? "Введіть номер телефона та адресу"
+                      : phoneController.text.isEmpty && courier
+                          ? "Введіть номер телефону"
+                          : ""),
+                ),
                 TextButton(
                   style: ButtonStyle(
                     padding:
                         MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
                   ),
                   onPressed: () async {
-                    await _startBot();
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return CustomAlertDialog(); // Вызов нашего алерт-диалога
-                      },
-                    );
+                    if ((!streetController.text.isEmpty &&
+                            !courier &&
+                            !phoneController.text.isEmpty) ||
+                        (!phoneController.text.isEmpty && courier)) {
+                      await _startBot();
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return CustomAlertDialog(); // Вызов нашего алерт-диалога
+                        },
+                      );
+                    }
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -451,7 +476,12 @@ class _OrderPagePhoneState extends State<OrderPagePhone> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular((10))),
-                      color: Color.fromRGBO(27, 57, 119, 1),
+                      color: (!streetController.text.isEmpty &&
+                                  !courier &&
+                                  !phoneController.text.isEmpty) ||
+                              (!phoneController.text.isEmpty && courier)
+                          ? Color.fromRGBO(27, 57, 119, 1)
+                          : Colors.grey,
                     ),
                   ),
                 ),

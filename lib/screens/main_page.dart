@@ -1183,7 +1183,7 @@ class _BottomInfoState extends State<BottomInfo> {
         children: [
           Container(
             alignment: Alignment.centerLeft,
-            margin: EdgeInsets.fromLTRB(60, 0, 60, 20),
+            margin: EdgeInsets.fromLTRB(60, 50, 60, 20),
             child: Text("Суші у Дніпрі",
                 style: TextStyle(
                     fontSize: 35,
@@ -1200,7 +1200,12 @@ class _BottomInfoState extends State<BottomInfo> {
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.fromLTRB(60, 0, 60, 50),
             child: Text(
-                "Nisl justo bibendum in tellus auctor tempor sed. Neque, nibh laoreet semper ultricies amet accumsan, feugiat. Auctor velit odio ullamcorper arcu diam. Ac semper sem enim nam elit fermentum, vitae. Adipiscing in netus netus proin in tellus sit. Dapibus urna amet sapien, amet. Pellentesque tempus non orci tortor nullam. Et at amet quis egestas. Quisque morbi fermentum vestibulum quis. Tellus scelerisque fermentum ipsum molestie magna ut est. Ac quam nulla ipsum porta enim, vestibulum vulputate mauris diam. Donec ac vitae, viverra turpis sit eu, adipiscing dis et. Facilisis augue accumsan neque, maecenas aliquet. In et tincidunt erat vitae vel mi neque faucibus. Sed condimentum elit gravida ultricies varius. Commodo, nulla bibendum aliquet iaculis pellentesque. Morbi sodales at adipiscing libero commodo, maecenas sit tellus arcu. Fringilla quis ac, at ultricies lorem. Tortor pretium aliquam purus tellus mattis nunc cursus. Gravida tortor aenean et, at enim. Pharetra egestas at nulla lectus lectus orci, ornare risus. "),
+              "Замовлення \"на зараз\" надходять у середньому протягом 60-90 хвилин після вашого дзвінка або оформлення на сайті. Час доставки починає рахуватися після повної оплати замовлення. Якщо ви обираєте доставку на конкретну годину, то ви отримаєте своє замовлення у вказаний вами час з можливим відхиленням від заданого на 10 хвилин. Звертаємо увагу, що прийом замовлень на доставку завершується не пізніше, ніж за 60 хвилин до закінчення робочого дня.",
+              style: TextStyle(
+                height: 2.0,
+                fontSize: 15
+              ),
+            ),
           ),
         ],
       ),
@@ -1323,7 +1328,7 @@ class _BottomContactsState extends State<BottomContacts> {
                                       size: 20,
                                     ),
                                     Text(
-                                      " м. Дніпро, Панікахи, 17",
+                                      " Святослава Хороброго, 24",
                                       style: TextStyle(fontSize: 16),
                                     ),
                                   ],
@@ -1349,7 +1354,7 @@ class _BottomContactsState extends State<BottomContacts> {
                                       size: 20,
                                     ),
                                     Text(
-                                      " +38 (050) 20 500 55",
+                                      " +38 (093) 205 0055",
                                       style: TextStyle(fontSize: 16),
                                     ),
                                   ],
@@ -1480,7 +1485,7 @@ class _AdressesWidgetState extends State<AdressesWidget> {
                     size: 20,
                   ),
                   Text(
-                    "м. Дніпро, Панікахи, 17",
+                    "Святослава Хороброго, 24",
                     style: TextStyle(fontSize: 12),
                   ),
                 ],

@@ -7,10 +7,9 @@ Map<Product, int> counters = {};
 List<Product> basket = [
 ];
 
-String? currentValue =  "Набори*assets/SushiPhiladelphia.png";
+String? currentValue =  "Фірмові роли*assets/SignatureSushi.png";
 
 final List<String> menu_items = [
-  "Набори*assets/SushiPhiladelphia.png",
   "Фірмові роли*assets/SignatureSushi.png",
   "Великі роли*assets/ClassicSushi.png",
   "Роли в норі*assets/SushiMaki.png",
@@ -19,6 +18,8 @@ final List<String> menu_items = [
   "Новинки*assets/SushiPhiladelphia.png",
   "Філадельфія*assets/ClassicSushi.png",
   "Класичні*assets/SignatureSushi.png",
+  "Набори*assets/SushiPhiladelphia.png",
+
 ];
 
 List<String> chapters = [
@@ -273,11 +274,12 @@ List<Product> others = [
     price: '300₴',
   ),
   Product(
-    image: 'assets/Vegan.jpg',
-    weight: '180 г',
-    description: 'Огірок, Салат чука, Листя салату, Авокадо',
-    name: 'Вегана',
-    price: '180₴',
+    image: 'assets/Fyudzhi.jpg',
+    weight: '275 г',
+    description:
+    'Огірок, Вугор, Масаго, Вершковий сир, Соус унагі, Томго, Кунжут',
+    name: 'Фьюджи',
+    price: '250₴',
   ),
   Product(
     image: 'assets/CHorna mamba.jpg',
@@ -386,14 +388,12 @@ List<Product> maki = [
     price: '200₴',
   ),
   Product(
-    image: 'assets/Fyudzhi.jpg',
-    weight: '275 г',
-    description:
-    'Огірок, Вугор, Масаго, Вершковий сир, Соус унагі, Томго, Кунжут',
-    name: 'Фьюджи',
-    price: '250₴',
+    image: 'assets/Vegan.jpg',
+    weight: '180 г',
+    description: 'Огірок, Салат чука, Листя салату, Авокадо',
+    name: 'Веган',
+    price: '180₴',
   ),
-
 ];
 
 

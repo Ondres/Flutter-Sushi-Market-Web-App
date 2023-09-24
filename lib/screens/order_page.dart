@@ -20,10 +20,11 @@ final TextEditingController apartmentController = TextEditingController();
 var sauces = 1;
 bool cash = true;
 bool courier = true;
-String? selectedValue = "м.Дніпро, Панікахи, 17";
+bool C = true;
+String? selectedValue = "Святослава Хороброго, 24";
 
 final List<String> items = [
-  'м.Дніпро, Панікахи, 17',
+  'Святослава Хороброго, 24',
   'м.Дніпро, Роторна, 23',
   'м.Дніпро, Чкалова, 24',
 ];
@@ -32,6 +33,7 @@ class OrderPage extends StatefulWidget {
   final Function(Product, bool, {int? items}) changeBasket;
   final Function(Product, bool) changeBasketAdd;
   int price;
+
   OrderPage({
     super.key,
     required this.price,
@@ -53,7 +55,7 @@ class _OrderPageState extends State<OrderPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-           // color: Colors.blue,
+            // color: Colors.blue,
             margin: EdgeInsets.only(top: 40),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -70,6 +72,11 @@ class _OrderPageState extends State<OrderPage> {
                           margin: EdgeInsets.only(bottom: 40),
                           child: TextField(
                             controller: phoneController,
+                            onChanged: (value) {
+                              setState(() {
+                                C = !C;
+                              });
+                            },
                             decoration: InputDecoration(
                               hintText: 'Телефон',
                               hintStyle: TextStyle(
@@ -157,33 +164,40 @@ class _OrderPageState extends State<OrderPage> {
                           color: Colors.white,
                         ),
                       ),
-                      !courier?
-                      Container(
-                          width: 200,
-                          height: 50,
-                          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                          child: TextField(
-                            controller: streetController,
-                            decoration: InputDecoration(
-                              hintText: 'Адреса',
-                              hintStyle: TextStyle(
-                                color: Color.fromRGBO(157, 155, 155, 1),
-                              ),
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                borderSide: BorderSide.none, // Скрываем границу
-                              ),
-                            ),
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                            textAlign: TextAlign.left,
-                            keyboardType: TextInputType.text,
-                            minLines: 1,
-                            maxLines: 1,
-                          )):Container(),
+                      !courier
+                          ? Container(
+                              width: 200,
+                              height: 50,
+                              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                              child: TextField(
+                                controller: streetController,
+                                onChanged: (value) {
+                                  setState(() {
+                                    C = !C;
+                                  });
+                                },
+                                decoration: InputDecoration(
+                                  hintText: 'Адреса',
+                                  hintStyle: TextStyle(
+                                    color: Color.fromRGBO(157, 155, 155, 1),
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    borderSide:
+                                        BorderSide.none, // Скрываем границу
+                                  ),
+                                ),
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                                textAlign: TextAlign.left,
+                                keyboardType: TextInputType.text,
+                                minLines: 1,
+                                maxLines: 1,
+                              ))
+                          : Container(),
                     ],
                   ),
                 ),
@@ -366,9 +380,11 @@ class _OrderPageState extends State<OrderPage> {
                                                     width: 30,
                                                     alignment: Alignment.center,
                                                     child: Icon(
-                                                        Icons.add_circle,
-                                                        size: 24,
-                                                        color: Color.fromRGBO(27, 57, 119, 1),)))),
+                                                      Icons.add_circle,
+                                                      size: 24,
+                                                      color: Color.fromRGBO(
+                                                          27, 57, 119, 1),
+                                                    )))),
                                       ],
                                     ))),
                           ],
@@ -376,10 +392,12 @@ class _OrderPageState extends State<OrderPage> {
                       ),
                       Container(
                         width: 210,
-                        child: Text("Імбир, васабі та соєвий соус входять до замовлення",
-                        style: TextStyle(
-                          fontSize: 12,
-                        ),),
+                        child: Text(
+                          "Імбир, васабі та соєвий соус входять до замовлення",
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -387,20 +405,20 @@ class _OrderPageState extends State<OrderPage> {
               ],
             ),
           ),
-          !courier?Container(
-            padding: EdgeInsets.only(left: 40),
-            alignment: Alignment.centerLeft,
-           // color: Colors.red,
-            height: 27,
-            child: Text(
-              "Oплата проводиться лише переказом на розрахунковий рахунок в повному обсязі!",
-              style: TextStyle(
-                color: Colors.black54
-              ),
-            ),
-          ):Container(
-            height: 27,
-          ),
+          !courier
+              ? Container(
+                  padding: EdgeInsets.only(left: 40),
+                  alignment: Alignment.centerLeft,
+                  // color: Colors.red,
+                  height: 27,
+                  child: Text(
+                    "Oплата проводиться лише переказом на розрахунковий рахунок в повному обсязі!",
+                    style: TextStyle(color: Colors.black54),
+                  ),
+                )
+              : Container(
+                  height: 27,
+                ),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -411,13 +429,18 @@ class _OrderPageState extends State<OrderPage> {
                         MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
                   ),
                   onPressed: () async {
-                    await _startBot();
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return CustomAlertDialog(); // Вызов нашего алерт-диалога
-                      },
-                    );
+                    if ((!streetController.text.isEmpty &&
+                            !courier &&
+                            !phoneController.text.isEmpty) ||
+                        (!phoneController.text.isEmpty && courier)) {
+                      await _startBot();
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return CustomAlertDialog(); // Вызов нашего алерт-диалога
+                        },
+                      );
+                    }
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -429,34 +452,38 @@ class _OrderPageState extends State<OrderPage> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular((10))),
-                      color: Color.fromRGBO(27, 57, 119, 1),
+                      color: (!streetController.text.isEmpty &&
+                                  !courier &&
+                                  !phoneController.text.isEmpty) ||
+                              (!phoneController.text.isEmpty && courier)
+                          ? Color.fromRGBO(27, 57, 119, 1)
+                          : Colors.grey,
                     ),
                   ),
                 ),
                 Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Text(
-                          "Сума до сплати:  ",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                    child: Row(
+                  children: [
+                    Container(
+                      child: Text(
+                        "Сума до сплати:  ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
                         ),
                       ),
-                      Container(
-                        child: Text(
-                          totalPrice.toString() + '  ₴',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                    ),
+                    Container(
+                      child: Text(
+                        totalPrice.toString() + '  ₴',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
                         ),
                       ),
-                    ],
-                  )
-                ),
+                    ),
+                  ],
+                )),
               ],
             ),
           ),
@@ -476,13 +503,14 @@ _startBot() async {
       "Телефон: ${phoneController.text}\n" +
       "Коментарі: ${commentController.text}\n" +
       "Адреса: ${streetController.text}\n" +
-          "кількість людей: " +
+      "кількість людей: " +
       sauces.toString();
   !courier ? Order += "\nДоставка кур'єром" : Order += "\nСамовивіз";
   courier ? Order += "\nПункт видачі: " + selectedValue.toString() : "";
   Order += "\nЗамовлення: ";
-  for (int i = 0; i < basket.length; i++) Order += basket[i].name + " " + counters[basket[i]].toString() + " шт., \n";
-  Order+="Всього до сплати: "+totalPrice.toString();
+  for (int i = 0; i < basket.length; i++)
+    Order += basket[i].name + " " + counters[basket[i]].toString() + " шт., \n";
+  Order += "Всього до сплати: " + totalPrice.toString();
   await teleDart.sendMessage(580706417, Order);
   teleDart.stop();
 }

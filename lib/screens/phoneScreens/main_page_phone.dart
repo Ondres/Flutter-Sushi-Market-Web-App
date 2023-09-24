@@ -92,7 +92,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.fromLTRB(30, 50, 30, 50),
-              child: Text("Набори",
+              child: Text("Фірмові",
                   style: TextStyle(
                       fontSize: 35,
                       color: Color.fromRGBO(27, 57, 119, 1),
@@ -101,7 +101,7 @@ class _MainPagePhoneState extends State<MainPagePhone> {
             SushiListPhone(
               changeBasketDel: BasketChangedDel,
               changeBasket: BasketChangedAdd,
-              sushiList: sets,
+              sushiList: firmovi,
             ),
           ],
         );
@@ -545,7 +545,7 @@ class _BottomContactsState extends State<BottomContacts> {
                                       size: 20,
                                     ),
                                     Text(
-                                      " +38 (050) 20 500 55",
+                                      " +38 (093) 205 0055",
                                       style: TextStyle(fontSize: 16),
                                     ),
                                   ],
